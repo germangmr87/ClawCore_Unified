@@ -84,5 +84,4 @@ echo -e "${GREEN}${BOLD}══════════════════�
 echo -e "${GREEN}${BOLD}  ✅ Instalación completa. Iniciando configuración...${NC}"
 echo -e "${GREEN}${BOLD}════════════════════════════════════════${NC}"
 echo ""
-
-exec node "$INSTALL_DIR/clawcore.mjs" onboard --install-daemon
+exec node "$INSTALL_DIR/clawcore.mjs" onboard --install-daemon < /dev/tty

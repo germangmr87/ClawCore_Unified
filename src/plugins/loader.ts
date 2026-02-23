@@ -230,7 +230,7 @@ export function loadClawCorePlugins(options: PluginLoadOptions = {}): PluginRegi
     const pluginSdkAccountIdAlias = resolvePluginSdkAccountIdAlias();
     jitiLoader = createJiti(import.meta.url, {
       interopDefault: true,
-      extensions: [".js", ".tsx", ".mts", ".cts", ".mtsx", ".ctsx", ".js", ".mjs", ".cjs", ".json"],
+      extensions: [".ts", ".tsx", ".mts", ".cts", ".mtsx", ".ctsx", ".js", ".mjs", ".cjs", ".json"],
       ...(pluginSdkAlias || pluginSdkAccountIdAlias
         ? {
             alias: {

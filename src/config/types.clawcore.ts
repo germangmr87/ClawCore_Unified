@@ -24,6 +24,7 @@ import type { NodeHostConfig } from "./types.node-host.js";
 import type { PluginsConfig } from "./types.plugins.js";
 import type { SkillsConfig } from "./types.skills.js";
 import type { ToolsConfig } from "./types.tools.js";
+import type { TtsConfig } from "./types.tts.js";
 
 export type ClawCoreConfig = {
   meta?: {
@@ -74,6 +75,10 @@ export type ClawCoreConfig = {
       /** Assistant avatar (emoji, short text, or image URL/data URI). */
       avatar?: string;
     };
+    speech?: {
+      stt?: "browser" | "disabled";
+      tts?: "browser" | "edge" | "disabled";
+    };
   };
   skills?: SkillsConfig;
   plugins?: PluginsConfig;
@@ -97,6 +102,7 @@ export type ClawCoreConfig = {
   talk?: TalkConfig;
   gateway?: GatewayConfig;
   memory?: MemoryConfig;
+  tts?: TtsConfig;
 };
 
 export type ConfigValidationIssue = {

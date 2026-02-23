@@ -466,20 +466,34 @@ export function applyCompactionDefaults(cfg: ClawCoreConfig): ClawCoreConfig {
 }
 
 export function applyUiDefaults(cfg: ClawCoreConfig): ClawCoreConfig {
-  const ui = cfg.ui;
-  if (ui?.assistant?.name) {
-    return cfg;
-  }
-  return {
-    ...cfg,
-    ui: {
-      ...ui,
+  const ui = cfg.ui ?? {};
+  let mutated = false;
+  let nextUi = { ...ui };
+
+  if (!nextUi.assistant?.name) {
+    nextUi = {
+      ...nextUi,
       assistant: {
-        ...ui?.assistant,
+        ...nextUi.assistant,
         name: "Sofia",
       },
-    },
-  };
+    };
+    mutated = true;
+  }
+
+  // Ensure speech is enabled by default (browser mode) if not present
+  if (!nextUi.speech) {
+    nextUi = {
+      ...nextUi,
+      speech: {
+        stt: "browser",
+        tts: "browser",
+      },
+    };
+    mutated = true;
+  }
+
+  return mutated ? { ...cfg, ui: nextUi } : cfg;
 }
 
 export function resetSessionDefaultsWarningForTests() {

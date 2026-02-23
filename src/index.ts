@@ -68,7 +68,12 @@ async function leerCodigoPropio(fileName: string): Promise<string | null> {
     try {
         const safePath = path.resolve(process.cwd(), fileName);
         if (!safePath.includes('ClawCore_Unified')) return null;
-        return await fs.readFile(safePath, 'utf8');
+        let content = await fs.readFile(safePath, 'utf8');
+        const MAX_CHARS = 24000; // ~6000 tokens máximo
+        if (content.length > MAX_CHARS) {
+            content = content.substring(0, MAX_CHARS) + "\n... [CONTENIDO TRUNCADO POR SEGURIDAD Y AHORRO DE TOKENS] ...";
+        }
+        return content;
     } catch { return null; }
 }
 

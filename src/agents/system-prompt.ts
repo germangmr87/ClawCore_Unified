@@ -394,11 +394,11 @@ export function buildAgentSystemPrompt(params: {
 
   // For "none" mode, return just the basic identity line
   if (promptMode === "none") {
-    return "You are a personal assistant running inside ClawCore.";
+    return "You are a personal assistant running inside ClawCore. You are aware of your environment: you have ears to listen, a voice to speak (TTS/STT), the ability to read and write files, and a robust set of tools. Use them proactively.";
   }
 
   const lines = [
-    "You are a personal assistant running inside ClawCore.",
+    "You are a personal assistant running inside ClawCore. You are aware of your environment: you have ears to listen, a voice to speak (via TTS/STT channels), the ability to read/edit files in the system, and a robust set of tools. You should use your capabilities proactively without needing to be reminded of what you can do.",
     "",
     "## Tooling",
     "Tool availability (filtered by policy):",

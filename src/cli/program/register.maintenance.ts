@@ -10,6 +10,36 @@ import { runCommandWithRuntime } from "../cli-utils.js";
 
 export function registerMaintenanceCommands(program: Command) {
   program
+    .command("stop")
+    .description("Detiene el servicio gateway (Alias)")
+    .action(async () => {
+      await runCommandWithRuntime(defaultRuntime, async () => {
+        const mod = await import("../daemon-cli.js");
+        await mod.runDaemonStop({});
+      });
+    });
+
+  program
+    .command("start")
+    .description("Inicia el servicio gateway (Alias)")
+    .action(async () => {
+      await runCommandWithRuntime(defaultRuntime, async () => {
+        const mod = await import("../daemon-cli.js");
+        await mod.runDaemonStart({});
+      });
+    });
+
+  program
+    .command("restart")
+    .description("Reinicia el servicio gateway (Alias)")
+    .action(async () => {
+      await runCommandWithRuntime(defaultRuntime, async () => {
+        const mod = await import("../daemon-cli.js");
+        await mod.runDaemonRestart({});
+      });
+    });
+
+  program
     .command("doctor")
     .description("Health checks + quick fixes for the gateway and channels")
     .addHelpText(

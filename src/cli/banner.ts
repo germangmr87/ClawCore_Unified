@@ -39,8 +39,8 @@ export function formatCliBannerLine(version: string, options: BannerOptions = {}
   const commitLabel = commit ?? "unknown";
   const tagline = pickTagline(options);
   const rich = options.richTty ?? isRich();
-  const title = "🦞 ClawCore";
-  const prefix = "🦞 ";
+  const title = "🔱 ClawCore";
+  const prefix = "🔱 ";
   const columns = options.columns ?? process.stdout.columns ?? 120;
   const plainFullLine = `${title} ${version} (${commitLabel}) — ${tagline}`;
   const fitsOnOneLine = visibleWidth(plainFullLine) <= columns;
@@ -65,12 +65,12 @@ export function formatCliBannerLine(version: string, options: BannerOptions = {}
 }
 
 const LOBSTER_ASCII = [
-  "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄",
-  "██░▄▄▄░██░▄▄░██░▄▄▄██░▀██░██░▄▄▀██░████░▄▄▀██░███░██",
-  "██░███░██░▀▀░██░▄▄▄██░█░█░██░█████░████░▀▀░██░█░█░██",
-  "██░▀▀▀░██░█████░▀▀▀██░██▄░██░▀▀▄██░▀▀░█░██░██▄▀▄▀▄██",
-  "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀",
-  "                  🦞 CLAWCORE 🦞                    ",
+  "   ____ _        ___        ______ ___  ____  _____ ",
+  "  / ___| |      / \\ \\      / / ___/ _ \\|  _ \\| ____|",
+  " | |   | |     / _ \\ \\ /\\ / / |  | | | | |_) |  _|  ",
+  " | |___| |___ / ___ \\ V  V /| |__| |_| |  _ <| |___ ",
+  "  \\____|_____/_/   \\_\\_/\\_/  \\____\\___/|_| \\_\\_____|",
+  "                  🔱 CLAWCORE 🔱                    ",
   " ",
 ];
 
@@ -97,9 +97,9 @@ export function formatCliBannerArt(options: BannerOptions = {}): string {
     if (line.includes("CLAWCORE")) {
       return (
         theme.muted("              ") +
-        theme.accent("🦞") +
+        theme.accent("🔱") +
         theme.info(" CLAWCORE ") +
-        theme.accent("🦞")
+        theme.accent("🔱")
       );
     }
     return splitGraphemes(line).map(colorChar).join("");

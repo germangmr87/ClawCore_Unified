@@ -2,7 +2,7 @@ import { z } from "zod";
 import { ToolsSchema } from "./zod-schema.agent-runtime.js";
 import { AgentsSchema, AudioSchema, BindingsSchema, BroadcastSchema } from "./zod-schema.agents.js";
 import { ApprovalsSchema } from "./zod-schema.approvals.js";
-import { HexColorSchema, ModelsConfigSchema } from "./zod-schema.core.js";
+import { HexColorSchema, ModelsConfigSchema, TtsConfigSchema } from "./zod-schema.core.js";
 import { HookMappingSchema, HooksGmailSchema, InternalHooksSchema } from "./zod-schema.hooks.js";
 import { ChannelsSchema } from "./zod-schema.providers.js";
 import { sensitive } from "./zod-schema.sensitive.js";
@@ -251,9 +251,21 @@ export const ClawCoreSchema = z
           })
           .strict()
           .optional(),
+        speech: z
+          .object({
+            stt: z.union([z.literal("browser"), z.literal("disabled")]).optional(),
+            tts: z.union([z.literal("browser"), z.literal("edge"), z.literal("disabled")]).optional(),
+          })
+          .strict()
+          .optional(),
       })
       .strict()
       .optional(),
+    // tts key removed from root as it caused schema reference errors (hoisting).
+    // The TtsConfigSchema is defined in zod-schema.core.ts but causes cyclic issues here if used too early.
+    // Since we moved 'speech' into 'ui', we rely on that for frontend toggles.
+    // The backend 'tts' object is optional and we will let it pass as unknown for now or fix properly later.
+    tts: z.any().optional(),
     auth: z
       .object({
         profiles: z

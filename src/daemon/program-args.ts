@@ -90,10 +90,10 @@ function buildDistCandidates(...inputs: string[]): string[] {
 function appendDistCandidates(candidates: string[], seen: Set<string>, baseDir: string): void {
   const distDir = path.resolve(baseDir, "dist");
   const distEntries = [
-    path.join(distDir, "index.js"),
-    path.join(distDir, "index.mjs"),
     path.join(distDir, "entry.js"),
     path.join(distDir, "entry.mjs"),
+    path.join(distDir, "index.js"),
+    path.join(distDir, "index.mjs"),
   ];
   for (const entry of distEntries) {
     if (seen.has(entry)) {

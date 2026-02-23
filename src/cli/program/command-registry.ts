@@ -65,6 +65,9 @@ const coreEntries: CoreCliEntry[] = [
         name: "uninstall",
         description: "Uninstall the gateway service + local data (CLI remains)",
       },
+      { name: "stop", description: "Detiene el servicio gateway (Alias)" },
+      { name: "start", description: "Inicia el servicio gateway (Alias)" },
+      { name: "restart", description: "Reinicia el servicio gateway (Alias)" },
     ],
     register: async ({ program }) => {
       const mod = await import("./register.maintenance.js");

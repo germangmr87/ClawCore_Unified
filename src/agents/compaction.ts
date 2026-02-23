@@ -324,11 +324,28 @@ export function pruneHistoryForContextShare(params: {
 } {
   const maxHistoryShare = params.maxHistoryShare ?? 0.5;
   const budgetTokens = Math.max(1, Math.floor(params.maxContextTokens * maxHistoryShare));
-  let keptMessages = params.messages;
-  const allDroppedMessages: AgentMessage[] = [];
-  let droppedChunks = 0;
-  let droppedMessages = 0;
-  let droppedTokens = 0;
+  
+  // 1. Evicción dura por tiempo (10 minutos máximo)
+  const TEN_MIN_MS = 10 * 60 * 1000;
+  const now = Date.now();
+  
+  const timeFiltered: AgentMessage[] = [];
+  const timeDropped: AgentMessage[] = [];
+  
+  for (const msg of params.messages) {
+    const msgTime = (msg as any).timestamp ?? now; // Fallback si no hay marca de tiempo
+    if (now - msgTime > TEN_MIN_MS) {
+      timeDropped.push(msg);
+    } else {
+      timeFiltered.push(msg);
+    }
+  }
+
+  let keptMessages = timeFiltered;
+  const allDroppedMessages: AgentMessage[] = [...timeDropped];
+  let droppedChunks = timeDropped.length > 0 ? 1 : 0;
+  let droppedMessages = timeDropped.length;
+  let droppedTokens = estimateMessagesTokens(timeDropped);
 
   const parts = normalizeParts(params.parts ?? DEFAULT_PARTS, keptMessages.length);
 
@@ -373,5 +390,7 @@ export function pruneHistoryForContextShare(params: {
 }
 
 export function resolveContextWindowTokens(model?: ExtensionContext["model"]): number {
-  return Math.max(1, Math.floor(model?.contextWindow ?? DEFAULT_CONTEXT_TOKENS));
+  const baseTokens = Math.max(1, Math.floor(model?.contextWindow ?? DEFAULT_CONTEXT_TOKENS));
+  // Techo estricto obligatorio solicitado para permitir que QMD (RAG) se encargue del resto del contexto
+  return Math.min(baseTokens, 10_000);
 }

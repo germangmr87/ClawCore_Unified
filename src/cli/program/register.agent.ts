@@ -155,7 +155,7 @@ ${theme.muted("Docs:")} ${formatDocsLink("/cli/agent", "docs.clawcore.ai/cli/age
         `
 ${theme.heading("Examples:")}
 ${formatHelpExamples([
-  ['clawcore agents set-identity --agent main --name "ClawCore" --emoji "🦞"', "Set name + emoji."],
+  ['clawcore agents set-identity --agent main --name "ClawCore" --emoji "🔱"', "Set name + emoji."],
   ["clawcore agents set-identity --agent main --avatar avatars/clawcore.png", "Set avatar path."],
   [
     "clawcore agents set-identity --workspace ~/.clawcore/workspace --from-identity",

@@ -11,7 +11,7 @@ function makePermissionRequest(
     sessionId: "session-1",
     toolCall: {
       toolCallId: "tool-1",
-      title: "read: src/index.ts",
+      title: "read: src/index.js",
       status: "pending",
     },
     options: [

@@ -1,12 +1,12 @@
-import type { OpenClawConfig } from "../config/config.js";
+import type { ClawCoreConfig } from "../config/config.js";
 import { DEFAULT_PROVIDER } from "../agents/defaults.js";
 import { resolveAllowlistModelKey } from "../agents/model-selection.js";
 
 export function ensureModelAllowlistEntry(params: {
-  cfg: OpenClawConfig;
+  cfg: ClawCoreConfig;
   modelRef: string;
   defaultProvider?: string;
-}): OpenClawConfig {
+}): ClawCoreConfig {
   const rawModelRef = params.modelRef.trim();
   if (!rawModelRef) {
     return params.cfg;

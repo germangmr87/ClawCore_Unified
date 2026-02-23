@@ -4,7 +4,7 @@ import {
   isRequestBodyLimitError,
   readRequestBodyWithLimit,
   requestBodyErrorToText,
-} from "openclaw/plugin-sdk";
+} from "clawcore/plugin-sdk";
 import type {
   CoreConfig,
   NextcloudTalkInboundMessage,

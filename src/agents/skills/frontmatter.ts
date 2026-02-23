@@ -1,6 +1,6 @@
 import type { Skill } from "@mariozechner/pi-coding-agent";
 import type {
-  OpenClawSkillMetadata,
+  ClawCoreSkillMetadata,
   ParsedSkillFrontmatter,
   SkillEntry,
   SkillInstallSpec,
@@ -11,10 +11,10 @@ import {
   getFrontmatterString,
   normalizeStringList,
   parseFrontmatterBool,
-  resolveOpenClawManifestBlock,
-  resolveOpenClawManifestInstall,
-  resolveOpenClawManifestOs,
-  resolveOpenClawManifestRequires,
+  resolveClawCoreManifestBlock,
+  resolveClawCoreManifestInstall,
+  resolveClawCoreManifestOs,
+  resolveClawCoreManifestRequires,
 } from "../../shared/frontmatter.js";
 
 export function parseFrontmatter(content: string): ParsedSkillFrontmatter {
@@ -79,16 +79,16 @@ function parseInstallSpec(input: unknown): SkillInstallSpec | undefined {
   return spec;
 }
 
-export function resolveOpenClawMetadata(
+export function resolveClawCoreMetadata(
   frontmatter: ParsedSkillFrontmatter,
-): OpenClawSkillMetadata | undefined {
-  const metadataObj = resolveOpenClawManifestBlock({ frontmatter });
+): ClawCoreSkillMetadata | undefined {
+  const metadataObj = resolveClawCoreManifestBlock({ frontmatter });
   if (!metadataObj) {
     return undefined;
   }
-  const requires = resolveOpenClawManifestRequires(metadataObj);
-  const install = resolveOpenClawManifestInstall(metadataObj, parseInstallSpec);
-  const osRaw = resolveOpenClawManifestOs(metadataObj);
+  const requires = resolveClawCoreManifestRequires(metadataObj);
+  const install = resolveClawCoreManifestInstall(metadataObj, parseInstallSpec);
+  const osRaw = resolveClawCoreManifestOs(metadataObj);
   return {
     always: typeof metadataObj.always === "boolean" ? metadataObj.always : undefined,
     emoji: typeof metadataObj.emoji === "string" ? metadataObj.emoji : undefined,

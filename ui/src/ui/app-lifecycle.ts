@@ -7,7 +7,10 @@ import {
   stopNodesPolling,
   startDebugPolling,
   stopDebugPolling,
+  startSovereignPolling,
+  stopSovereignPolling,
 } from "./app-polling.ts";
+
 import { observeTopbar, scheduleChatScroll, scheduleLogsScroll } from "./app-scroll.ts";
 import {
   applySettingsFromUrl,
@@ -54,7 +57,11 @@ export function handleConnected(host: LifecycleHost) {
   if (host.tab === "debug") {
     startDebugPolling(host as unknown as Parameters<typeof startDebugPolling>[0]);
   }
+  if (host.tab === "sovereign") {
+    startSovereignPolling(host as unknown as Parameters<typeof startSovereignPolling>[0]);
+  }
 }
+
 
 export function handleFirstUpdated(host: LifecycleHost) {
   observeTopbar(host as unknown as Parameters<typeof observeTopbar>[0]);
@@ -65,13 +72,33 @@ export function handleDisconnected(host: LifecycleHost) {
   stopNodesPolling(host as unknown as Parameters<typeof stopNodesPolling>[0]);
   stopLogsPolling(host as unknown as Parameters<typeof stopLogsPolling>[0]);
   stopDebugPolling(host as unknown as Parameters<typeof stopDebugPolling>[0]);
+  stopSovereignPolling(host as unknown as Parameters<typeof stopSovereignPolling>[0]);
   detachThemeListener(host as unknown as Parameters<typeof detachThemeListener>[0]);
   host.topbarObserver?.disconnect();
   host.topbarObserver = null;
 }
 
 export function handleUpdated(host: LifecycleHost, changed: Map<PropertyKey, unknown>) {
+  if (changed.has("tab")) {
+    if (host.tab === "logs") {
+      startLogsPolling(host as unknown as Parameters<typeof startLogsPolling>[0]);
+    } else {
+      stopLogsPolling(host as unknown as Parameters<typeof stopLogsPolling>[0]);
+    }
+    if (host.tab === "debug") {
+      startDebugPolling(host as unknown as Parameters<typeof startDebugPolling>[0]);
+    } else {
+      stopDebugPolling(host as unknown as Parameters<typeof stopDebugPolling>[0]);
+    }
+    if (host.tab === "sovereign") {
+      startSovereignPolling(host as unknown as Parameters<typeof startSovereignPolling>[0]);
+    } else {
+      stopSovereignPolling(host as unknown as Parameters<typeof stopSovereignPolling>[0]);
+    }
+  }
+
   if (host.tab === "chat" && host.chatManualRefreshInFlight) {
+
     return;
   }
   if (

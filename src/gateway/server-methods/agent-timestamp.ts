@@ -1,6 +1,6 @@
-import type { OpenClawConfig } from "../../config/types.js";
+import type { ClawCoreConfig } from "../../config/types.js";
 import { resolveUserTimezone } from "../../agents/date-time.js";
-import { formatZonedTimestamp } from "../../infra/format-time/format-datetime.ts";
+import { formatZonedTimestamp } from "../../infra/format-time/format-datetime.js";
 
 /**
  * Cron jobs inject "Current time: ..." into their messages.
@@ -71,9 +71,9 @@ export function injectTimestamp(message: string, opts?: TimestampInjectionOption
 }
 
 /**
- * Build TimestampInjectionOptions from an OpenClawConfig.
+ * Build TimestampInjectionOptions from an ClawCoreConfig.
  */
-export function timestampOptsFromConfig(cfg: OpenClawConfig): TimestampInjectionOptions {
+export function timestampOptsFromConfig(cfg: ClawCoreConfig): TimestampInjectionOptions {
   return {
     timezone: resolveUserTimezone(cfg.agents?.defaults?.userTimezone),
   };

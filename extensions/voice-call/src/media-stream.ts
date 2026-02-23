@@ -43,6 +43,10 @@ interface StreamSession {
   streamSid: string;
   ws: WebSocket;
   sttSession: RealtimeSTTSession;
+  /** Expected next sequence number for incoming media messages from Twilio */
+  nextSequenceNumber: number;
+  /** Jitter buffer to reorder out-of-order messages */
+  jitterBuffer: Map<number, Buffer>;
 }
 
 type TtsQueueEntry = {
@@ -106,9 +110,15 @@ export class MediaStreamHandler {
 
           case "media":
             if (session && message.media?.payload) {
-              // Forward audio to STT
-              const audioBuffer = Buffer.from(message.media.payload, "base64");
-              session.sttSession.sendAudio(audioBuffer);
+              const seq = message.sequenceNumber ? parseInt(message.sequenceNumber, 10) : -1;
+              const payload = Buffer.from(message.media.payload, "base64");
+
+              if (seq === -1) {
+                // No sequence number available, forward immediately.
+                session.sttSession.sendAudio(payload);
+              } else {
+                this.handleIncomingAudio(session, seq, payload);
+              }
             }
             break;
 
@@ -187,6 +197,8 @@ export class MediaStreamHandler {
       streamSid,
       ws,
       sttSession,
+      nextSequenceNumber: -1,
+      jitterBuffer: new Map(),
     };
 
     this.sessions.set(streamSid, session);
@@ -383,6 +395,41 @@ export class MediaStreamHandler {
     this.ttsActiveControllers.delete(streamSid);
     this.ttsPlaying.delete(streamSid);
     this.ttsQueues.delete(streamSid);
+  }
+
+  /**
+   * Handle incoming audio with reordering based on sequence numbers.
+   */
+  private handleIncomingAudio(session: StreamSession, seq: number, payload: Buffer): void {
+    // Initialize sequence anchor if this is the first message.
+    if (session.nextSequenceNumber === -1) {
+      session.nextSequenceNumber = seq;
+    }
+
+    // Drop late packets that we've already surpassed.
+    if (seq < session.nextSequenceNumber) {
+      return;
+    }
+
+    // Buffer the message for reordering.
+    session.jitterBuffer.set(seq, payload);
+
+    // Limit buffer size to prevent memory leaks and excessive latency.
+    // 25 messages = 500ms jitter buffer.
+    const MAX_JITTER_SIZE = 25;
+    if (session.jitterBuffer.size > MAX_JITTER_SIZE) {
+      // Force skip if buffer is too large, tending towards the lowest remaining seq.
+      const lowestBuffered = Math.min(...session.jitterBuffer.keys());
+      session.nextSequenceNumber = lowestBuffered;
+    }
+
+    // Process all contiguous buffered messages.
+    while (session.jitterBuffer.has(session.nextSequenceNumber)) {
+      const p = session.jitterBuffer.get(session.nextSequenceNumber)!;
+      session.jitterBuffer.delete(session.nextSequenceNumber);
+      session.sttSession.sendAudio(p);
+      session.nextSequenceNumber++;
+    }
   }
 }
 

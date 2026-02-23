@@ -59,45 +59,45 @@ describe("systemd runtime parsing", () => {
 });
 
 describe("resolveSystemdUserUnitPath", () => {
-  it("uses default service name when OPENCLAW_PROFILE is unset", () => {
+  it("uses default service name when CLAWCORE_PROFILE is unset", () => {
     const env = { HOME: "/home/test" };
     expect(resolveSystemdUserUnitPath(env)).toBe(
-      "/home/test/.config/systemd/user/openclaw-gateway.service",
+      "/home/test/.config/systemd/user/clawcore-gateway.service",
     );
   });
 
-  it("uses profile-specific service name when OPENCLAW_PROFILE is set to a custom value", () => {
-    const env = { HOME: "/home/test", OPENCLAW_PROFILE: "jbphoenix" };
+  it("uses profile-specific service name when CLAWCORE_PROFILE is set to a custom value", () => {
+    const env = { HOME: "/home/test", CLAWCORE_PROFILE: "jbphoenix" };
     expect(resolveSystemdUserUnitPath(env)).toBe(
-      "/home/test/.config/systemd/user/openclaw-gateway-jbphoenix.service",
+      "/home/test/.config/systemd/user/clawcore-gateway-jbphoenix.service",
     );
   });
 
-  it("prefers OPENCLAW_SYSTEMD_UNIT over OPENCLAW_PROFILE", () => {
+  it("prefers CLAWCORE_SYSTEMD_UNIT over CLAWCORE_PROFILE", () => {
     const env = {
       HOME: "/home/test",
-      OPENCLAW_PROFILE: "jbphoenix",
-      OPENCLAW_SYSTEMD_UNIT: "custom-unit",
+      CLAWCORE_PROFILE: "jbphoenix",
+      CLAWCORE_SYSTEMD_UNIT: "custom-unit",
     };
     expect(resolveSystemdUserUnitPath(env)).toBe(
       "/home/test/.config/systemd/user/custom-unit.service",
     );
   });
 
-  it("handles OPENCLAW_SYSTEMD_UNIT with .service suffix", () => {
+  it("handles CLAWCORE_SYSTEMD_UNIT with .service suffix", () => {
     const env = {
       HOME: "/home/test",
-      OPENCLAW_SYSTEMD_UNIT: "custom-unit.service",
+      CLAWCORE_SYSTEMD_UNIT: "custom-unit.service",
     };
     expect(resolveSystemdUserUnitPath(env)).toBe(
       "/home/test/.config/systemd/user/custom-unit.service",
     );
   });
 
-  it("trims whitespace from OPENCLAW_SYSTEMD_UNIT", () => {
+  it("trims whitespace from CLAWCORE_SYSTEMD_UNIT", () => {
     const env = {
       HOME: "/home/test",
-      OPENCLAW_SYSTEMD_UNIT: "  custom-unit  ",
+      CLAWCORE_SYSTEMD_UNIT: "  custom-unit  ",
     };
     expect(resolveSystemdUserUnitPath(env)).toBe(
       "/home/test/.config/systemd/user/custom-unit.service",
@@ -107,8 +107,8 @@ describe("resolveSystemdUserUnitPath", () => {
 
 describe("splitArgsPreservingQuotes", () => {
   it("splits on whitespace outside quotes", () => {
-    expect(splitArgsPreservingQuotes('/usr/bin/openclaw gateway start --name "My Bot"')).toEqual([
-      "/usr/bin/openclaw",
+    expect(splitArgsPreservingQuotes('/usr/bin/clawcore gateway start --name "My Bot"')).toEqual([
+      "/usr/bin/clawcore",
       "gateway",
       "start",
       "--name",
@@ -118,32 +118,32 @@ describe("splitArgsPreservingQuotes", () => {
 
   it("supports systemd-style backslash escaping", () => {
     expect(
-      splitArgsPreservingQuotes('openclaw --name "My \\"Bot\\"" --foo bar', {
+      splitArgsPreservingQuotes('clawcore --name "My \\"Bot\\"" --foo bar', {
         escapeMode: "backslash",
       }),
-    ).toEqual(["openclaw", "--name", 'My "Bot"', "--foo", "bar"]);
+    ).toEqual(["clawcore", "--name", 'My "Bot"', "--foo", "bar"]);
   });
 
   it("supports schtasks-style escaped quotes while preserving other backslashes", () => {
     expect(
-      splitArgsPreservingQuotes('openclaw --path "C:\\\\Program Files\\\\OpenClaw"', {
+      splitArgsPreservingQuotes('clawcore --path "C:\\\\Program Files\\\\ClawCore"', {
         escapeMode: "backslash-quote-only",
       }),
-    ).toEqual(["openclaw", "--path", "C:\\\\Program Files\\\\OpenClaw"]);
+    ).toEqual(["clawcore", "--path", "C:\\\\Program Files\\\\ClawCore"]);
 
     expect(
-      splitArgsPreservingQuotes('openclaw --label "My \\"Quoted\\" Name"', {
+      splitArgsPreservingQuotes('clawcore --label "My \\"Quoted\\" Name"', {
         escapeMode: "backslash-quote-only",
       }),
-    ).toEqual(["openclaw", "--label", 'My "Quoted" Name']);
+    ).toEqual(["clawcore", "--label", 'My "Quoted" Name']);
   });
 });
 
 describe("parseSystemdExecStart", () => {
   it("preserves quoted arguments", () => {
-    const execStart = '/usr/bin/openclaw gateway start --name "My Bot"';
+    const execStart = '/usr/bin/clawcore gateway start --name "My Bot"';
     expect(parseSystemdExecStart(execStart)).toEqual([
-      "/usr/bin/openclaw",
+      "/usr/bin/clawcore",
       "gateway",
       "start",
       "--name",

@@ -1,11 +1,11 @@
 import type { GatewayStatusSummary } from "./tui-types.js";
-import { formatTimeAgo } from "../infra/format-time/format-relative.ts";
+import { formatTimeAgo } from "../infra/format-time/format-relative.js";
 import { formatTokenCount } from "../utils/usage-format.js";
 import { formatContextUsageLine } from "./tui-formatters.js";
 
 export function formatStatusSummary(summary: GatewayStatusSummary) {
   const lines: string[] = [];
-  lines.push("Gateway status");
+  lines.push("🚀 CLAWCORE Status");
 
   if (!summary.linkChannel) {
     lines.push("Link channel: unknown");
@@ -64,7 +64,8 @@ export function formatStatusSummary(summary: GatewayStatusSummary) {
     lines.push("Recent sessions:");
     for (const entry of recent) {
       const ageLabel = typeof entry.age === "number" ? formatTimeAgo(entry.age) : "no activity";
-      const model = entry.model ?? "unknown";
+      // 🚀 CLAWCORE FIX: Fallback to defaultModel if entry model is missing
+      const model = entry.model ?? defaultModel;
       const usage = formatContextUsageLine({
         total: entry.totalTokens ?? null,
         context: entry.contextTokens ?? null,
@@ -86,3 +87,6 @@ export function formatStatusSummary(summary: GatewayStatusSummary) {
 
   return lines;
 }
+
+// Exportar función principal
+export default { formatStatusSummary };

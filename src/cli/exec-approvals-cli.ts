@@ -8,7 +8,7 @@ import {
   type ExecApprovalsAgent,
   type ExecApprovalsFile,
 } from "../infra/exec-approvals.js";
-import { formatTimeAgo } from "../infra/format-time/format-relative.ts";
+import { formatTimeAgo } from "../infra/format-time/format-relative.js";
 import { defaultRuntime } from "../runtime.js";
 import { formatDocsLink } from "../terminal/links.js";
 import { renderTable } from "../terminal/table.js";
@@ -303,7 +303,7 @@ export function registerExecApprovalsCli(program: Command) {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/approvals", "docs.openclaw.ai/cli/approvals")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/approvals", "docs.clawcore.ai/cli/approvals")}\n`,
     );
 
   const getCmd = approvals
@@ -372,18 +372,18 @@ export function registerExecApprovalsCli(program: Command) {
       "after",
       () =>
         `\n${theme.heading("Examples:")}\n${formatExample(
-          'openclaw approvals allowlist add "~/Projects/**/bin/rg"',
+          'clawcore approvals allowlist add "~/Projects/**/bin/rg"',
           "Allowlist a local binary pattern for the main agent.",
         )}\n${formatExample(
-          'openclaw approvals allowlist add --agent main --node <id|name|ip> "/usr/bin/uptime"',
+          'clawcore approvals allowlist add --agent main --node <id|name|ip> "/usr/bin/uptime"',
           "Allowlist on a specific node/agent.",
         )}\n${formatExample(
-          'openclaw approvals allowlist add --agent "*" "/usr/bin/uname"',
+          'clawcore approvals allowlist add --agent "*" "/usr/bin/uname"',
           "Allowlist for all agents (wildcard).",
         )}\n${formatExample(
-          'openclaw approvals allowlist remove "~/Projects/**/bin/rg"',
+          'clawcore approvals allowlist remove "~/Projects/**/bin/rg"',
           "Remove an allowlist pattern.",
-        )}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/approvals", "docs.openclaw.ai/cli/approvals")}\n`,
+        )}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/approvals", "docs.clawcore.ai/cli/approvals")}\n`,
     );
 
   const allowlistAdd = allowlist

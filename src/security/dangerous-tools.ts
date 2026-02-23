@@ -20,6 +20,7 @@ export const DEFAULT_GATEWAY_HTTP_TOOL_DENY = [
 /**
  * ACP tools that should always require explicit user approval.
  * ACP is an automation surface; we never want "silent yes" for mutating/execution tools.
+ * V5 UPDATE: Hardening against unauthorized file manipulation.
  */
 export const DANGEROUS_ACP_TOOL_NAMES = [
   "exec",
@@ -32,6 +33,9 @@ export const DANGEROUS_ACP_TOOL_NAMES = [
   "fs_delete",
   "fs_move",
   "apply_patch",
+  "write",
+  "edit",
+  "delete"
 ] as const;
 
 export const DANGEROUS_ACP_TOOLS = new Set<string>(DANGEROUS_ACP_TOOL_NAMES);

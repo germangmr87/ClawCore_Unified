@@ -5,7 +5,7 @@ import { withProgress } from "../cli/progress.js";
 import { resolveGatewayPort } from "../config/config.js";
 import { buildGatewayConnectionDetails, callGateway } from "../gateway/call.js";
 import { info } from "../globals.js";
-import { formatTimeAgo } from "../infra/format-time/format-relative.ts";
+import { formatTimeAgo } from "../infra/format-time/format-relative.js";
 import { formatUsageReportLines, loadProviderUsageSummary } from "../infra/provider-usage.js";
 import {
   formatUpdateChannelLabel,
@@ -393,7 +393,7 @@ export async function statusCommand(
     },
   ];
 
-  runtime.log(theme.heading("OpenClaw status"));
+  runtime.log(theme.heading("ClawCore status"));
   runtime.log("");
   runtime.log(theme.heading("Overview"));
   runtime.log(
@@ -450,8 +450,8 @@ export async function statusCommand(
       runtime.log(theme.muted(`… +${sorted.length - shown.length} more`));
     }
   }
-  runtime.log(theme.muted(`Full report: ${formatCliCommand("openclaw security audit")}`));
-  runtime.log(theme.muted(`Deep probe: ${formatCliCommand("openclaw security audit --deep")}`));
+  runtime.log(theme.muted(`Full report: ${formatCliCommand("clawcore security audit")}`));
+  runtime.log(theme.muted(`Deep probe: ${formatCliCommand("clawcore security audit --deep")}`));
 
   runtime.log("");
   runtime.log(theme.heading("Channels"));
@@ -615,8 +615,8 @@ export async function statusCommand(
   }
 
   runtime.log("");
-  runtime.log("FAQ: https://docs.openclaw.ai/faq");
-  runtime.log("Troubleshooting: https://docs.openclaw.ai/troubleshooting");
+  runtime.log("FAQ: https://docs.clawcore.ai/faq");
+  runtime.log("Troubleshooting: https://docs.clawcore.ai/troubleshooting");
   runtime.log("");
   const updateHint = formatUpdateAvailableHint(update);
   if (updateHint) {
@@ -624,11 +624,11 @@ export async function statusCommand(
     runtime.log("");
   }
   runtime.log("Next steps:");
-  runtime.log(`  Need to share?      ${formatCliCommand("openclaw status --all")}`);
-  runtime.log(`  Need to debug live? ${formatCliCommand("openclaw logs --follow")}`);
+  runtime.log(`  Need to share?      ${formatCliCommand("clawcore status --all")}`);
+  runtime.log(`  Need to debug live? ${formatCliCommand("clawcore logs --follow")}`);
   if (gatewayReachable) {
-    runtime.log(`  Need to test channels? ${formatCliCommand("openclaw status --deep")}`);
+    runtime.log(`  Need to test channels? ${formatCliCommand("clawcore status --deep")}`);
   } else {
-    runtime.log(`  Fix reachability first: ${formatCliCommand("openclaw gateway probe")}`);
+    runtime.log(`  Fix reachability first: ${formatCliCommand("clawcore gateway probe")}`);
   }
 }

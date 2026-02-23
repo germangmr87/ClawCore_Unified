@@ -14,7 +14,7 @@
  *       "handlers": [
  *         {
  *           "event": "command",
- *           "module": "./hooks/handlers/command-logger.ts"
+ *           "module": "./hooks/handlers/command-logger.js"
  *         }
  *       ]
  *     }

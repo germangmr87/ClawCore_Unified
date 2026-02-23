@@ -7,16 +7,16 @@ import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vites
 import { captureEnv } from "../test-utils/env.js";
 import { saveMediaSource, setMediaStoreNetworkDepsForTest } from "./store.js";
 
-const HOME = path.join(os.tmpdir(), "openclaw-home-redirect");
+const HOME = path.join(os.tmpdir(), "clawcore-home-redirect");
 const mockRequest = vi.fn();
 
 describe("media store redirects", () => {
   let envSnapshot: ReturnType<typeof captureEnv>;
 
   beforeAll(async () => {
-    envSnapshot = captureEnv(["OPENCLAW_STATE_DIR"]);
+    envSnapshot = captureEnv(["CLAWCORE_STATE_DIR"]);
     await fs.rm(HOME, { recursive: true, force: true });
-    process.env.OPENCLAW_STATE_DIR = HOME;
+    process.env.CLAWCORE_STATE_DIR = HOME;
   });
 
   beforeEach(() => {

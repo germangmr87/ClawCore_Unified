@@ -2,11 +2,11 @@ import { createJiti } from "jiti";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import type { OpenClawConfig } from "../config/config.js";
+import type { ClawCoreConfig } from "../config/config.js";
 import type { GatewayRequestHandler } from "../gateway/server-methods/types.js";
 import type {
-  OpenClawPluginDefinition,
-  OpenClawPluginModule,
+  ClawCorePluginDefinition,
+  ClawCorePluginModule,
   PluginDiagnostic,
   PluginLogger,
 } from "./types.js";
@@ -20,7 +20,7 @@ import {
   resolveMemorySlotDecision,
   type NormalizedPluginsConfig,
 } from "./config-state.js";
-import { discoverOpenClawPlugins } from "./discovery.js";
+import { discoverClawCorePlugins } from "./discovery.js";
 import { initializeGlobalHookRunner } from "./hook-runner-global.js";
 import { loadPluginManifestRegistry } from "./manifest-registry.js";
 import { createPluginRegistry, type PluginRecord, type PluginRegistry } from "./registry.js";
@@ -31,7 +31,7 @@ import { validateJsonSchemaValue } from "./schema-validator.js";
 export type PluginLoadResult = PluginRegistry;
 
 export type PluginLoadOptions = {
-  config?: OpenClawConfig;
+  config?: ClawCoreConfig;
   workspaceDir?: string;
   logger?: PluginLogger;
   coreGatewayHandlers?: Record<string, GatewayRequestHandler>;
@@ -78,10 +78,10 @@ const resolvePluginSdkAliasFile = (params: {
 };
 
 const resolvePluginSdkAlias = (): string | null =>
-  resolvePluginSdkAliasFile({ srcFile: "index.ts", distFile: "index.js" });
+  resolvePluginSdkAliasFile({ srcFile: "index.js", distFile: "index.js" });
 
 const resolvePluginSdkAccountIdAlias = (): string | null => {
-  return resolvePluginSdkAliasFile({ srcFile: "account-id.ts", distFile: "account-id.js" });
+  return resolvePluginSdkAliasFile({ srcFile: "account-id.js", distFile: "account-id.js" });
 };
 
 function buildCacheKey(params: {
@@ -114,8 +114,8 @@ function validatePluginConfig(params: {
 }
 
 function resolvePluginModuleExport(moduleExport: unknown): {
-  definition?: OpenClawPluginDefinition;
-  register?: OpenClawPluginDefinition["register"];
+  definition?: ClawCorePluginDefinition;
+  register?: ClawCorePluginDefinition["register"];
 } {
   const resolved =
     moduleExport &&
@@ -125,11 +125,11 @@ function resolvePluginModuleExport(moduleExport: unknown): {
       : moduleExport;
   if (typeof resolved === "function") {
     return {
-      register: resolved as OpenClawPluginDefinition["register"],
+      register: resolved as ClawCorePluginDefinition["register"],
     };
   }
   if (resolved && typeof resolved === "object") {
-    const def = resolved as OpenClawPluginDefinition;
+    const def = resolved as ClawCorePluginDefinition;
     const register = def.register ?? def.activate;
     return { definition: def, register };
   }
@@ -177,7 +177,7 @@ function pushDiagnostics(diagnostics: PluginDiagnostic[], append: PluginDiagnost
   diagnostics.push(...append);
 }
 
-export function loadOpenClawPlugins(options: PluginLoadOptions = {}): PluginRegistry {
+export function loadClawCorePlugins(options: PluginLoadOptions = {}): PluginRegistry {
   // Test env: default-disable plugins unless explicitly configured.
   // This keeps unit/gateway suites fast and avoids loading heavyweight plugin deps by accident.
   const cfg = applyTestPluginDefaults(options.config ?? {}, process.env);
@@ -207,7 +207,7 @@ export function loadOpenClawPlugins(options: PluginLoadOptions = {}): PluginRegi
     coreGatewayHandlers: options.coreGatewayHandlers as Record<string, GatewayRequestHandler>,
   });
 
-  const discovery = discoverOpenClawPlugins({
+  const discovery = discoverClawCorePlugins({
     workspaceDir: options.workspaceDir,
     extraPaths: normalized.loadPaths,
   });
@@ -230,13 +230,13 @@ export function loadOpenClawPlugins(options: PluginLoadOptions = {}): PluginRegi
     const pluginSdkAccountIdAlias = resolvePluginSdkAccountIdAlias();
     jitiLoader = createJiti(import.meta.url, {
       interopDefault: true,
-      extensions: [".ts", ".tsx", ".mts", ".cts", ".mtsx", ".ctsx", ".js", ".mjs", ".cjs", ".json"],
+      extensions: [".js", ".tsx", ".mts", ".cts", ".mtsx", ".ctsx", ".js", ".mjs", ".cjs", ".json"],
       ...(pluginSdkAlias || pluginSdkAccountIdAlias
         ? {
             alias: {
-              ...(pluginSdkAlias ? { "openclaw/plugin-sdk": pluginSdkAlias } : {}),
+              ...(pluginSdkAlias ? { "clawcore/plugin-sdk": pluginSdkAlias } : {}),
               ...(pluginSdkAccountIdAlias
-                ? { "openclaw/plugin-sdk/account-id": pluginSdkAccountIdAlias }
+                ? { "clawcore/plugin-sdk/account-id": pluginSdkAccountIdAlias }
                 : {}),
             },
           }
@@ -318,9 +318,9 @@ export function loadOpenClawPlugins(options: PluginLoadOptions = {}): PluginRegi
       continue;
     }
 
-    let mod: OpenClawPluginModule | null = null;
+    let mod: ClawCorePluginModule | null = null;
     try {
-      mod = getJiti()(candidate.source) as OpenClawPluginModule;
+      mod = getJiti()(candidate.source) as ClawCorePluginModule;
     } catch (err) {
       logger.error(`[plugins] ${record.id} failed to load from ${record.source}: ${String(err)}`);
       record.status = "error";

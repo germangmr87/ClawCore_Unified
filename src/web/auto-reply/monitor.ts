@@ -7,7 +7,7 @@ import { formatCliCommand } from "../../cli/command-format.js";
 import { waitForever } from "../../cli/wait.js";
 import { loadConfig } from "../../config/config.js";
 import { logVerbose } from "../../globals.js";
-import { formatDurationPrecise } from "../../infra/format-time/format-duration.ts";
+import { formatDurationPrecise } from "../../infra/format-time/format-duration.js";
 import { enqueueSystemEvent } from "../../infra/system-events.js";
 import { registerUnhandledRejectionHandler } from "../../infra/unhandled-rejections.js";
 import { getChildLogger } from "../../logging.js";
@@ -395,7 +395,7 @@ export async function monitorWebChannel(
 
     if (loggedOut) {
       runtime.error(
-        `WhatsApp session logged out. Run \`${formatCliCommand("openclaw channels login --channel web")}\` to relink.`,
+        `WhatsApp session logged out. Run \`${formatCliCommand("clawcore channels login --channel web")}\` to relink.`,
       );
       await closeListener();
       break;

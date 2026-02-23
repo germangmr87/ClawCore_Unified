@@ -565,23 +565,46 @@ export class TwilioProvider implements VoiceCallProvider {
       throw new Error("TTS provider and media stream handler required");
     }
 
-    // Stream audio in 20ms chunks (160 bytes at 8kHz mu-law)
-    const CHUNK_SIZE = 160;
-    const CHUNK_DELAY_MS = 20;
+    // Start synthesis immediately (parallel to any active playback queue tasks)
+    // This reduces the perceived gap between sentences as the next sentence
+    // begins generating while the previous one is still playing.
+    const muLawAudioPromise = this.ttsProvider.synthesizeForTelephony(text);
+
+    // Stream audio in 40ms chunks (320 bytes at 8kHz mu-law).
+    // Larger chunks reduce WebSocket overhead and stabilize timing.
+    const CHUNK_SIZE = 320;
+    const CHUNK_DURATION_MS = 40;
 
     const handler = this.mediaStreamHandler;
-    const ttsProvider = this.ttsProvider;
+
     await handler.queueTts(streamSid, async (signal) => {
-      // Generate audio with core TTS (returns mu-law at 8kHz)
-      const muLawAudio = await ttsProvider.synthesizeForTelephony(text);
+      // Wait for synthesis to complete before starting playback
+      const muLawAudio = await muLawAudioPromise;
+      if (signal.aborted) {
+        return;
+      }
+
+      const startTime = Date.now();
+      let sentDuration = 0;
+
       for (const chunk of chunkAudio(muLawAudio, CHUNK_SIZE)) {
         if (signal.aborted) {
           break;
         }
-        handler.sendAudio(streamSid, chunk);
 
-        // Pace the audio to match real-time playback
-        await new Promise((resolve) => setTimeout(resolve, CHUNK_DELAY_MS));
+        handler.sendAudio(streamSid, chunk);
+        sentDuration += CHUNK_DURATION_MS;
+
+        // Use drift-correcting pacing to ensure steady playback.
+        // We aim for a small 40ms buffer (start one chunk ahead) to absorb
+        // any event loop jitter.
+        const nextExpected = startTime + sentDuration - 40;
+        const delay = nextExpected - Date.now();
+
+        if (delay > 0) {
+          await new Promise((resolve) => setTimeout(resolve, delay));
+        }
+
         if (signal.aborted) {
           break;
         }

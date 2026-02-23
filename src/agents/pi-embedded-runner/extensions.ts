@@ -2,7 +2,7 @@ import type { Api, Model } from "@mariozechner/pi-ai";
 import type { SessionManager } from "@mariozechner/pi-coding-agent";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import type { OpenClawConfig } from "../../config/config.js";
+import type { ClawCoreConfig } from "../../config/config.js";
 import { resolveContextWindowInfo } from "../context-window-guard.js";
 import { DEFAULT_CONTEXT_TOKENS } from "../defaults.js";
 import { setCompactionSafeguardRuntime } from "../pi-extensions/compaction-safeguard-runtime.js";
@@ -16,12 +16,12 @@ function resolvePiExtensionPath(id: string): string {
   const self = fileURLToPath(import.meta.url);
   const dir = path.dirname(self);
   // In dev this file is `.ts` (tsx), in production it's `.js`.
-  const ext = path.extname(self) === ".ts" ? "ts" : "js";
+  const ext = path.extname(self) === ".js" ? "ts" : "js";
   return path.join(dir, "..", "pi-extensions", `${id}.${ext}`);
 }
 
 function resolveContextWindowTokens(params: {
-  cfg: OpenClawConfig | undefined;
+  cfg: ClawCoreConfig | undefined;
   provider: string;
   modelId: string;
   model: Model<Api> | undefined;
@@ -36,7 +36,7 @@ function resolveContextWindowTokens(params: {
 }
 
 function buildContextPruningExtension(params: {
-  cfg: OpenClawConfig | undefined;
+  cfg: ClawCoreConfig | undefined;
   sessionManager: SessionManager;
   provider: string;
   modelId: string;
@@ -67,12 +67,12 @@ function buildContextPruningExtension(params: {
   };
 }
 
-function resolveCompactionMode(cfg?: OpenClawConfig): "default" | "safeguard" {
+function resolveCompactionMode(cfg?: ClawCoreConfig): "default" | "safeguard" {
   return cfg?.agents?.defaults?.compaction?.mode === "safeguard" ? "safeguard" : "default";
 }
 
 export function buildEmbeddedExtensionPaths(params: {
-  cfg: OpenClawConfig | undefined;
+  cfg: ClawCoreConfig | undefined;
   sessionManager: SessionManager;
   provider: string;
   modelId: string;

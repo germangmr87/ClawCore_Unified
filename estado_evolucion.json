@@ -1,0 +1,12 @@
+{
+  "autonomia": 0.3500,
+  "evoluciones": 10,
+
+  "ultima_evolucion": "2026-02-16T12:47:48.589948",
+  "proximo_hito": 0.3,
+  "sistema": "ClawCore 2026.2.16-clawcore",
+  "gateway": "ws://127.0.0.1:18789",
+
+  "modelo": "ollama/llama3.2:3b",
+  "fix_tui": "APLICADO (tui-status-summary.ts l\u00ednea 67)"
+}

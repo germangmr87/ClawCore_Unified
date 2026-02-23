@@ -67,9 +67,9 @@ vi.mock("node:fs", async (importOriginal) => {
   return { ...wrapped, default: wrapped };
 });
 
-vi.mock("./openclaw-root.js", () => ({
-  resolveOpenClawPackageRoot: vi.fn(async () => null),
-  resolveOpenClawPackageRootSync: vi.fn(() => null),
+vi.mock("./clawcore-root.js", () => ({
+  resolveClawCorePackageRoot: vi.fn(async () => null),
+  resolveClawCorePackageRootSync: vi.fn(() => null),
 }));
 
 describe("control UI assets helpers (fs-mocked)", () => {
@@ -83,9 +83,9 @@ describe("control UI assets helpers (fs-mocked)", () => {
     const { resolveControlUiRepoRoot } = await import("./control-ui-assets.js");
 
     const root = abs("fixtures/ui-src");
-    setFile(path.join(root, "ui", "vite.config.ts"), "export {};\n");
+    setFile(path.join(root, "ui", "vite.config.js"), "export {};\n");
 
-    const argv1 = path.join(root, "src", "index.ts");
+    const argv1 = path.join(root, "src", "index.js");
     expect(resolveControlUiRepoRoot(argv1)).toBe(root);
   });
 
@@ -94,7 +94,7 @@ describe("control UI assets helpers (fs-mocked)", () => {
 
     const root = abs("fixtures/ui-dist");
     setFile(path.join(root, "package.json"), "{}\n");
-    setFile(path.join(root, "ui", "vite.config.ts"), "export {};\n");
+    setFile(path.join(root, "ui", "vite.config.js"), "export {};\n");
 
     const argv1 = path.join(root, "dist", "index.js");
     expect(resolveControlUiRepoRoot(argv1)).toBe(root);
@@ -110,16 +110,16 @@ describe("control UI assets helpers (fs-mocked)", () => {
     );
   });
 
-  it("uses resolveOpenClawPackageRoot when available", async () => {
-    const openclawRoot = await import("./openclaw-root.js");
+  it("uses resolveClawCorePackageRoot when available", async () => {
+    const clawcoreRoot = await import("./clawcore-root.js");
     const { resolveControlUiDistIndexPath } = await import("./control-ui-assets.js");
 
-    const pkgRoot = abs("fixtures/openclaw");
+    const pkgRoot = abs("fixtures/clawcore");
     (
-      openclawRoot.resolveOpenClawPackageRoot as unknown as ReturnType<typeof vi.fn>
+      clawcoreRoot.resolveClawCorePackageRoot as unknown as ReturnType<typeof vi.fn>
     ).mockResolvedValueOnce(pkgRoot);
 
-    await expect(resolveControlUiDistIndexPath(abs("fixtures/bin/openclaw"))).resolves.toBe(
+    await expect(resolveControlUiDistIndexPath(abs("fixtures/bin/clawcore"))).resolves.toBe(
       path.join(pkgRoot, "dist", "control-ui", "index.html"),
     );
   });
@@ -128,10 +128,10 @@ describe("control UI assets helpers (fs-mocked)", () => {
     const { resolveControlUiDistIndexPath } = await import("./control-ui-assets.js");
 
     const root = abs("fixtures/fallback");
-    setFile(path.join(root, "package.json"), JSON.stringify({ name: "openclaw" }));
+    setFile(path.join(root, "package.json"), JSON.stringify({ name: "clawcore" }));
     setFile(path.join(root, "dist", "control-ui", "index.html"), "<html></html>\n");
 
-    await expect(resolveControlUiDistIndexPath(path.join(root, "openclaw.mjs"))).resolves.toBe(
+    await expect(resolveControlUiDistIndexPath(path.join(root, "clawcore.mjs"))).resolves.toBe(
       path.join(root, "dist", "control-ui", "index.html"),
     );
   });
@@ -139,7 +139,7 @@ describe("control UI assets helpers (fs-mocked)", () => {
   it("returns null when fallback package name does not match", async () => {
     const { resolveControlUiDistIndexPath } = await import("./control-ui-assets.js");
 
-    const root = abs("fixtures/not-openclaw");
+    const root = abs("fixtures/not-clawcore");
     setFile(path.join(root, "package.json"), JSON.stringify({ name: "malicious-pkg" }));
     setFile(path.join(root, "dist", "control-ui", "index.html"), "<html></html>\n");
 
@@ -180,12 +180,12 @@ describe("control UI assets helpers (fs-mocked)", () => {
   });
 
   it("resolves control-ui root for dist bundle argv1 and moduleUrl candidates", async () => {
-    const openclawRoot = await import("./openclaw-root.js");
+    const clawcoreRoot = await import("./clawcore-root.js");
     const { resolveControlUiRootSync } = await import("./control-ui-assets.js");
 
-    const pkgRoot = abs("fixtures/openclaw-bundle");
+    const pkgRoot = abs("fixtures/clawcore-bundle");
     (
-      openclawRoot.resolveOpenClawPackageRootSync as unknown as ReturnType<typeof vi.fn>
+      clawcoreRoot.resolveClawCorePackageRootSync as unknown as ReturnType<typeof vi.fn>
     ).mockReturnValueOnce(pkgRoot);
 
     const uiDir = path.join(pkgRoot, "dist", "control-ui");

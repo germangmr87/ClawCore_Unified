@@ -13,14 +13,14 @@ let fixtureCount = 0;
 async function makeEnv() {
   const dir = path.join(fixtureRoot, `case-${fixtureCount++}`);
   await fs.mkdir(dir, { recursive: true });
-  const configPath = path.join(dir, "openclaw.json");
+  const configPath = path.join(dir, "clawcore.json");
   await fs.writeFile(configPath, "{}", "utf8");
   await fs.mkdir(resolveGatewayLockDir(), { recursive: true });
   return {
     env: {
       ...process.env,
-      OPENCLAW_STATE_DIR: dir,
-      OPENCLAW_CONFIG_PATH: configPath,
+      CLAWCORE_STATE_DIR: dir,
+      CLAWCORE_CONFIG_PATH: configPath,
     },
     cleanup: async () => {},
   };
@@ -64,7 +64,7 @@ function makeProcStat(pid: number, startTime: number) {
 
 describe("gateway lock", () => {
   beforeAll(async () => {
-    fixtureRoot = await fs.mkdtemp(path.join(os.tmpdir(), "openclaw-gateway-lock-"));
+    fixtureRoot = await fs.mkdtemp(path.join(os.tmpdir(), "clawcore-gateway-lock-"));
   });
 
   beforeEach(() => {

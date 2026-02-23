@@ -31,7 +31,7 @@ function makePathEnv(binDir: string): NodeJS.ProcessEnv {
 }
 
 function makeTempDir() {
-  return fs.mkdtempSync(path.join(os.tmpdir(), "openclaw-exec-approvals-"));
+  return fs.mkdtempSync(path.join(os.tmpdir(), "clawcore-exec-approvals-"));
 }
 
 describe("exec approvals allowlist matching", () => {
@@ -132,7 +132,7 @@ describe("exec approvals safe shell command builder", () => {
     });
     expect(res.ok).toBe(true);
     // Preserve non-safeBins segment raw (glob stays unquoted)
-    expect(res.command).toContain("rg foo src/*.ts");
+    expect(res.command).toContain("rg foo src/*.js");
     // SafeBins segment is fully quoted
     expect(res.command).toContain("'head' '-n' '5'");
   });
@@ -587,7 +587,7 @@ describe("exec approvals wildcard agent", () => {
     const homedirSpy = vi.spyOn(os, "homedir").mockReturnValue(dir);
 
     try {
-      const approvalsPath = path.join(dir, ".openclaw", "exec-approvals.json");
+      const approvalsPath = path.join(dir, ".clawcore", "exec-approvals.json");
       fs.mkdirSync(path.dirname(approvalsPath), { recursive: true });
       fs.writeFileSync(
         approvalsPath,

@@ -5,7 +5,7 @@ import path from "node:path";
 import { afterAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { isAddressInUseError } from "./gmail-watcher.js";
 
-const fixtureRoot = path.join(os.tmpdir(), `openclaw-hook-install-${randomUUID()}`);
+const fixtureRoot = path.join(os.tmpdir(), `clawcore-hook-install-${randomUUID()}`);
 let tempDirIndex = 0;
 
 const fixturesDir = path.resolve(process.cwd(), "test", "fixtures", "hooks-install");
@@ -158,9 +158,9 @@ describe("installHooksFromPath", () => {
     fs.writeFileSync(
       path.join(pkgDir, "package.json"),
       JSON.stringify({
-        name: "@openclaw/test-hooks",
+        name: "@clawcore/test-hooks",
         version: "0.0.1",
-        openclaw: { hooks: ["./hooks/one-hook"] },
+        clawcore: { hooks: ["./hooks/one-hook"] },
         dependencies: { "left-pad": "1.3.0" },
       }),
       "utf-8",
@@ -171,7 +171,7 @@ describe("installHooksFromPath", () => {
         "---",
         "name: one-hook",
         "description: One hook",
-        'metadata: {"openclaw":{"events":["command:new"]}}',
+        'metadata: {"clawcore":{"events":["command:new"]}}',
         "---",
         "",
         "# One Hook",
@@ -179,7 +179,7 @@ describe("installHooksFromPath", () => {
       "utf-8",
     );
     fs.writeFileSync(
-      path.join(pkgDir, "hooks", "one-hook", "handler.ts"),
+      path.join(pkgDir, "hooks", "one-hook", "handler.js"),
       "export default async () => {};\n",
       "utf-8",
     );
@@ -220,14 +220,14 @@ describe("installHooksFromPath", () => {
         "---",
         "name: my-hook",
         "description: My hook",
-        'metadata: {"openclaw":{"events":["command:new"]}}',
+        'metadata: {"clawcore":{"events":["command:new"]}}',
         "---",
         "",
         "# My Hook",
       ].join("\n"),
       "utf-8",
     );
-    fs.writeFileSync(path.join(hookDir, "handler.ts"), "export default async () => {};\n");
+    fs.writeFileSync(path.join(hookDir, "handler.js"), "export default async () => {};\n");
 
     const hooksDir = path.join(stateDir, "hooks");
     const result = await installHooksFromPath({ path: hookDir, hooksDir });
@@ -261,10 +261,13 @@ describe("installHooksFromNpmSpec", () => {
 
     const hooksDir = path.join(stateDir, "hooks");
     const result = await installHooksFromNpmSpec({
-      spec: "@openclaw/test-hooks@0.0.1",
+      spec: "@clawcore/test-hooks@0.0.1",
       hooksDir,
       logger: { info: () => {}, warn: () => {} },
     });
+    if (!result.ok) {
+      expect((result as any).error).toBeUndefined();
+    }
     expect(result.ok).toBe(true);
     if (!result.ok) {
       return;
@@ -281,7 +284,7 @@ describe("installHooksFromNpmSpec", () => {
       throw new Error("expected npm pack call");
     }
     const [argv, options] = packCall;
-    expect(argv).toEqual(["npm", "pack", "@openclaw/test-hooks@0.0.1", "--ignore-scripts"]);
+    expect(argv).toEqual(["npm", "pack", "@clawcore/test-hooks@0.0.1", "--ignore-scripts"]);
     expect(options?.env).toMatchObject({ NPM_CONFIG_IGNORE_SCRIPTS: "true" });
 
     expect(packTmpDir).not.toBe("");

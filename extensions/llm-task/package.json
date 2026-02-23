@@ -1,13 +1,13 @@
 {
-  "name": "@openclaw/llm-task",
+  "name": "@clawcore/llm-task",
   "version": "2026.2.16",
   "private": true,
-  "description": "OpenClaw JSON-only LLM task plugin",
+  "description": "ClawCore JSON-only LLM task plugin",
   "type": "module",
   "devDependencies": {
-    "openclaw": "workspace:*"
+    "clawcore": "workspace:*"
   },
-  "openclaw": {
+  "clawcore": {
     "extensions": [
       "./index.ts"
     ]

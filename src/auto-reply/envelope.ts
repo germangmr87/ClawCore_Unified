@@ -1,4 +1,4 @@
-import type { OpenClawConfig } from "../config/config.js";
+import type { ClawCoreConfig } from "../config/config.js";
 import { resolveUserTimezone } from "../agents/date-time.js";
 import { normalizeChatType } from "../channels/chat-type.js";
 import { resolveSenderLabel, type SenderLabelParams } from "../channels/sender-label.js";
@@ -6,8 +6,8 @@ import {
   resolveTimezone,
   formatUtcTimestamp,
   formatZonedTimestamp,
-} from "../infra/format-time/format-datetime.ts";
-import { formatTimeAgo } from "../infra/format-time/format-relative.ts";
+} from "../infra/format-time/format-datetime.js";
+import { formatTimeAgo } from "../infra/format-time/format-relative.js";
 
 export type AgentEnvelopeParams = {
   channel: string;
@@ -62,7 +62,7 @@ function sanitizeEnvelopeHeaderPart(value: string): string {
     .trim();
 }
 
-export function resolveEnvelopeFormatOptions(cfg?: OpenClawConfig): EnvelopeFormatOptions {
+export function resolveEnvelopeFormatOptions(cfg?: ClawCoreConfig): EnvelopeFormatOptions {
   const defaults = cfg?.agents?.defaults;
   return {
     timezone: defaults?.envelopeTimezone,

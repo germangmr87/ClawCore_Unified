@@ -1,4 +1,12 @@
-import type { TlsOptions } from "node:tls";
+import fs from "node:fs";
+
+// Load TLS credentials from environment variables if provided
+const tlsOptions: TlsOptions | undefined = process.env.CLAWCORE_TLS_CERT && process.env.CLAWCORE_TLS_KEY
+  ? {
+      cert: fs.readFileSync(process.env.CLAWCORE_TLS_CERT),
+      key: fs.readFileSync(process.env.CLAWCORE_TLS_KEY),
+    }
+  : undefined;
 import type { WebSocketServer } from "ws";
 import {
   createServer as createHttpServer,
@@ -55,6 +63,7 @@ import { isPrivateOrLoopbackAddress, resolveGatewayClientIp } from "./net.js";
 import { handleOpenAiHttpRequest } from "./openai-http.js";
 import { handleOpenResponsesHttpRequest } from "./openresponses-http.js";
 import { handleToolsInvokeHttpRequest } from "./tools-invoke-http.js";
+import { handlePortalRequest } from "./server-portal.js";
 
 type SubsystemLogger = ReturnType<typeof createSubsystemLogger>;
 type HookAuthFailure = { count: number; windowStartedAtMs: number };
@@ -265,7 +274,7 @@ export function createHooksRequestHandler(
       res.statusCode = 400;
       res.setHeader("Content-Type", "text/plain; charset=utf-8");
       res.end(
-        "Hook token must be provided via Authorization: Bearer <token> or X-OpenClaw-Token header (query parameters are not allowed).",
+        "Hook token must be provided via Authorization: Bearer <token> or X-ClawCore-Token header (query parameters are not allowed).",
       );
       return true;
     }
@@ -465,8 +474,8 @@ export function createGatewayHttpServer(opts: {
     resolvedAuth,
     rateLimiter,
   } = opts;
-  const httpServer: HttpServer = opts.tlsOptions
-    ? createHttpsServer(opts.tlsOptions, (req, res) => {
+  const httpServer: HttpServer = (opts.tlsOptions ?? tlsOptions)
+    ? createHttpsServer(opts.tlsOptions ?? tlsOptions, (req, res) => {
         void handleRequest(req, res);
       })
     : createHttpServer((req, res) => {
@@ -583,8 +592,13 @@ export function createGatewayHttpServer(opts: {
           return;
         }
       }
-
-      res.statusCode = 404;
+      // Portal request handling
+      if (await handlePortalRequest(req, res, { auth: resolvedAuth, trustedProxies })) {
+        return;
+      }
+    // Security headers
+    res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
+    res.setHeader("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none';");
       res.setHeader("Content-Type", "text/plain; charset=utf-8");
       res.end("Not Found");
     } catch {

@@ -6,7 +6,7 @@ import {
   resolveControlUiDistIndexHealth,
   resolveControlUiDistIndexPathForRoot,
 } from "../infra/control-ui-assets.js";
-import { resolveOpenClawPackageRoot } from "../infra/openclaw-root.js";
+import { resolveClawCorePackageRoot } from "../infra/clawcore-root.js";
 import { runCommandWithTimeout } from "../process/exec.js";
 import { note } from "../terminal/note.js";
 
@@ -14,7 +14,7 @@ export async function maybeRepairUiProtocolFreshness(
   _runtime: RuntimeEnv,
   prompter: DoctorPrompter,
 ) {
-  const root = await resolveOpenClawPackageRoot({
+  const root = await resolveClawCorePackageRoot({
     moduleUrl: import.meta.url,
     argv1: process.argv[1],
     cwd: process.cwd(),
@@ -24,7 +24,7 @@ export async function maybeRepairUiProtocolFreshness(
     return;
   }
 
-  const schemaPath = path.join(root, "src/gateway/protocol/schema.ts");
+  const schemaPath = path.join(root, "src/gateway/protocol/schema.js");
   const uiHealth = await resolveControlUiDistIndexHealth({
     root,
     argv1: process.argv[1],
@@ -92,7 +92,7 @@ export async function maybeRepairUiProtocolFreshness(
           "log",
           `--since=${uiMtimeIso}`,
           "--format=%h %s",
-          "src/gateway/protocol/schema.ts",
+          "src/gateway/protocol/schema.js",
         ],
         { timeoutMs: 5000 },
       ).catch(() => null);

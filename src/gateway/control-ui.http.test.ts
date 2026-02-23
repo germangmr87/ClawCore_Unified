@@ -24,7 +24,7 @@ const makeResponse = (): {
 
 describe("handleControlUiHttpRequest", () => {
   it("sets security headers for Control UI responses", async () => {
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), "openclaw-ui-"));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), "clawcore-ui-"));
     try {
       await fs.writeFile(path.join(tmp, "index.html"), "<html></html>\n");
       const { res, setHeader } = makeResponse();
@@ -48,7 +48,7 @@ describe("handleControlUiHttpRequest", () => {
   });
 
   it("does not inject inline scripts into index.html", async () => {
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), "openclaw-ui-"));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), "clawcore-ui-"));
     try {
       const html = "<html><head></head><body>Hello</body></html>\n";
       await fs.writeFile(path.join(tmp, "index.html"), html);
@@ -72,7 +72,7 @@ describe("handleControlUiHttpRequest", () => {
   });
 
   it("serves bootstrap config JSON", async () => {
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), "openclaw-ui-"));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), "clawcore-ui-"));
     try {
       await fs.writeFile(path.join(tmp, "index.html"), "<html></html>\n");
       const { res, end } = makeResponse();
@@ -105,15 +105,15 @@ describe("handleControlUiHttpRequest", () => {
   });
 
   it("serves bootstrap config JSON under basePath", async () => {
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), "openclaw-ui-"));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), "clawcore-ui-"));
     try {
       await fs.writeFile(path.join(tmp, "index.html"), "<html></html>\n");
       const { res, end } = makeResponse();
       const handled = handleControlUiHttpRequest(
-        { url: `/openclaw${CONTROL_UI_BOOTSTRAP_CONFIG_PATH}`, method: "GET" } as IncomingMessage,
+        { url: `/clawcore${CONTROL_UI_BOOTSTRAP_CONFIG_PATH}`, method: "GET" } as IncomingMessage,
         res,
         {
-          basePath: "/openclaw",
+          basePath: "/clawcore",
           root: { kind: "resolved", path: tmp },
           config: {
             agents: { defaults: { workspace: tmp } },
@@ -129,9 +129,9 @@ describe("handleControlUiHttpRequest", () => {
         assistantAvatar: string;
         assistantAgentId: string;
       };
-      expect(parsed.basePath).toBe("/openclaw");
+      expect(parsed.basePath).toBe("/clawcore");
       expect(parsed.assistantName).toBe("Ops");
-      expect(parsed.assistantAvatar).toBe("/openclaw/avatar/main");
+      expect(parsed.assistantAvatar).toBe("/clawcore/avatar/main");
       expect(parsed.assistantAgentId).toBe("main");
     } finally {
       await fs.rm(tmp, { recursive: true, force: true });

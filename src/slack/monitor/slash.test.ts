@@ -108,7 +108,7 @@ function createArgMenusHarness() {
     channelsConfig: undefined,
     slashCommand: {
       enabled: true,
-      name: "openclaw",
+      name: "clawcore",
       ephemeral: true,
       sessionPrefix: "slack:slash",
     },
@@ -135,7 +135,7 @@ describe("Slack native command argument menus", () => {
     harness = createArgMenusHarness();
     await registerCommands(harness.ctx, harness.account);
 
-    const argMenu = harness.actions.get("openclaw_cmdarg");
+    const argMenu = harness.actions.get("clawcore_cmdarg");
     if (!argMenu) {
       throw new Error("Missing arg-menu action handler");
     }

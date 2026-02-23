@@ -16,7 +16,7 @@ export function noteSourceInstallIssues(root: string | null) {
   const nodeModules = path.join(root, "node_modules");
   const pnpmStore = path.join(nodeModules, ".pnpm");
   const tsxBin = path.join(nodeModules, ".bin", "tsx");
-  const srcEntry = path.join(root, "src", "entry.ts");
+  const srcEntry = path.join(root, "src", "entry.js");
 
   if (fs.existsSync(nodeModules) && !fs.existsSync(pnpmStore)) {
     warnings.push(

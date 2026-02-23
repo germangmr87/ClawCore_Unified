@@ -27,14 +27,14 @@ ${body ?? `# ${name}\n`}
 }
 
 async function setupWorkspaceWithProsePlugin() {
-  const workspaceDir = await fs.mkdtemp(path.join(os.tmpdir(), "openclaw-"));
+  const workspaceDir = await fs.mkdtemp(path.join(os.tmpdir(), "clawcore-"));
   const managedDir = path.join(workspaceDir, ".managed");
   const bundledDir = path.join(workspaceDir, ".bundled");
-  const pluginRoot = path.join(workspaceDir, ".openclaw", "extensions", "open-prose");
+  const pluginRoot = path.join(workspaceDir, ".clawcore", "extensions", "open-prose");
 
   await fs.mkdir(path.join(pluginRoot, "skills", "prose"), { recursive: true });
   await fs.writeFile(
-    path.join(pluginRoot, "openclaw.plugin.json"),
+    path.join(pluginRoot, "clawcore.plugin.json"),
     JSON.stringify(
       {
         id: "open-prose",
@@ -46,7 +46,7 @@ async function setupWorkspaceWithProsePlugin() {
     ),
     "utf-8",
   );
-  await fs.writeFile(path.join(pluginRoot, "index.ts"), "export {};\n", "utf-8");
+  await fs.writeFile(path.join(pluginRoot, "index.js"), "export {};\n", "utf-8");
   await fs.writeFile(
     path.join(pluginRoot, "skills", "prose", "SKILL.md"),
     `---\nname: prose\ndescription: test\n---\n`,
@@ -58,7 +58,7 @@ async function setupWorkspaceWithProsePlugin() {
 
 describe("loadWorkspaceSkillEntries", () => {
   it("handles an empty managed skills dir without throwing", async () => {
-    const workspaceDir = await fs.mkdtemp(path.join(os.tmpdir(), "openclaw-"));
+    const workspaceDir = await fs.mkdtemp(path.join(os.tmpdir(), "clawcore-"));
     const managedDir = path.join(workspaceDir, ".managed");
     await fs.mkdir(managedDir, { recursive: true });
 

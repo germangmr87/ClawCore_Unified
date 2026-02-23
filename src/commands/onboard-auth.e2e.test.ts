@@ -33,19 +33,19 @@ import {
 
 const authProfilePathFor = (agentDir: string) => path.join(agentDir, "auth-profiles.json");
 const requireAgentDir = () => {
-  const agentDir = process.env.OPENCLAW_AGENT_DIR;
+  const agentDir = process.env.CLAWCORE_AGENT_DIR;
   if (!agentDir) {
-    throw new Error("OPENCLAW_AGENT_DIR not set");
+    throw new Error("CLAWCORE_AGENT_DIR not set");
   }
   return agentDir;
 };
 
 describe("writeOAuthCredentials", () => {
   const envSnapshot = captureEnv([
-    "OPENCLAW_STATE_DIR",
-    "OPENCLAW_AGENT_DIR",
+    "CLAWCORE_STATE_DIR",
+    "CLAWCORE_AGENT_DIR",
     "PI_CODING_AGENT_DIR",
-    "OPENCLAW_OAUTH_DIR",
+    "CLAWCORE_OAUTH_DIR",
   ]);
   let tempStateDir: string | null = null;
 
@@ -57,11 +57,11 @@ describe("writeOAuthCredentials", () => {
     envSnapshot.restore();
   });
 
-  it("writes auth-profiles.json under OPENCLAW_AGENT_DIR when set", async () => {
-    tempStateDir = await fs.mkdtemp(path.join(os.tmpdir(), "openclaw-oauth-"));
-    process.env.OPENCLAW_STATE_DIR = tempStateDir;
-    process.env.OPENCLAW_AGENT_DIR = path.join(tempStateDir, "agent");
-    process.env.PI_CODING_AGENT_DIR = process.env.OPENCLAW_AGENT_DIR;
+  it("writes auth-profiles.json under CLAWCORE_AGENT_DIR when set", async () => {
+    tempStateDir = await fs.mkdtemp(path.join(os.tmpdir(), "clawcore-oauth-"));
+    process.env.CLAWCORE_STATE_DIR = tempStateDir;
+    process.env.CLAWCORE_AGENT_DIR = path.join(tempStateDir, "agent");
+    process.env.PI_CODING_AGENT_DIR = process.env.CLAWCORE_AGENT_DIR;
 
     const creds = {
       refresh: "refresh-token",
@@ -90,8 +90,8 @@ describe("writeOAuthCredentials", () => {
 
 describe("setMinimaxApiKey", () => {
   const envSnapshot = captureEnv([
-    "OPENCLAW_STATE_DIR",
-    "OPENCLAW_AGENT_DIR",
+    "CLAWCORE_STATE_DIR",
+    "CLAWCORE_AGENT_DIR",
     "PI_CODING_AGENT_DIR",
   ]);
   let tempStateDir: string | null = null;
@@ -104,11 +104,11 @@ describe("setMinimaxApiKey", () => {
     envSnapshot.restore();
   });
 
-  it("writes to OPENCLAW_AGENT_DIR when set", async () => {
-    tempStateDir = await fs.mkdtemp(path.join(os.tmpdir(), "openclaw-minimax-"));
-    process.env.OPENCLAW_STATE_DIR = tempStateDir;
-    process.env.OPENCLAW_AGENT_DIR = path.join(tempStateDir, "custom-agent");
-    process.env.PI_CODING_AGENT_DIR = process.env.OPENCLAW_AGENT_DIR;
+  it("writes to CLAWCORE_AGENT_DIR when set", async () => {
+    tempStateDir = await fs.mkdtemp(path.join(os.tmpdir(), "clawcore-minimax-"));
+    process.env.CLAWCORE_STATE_DIR = tempStateDir;
+    process.env.CLAWCORE_AGENT_DIR = path.join(tempStateDir, "custom-agent");
+    process.env.PI_CODING_AGENT_DIR = process.env.CLAWCORE_AGENT_DIR;
 
     await setMinimaxApiKey("sk-minimax-test");
 

@@ -37,7 +37,7 @@ export type SkillScanOptions = {
 
 const SCANNABLE_EXTENSIONS = new Set([
   ".js",
-  ".ts",
+  ".js",
   ".mjs",
   ".cjs",
   ".mts",

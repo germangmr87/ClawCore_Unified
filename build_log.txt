@@ -1,0 +1,1100 @@
+src/acp/client.ts(8,8): error TS2307: Cannot find module '@agentclientprotocol/sdk' or its corresponding type declarations.
+src/acp/client.ts(269,32): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/acp/commands.ts(1,39): error TS2307: Cannot find module '@agentclientprotocol/sdk' or its corresponding type declarations.
+src/acp/event-mapper.ts(1,59): error TS2307: Cannot find module '@agentclientprotocol/sdk' or its corresponding type declarations.
+src/acp/server.ts(2,51): error TS2307: Cannot find module '@agentclientprotocol/sdk' or its corresponding type declarations.
+src/acp/server.ts(168,47): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/acp/translator.ts(20,8): error TS2307: Cannot find module '@agentclientprotocol/sdk' or its corresponding type declarations.
+src/acp/translator.ts(21,34): error TS2307: Cannot find module '@agentclientprotocol/sdk' or its corresponding type declarations.
+src/acp/types.ts(1,32): error TS2307: Cannot find module '@agentclientprotocol/sdk' or its corresponding type declarations.
+src/agents/anthropic-payload-log.ts(1,45): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/anthropic-payload-log.ts(2,33): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/apply-patch.ts(1,32): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/apply-patch.ts(2,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/auth-profiles/oauth.ts(6,8): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/auth-profiles/store.ts(1,39): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/auth-profiles/types.ts(1,39): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/bash-tools.exec-runtime.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/bash-tools.exec-runtime.ts(2,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/bash-tools.exec.ts(1,49): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/bash-tools.process.ts(1,49): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/bash-tools.process.ts(2,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/bash-tools.process.ts(3,39): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/agents/bedrock-discovery.ts(5,8): error TS2307: Cannot find module '@aws-sdk/client-bedrock' or its corresponding type declarations.
+src/agents/cache-trace.ts(1,45): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/chutes-oauth.ts(1,39): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/cli-credentials.ts(1,54): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/cli-runner.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/cli-runner.ts(108,16): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/agents/cli-runner/helpers.ts(1,32): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/cli-runner/helpers.ts(2,35): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/compaction.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/compaction.ts(2,39): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/compaction.ts(3,49): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/identity-avatar.ts(99,45): error TS2339: Property 'reason' does not exist on type '{ ok: true; filePath: string; } | { ok: false; reason: string; }'.
+  Property 'reason' does not exist on type '{ ok: true; filePath: string; }'.
+src/agents/model-auth.ts(1,52): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/model-catalog.ts(67,3): error TS2322: Type '() => Promise<typeof import("/Users/german/Documents/GitHub/ClawCore_Unified/src/agents/pi-model-discovery")>' is not assignable to type '() => Promise<{ default: typeof import("/Users/german/Documents/GitHub/ClawCore_Unified/src/agents/pi-model-discovery"); discoverAuthStorage(agentDir: string): AuthStorage; discoverModels(authStorage: AuthStorage, agentDir: string): ModelRegistry; AuthStorage: any; ModelRegistry: any; }>'.
+  Type 'Promise<typeof import("/Users/german/Documents/GitHub/ClawCore_Unified/src/agents/pi-model-discovery")>' is not assignable to type 'Promise<{ default: typeof import("/Users/german/Documents/GitHub/ClawCore_Unified/src/agents/pi-model-discovery"); discoverAuthStorage(agentDir: string): AuthStorage; discoverModels(authStorage: AuthStorage, agentDir: string): ModelRegistry; AuthStorage: any; ModelRegistry: any; }>'.
+    Property 'default' is missing in type 'typeof import("/Users/german/Documents/GitHub/ClawCore_Unified/src/agents/pi-model-discovery")' but required in type '{ default: typeof import("/Users/german/Documents/GitHub/ClawCore_Unified/src/agents/pi-model-discovery"); discoverAuthStorage(agentDir: string): AuthStorage; discoverModels(authStorage: AuthStorage, agentDir: string): ModelRegistry; AuthStorage: any; ModelRegistry: any; }'.
+src/agents/model-compat.ts(1,33): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/model-forward-compat.ts(1,33): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/model-scan.ts(9,8): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/model-scan.ts(10,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/model-scan.ts(272,33): error TS2339: Property 'content' does not exist on type 'unknown'.
+src/agents/models-config.e2e-harness.ts(1,39): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/agents/models-config.e2e-harness.ts(3,50): error TS6059: File '/Users/german/Documents/GitHub/ClawCore_Unified/test/helpers/temp-home.ts' is not under 'rootDir' '/Users/german/Documents/GitHub/ClawCore_Unified/src'. 'rootDir' is expected to contain all source files.
+  The file is in the program because:
+    Imported via "../../test/helpers/temp-home.js" from file '/Users/german/Documents/GitHub/ClawCore_Unified/src/agents/models-config.e2e-harness.ts'
+    Imported via "../../test/helpers/temp-home.js" from file '/Users/german/Documents/GitHub/ClawCore_Unified/src/auto-reply/reply.directive.directive-behavior.e2e-harness.ts'
+    Imported via "../../test/helpers/temp-home.js" from file '/Users/german/Documents/GitHub/ClawCore_Unified/src/auto-reply/reply.triggers.trigger-handling.test-harness.ts'
+    Imported via "../../test/helpers/temp-home.js" from file '/Users/german/Documents/GitHub/ClawCore_Unified/src/config/test-helpers.ts'
+    Imported via "../../test/helpers/temp-home.js" from file '/Users/german/Documents/GitHub/ClawCore_Unified/src/cron/isolated-agent.test-harness.ts'
+  File is CommonJS module because '/Users/german/Documents/GitHub/ClawCore_Unified/package.json' does not have field "type"
+src/agents/ollama-stream.ts(1,31): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/ollama-stream.ts(9,8): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/ollama-stream.ts(10,51): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/clawcore-tools.subagents.sessions-spawn.test-harness.ts(1,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/agents/clawcore-tools.subagents.sessions-spawn.test-harness.ts(42,24): error TS2347: Untyped function calls may not accept type arguments.
+src/agents/clawcore-tools.subagents.sessions-spawn.test-harness.ts(52,24): error TS2347: Untyped function calls may not accept type arguments.
+src/agents/pi-embedded-helpers/bootstrap.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-helpers/errors.ts(1,39): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/pi-embedded-helpers/images.ts(1,52): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-helpers/openai.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-helpers/turns.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-runner.sanitize-session-history.test-harness.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-runner.sanitize-session-history.test-harness.ts(2,37): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-embedded-runner.sanitize-session-history.test-harness.ts(3,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/agents/pi-embedded-runner/compact.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-runner/compact.ts(7,8): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-embedded-runner/compact.ts(473,18): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/agents/pi-embedded-runner/compact.ts(643,36): error TS2339: Property 'tokensBefore' does not exist on type 'unknown'.
+src/agents/pi-embedded-runner/compact.ts(688,29): error TS2339: Property 'summary' does not exist on type 'unknown'.
+src/agents/pi-embedded-runner/compact.ts(689,38): error TS2339: Property 'firstKeptEntryId' does not exist on type 'unknown'.
+src/agents/pi-embedded-runner/compact.ts(690,34): error TS2339: Property 'tokensBefore' does not exist on type 'unknown'.
+src/agents/pi-embedded-runner/compact.ts(692,29): error TS2339: Property 'details' does not exist on type 'unknown'.
+src/agents/pi-embedded-runner/extensions.ts(1,33): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/pi-embedded-runner/extensions.ts(2,37): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-embedded-runner/extensions.ts(16,30): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/agents/pi-embedded-runner/extra-params.ts(1,31): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-runner/extra-params.ts(2,42): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/pi-embedded-runner/extra-params.ts(3,30): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/pi-embedded-runner/google.ts(1,46): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-runner/google.ts(2,37): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-embedded-runner/google.ts(3,30): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/pi-embedded-runner/history.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-runner/model.test-harness.ts(1,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/agents/pi-embedded-runner/model.ts(1,33): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/pi-embedded-runner/run.overflow-compaction.mocks.shared.ts(1,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/agents/pi-embedded-runner/run/attempt.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-runner/run/attempt.ts(2,35): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/pi-embedded-runner/run/attempt.ts(3,30): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/pi-embedded-runner/run/attempt.ts(4,69): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-embedded-runner/run/attempt.ts(425,18): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/agents/pi-embedded-runner/run/compaction-timeout.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-runner/run/images.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/pi-embedded-runner/run/params.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/pi-embedded-runner/run/payloads.ts(1,39): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/pi-embedded-runner/run/types.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-runner/run/types.ts(2,51): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/pi-embedded-runner/system-prompt.ts(1,32): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-runner/system-prompt.ts(2,35): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-embedded-runner/tool-result-truncation.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-runner/tool-result-truncation.ts(2,34): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/pi-embedded-runner/tool-result-truncation.ts(3,32): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-embedded-runner/tool-split.ts(1,32): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-runner/utils.ts(1,36): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-subscribe.handlers.compaction.ts(1,33): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-subscribe.handlers.messages.ts(1,47): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-subscribe.handlers.tools.ts(1,33): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-subscribe.handlers.types.ts(1,47): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-subscribe.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-subscribe.types.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-embedded-utils.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-embedded-utils.ts(2,39): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/pi-extensions/compaction-safeguard.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-extensions/compaction-safeguard.ts(2,51): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-extensions/context-pruning/extension.ts(1,67): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-extensions/context-pruning/pruner.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-extensions/context-pruning/pruner.ts(2,67): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/pi-extensions/context-pruning/pruner.ts(3,39): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-model-discovery.ts(1,44): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-model-discovery.ts(4,44): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-tool-definition-adapter.ts(5,8): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-tool-definition-adapter.ts(6,37): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-tool-definition-adapter.ts(79,5): error TS2322: Type 'unknown' is not assignable to type 'string'.
+src/agents/pi-tool-definition-adapter.ts(82,5): error TS2740: Type '{}' is missing the following properties from type 'AbortSignal': aborted, onabort, reason, throwIfAborted, and 3 more.
+src/agents/pi-tool-definition-adapter.ts(109,41): error TS2339: Property 'params' does not exist on type 'HookOutcome'.
+  Property 'params' does not exist on type '{ blocked: true; reason: string; }'.
+src/agents/pi-tool-definition-adapter.ts(214,40): error TS2339: Property 'params' does not exist on type 'HookOutcome'.
+  Property 'params' does not exist on type '{ blocked: true; reason: string; }'.
+src/agents/pi-tools.before-tool-call.ts(90,60): error TS2339: Property 'params' does not exist on type 'HookOutcome'.
+  Property 'params' does not exist on type '{ blocked: true; reason: string; }'.
+src/agents/pi-tools.before-tool-call.ts(98,48): error TS2339: Property 'params' does not exist on type 'HookOutcome'.
+  Property 'params' does not exist on type '{ blocked: true; reason: string; }'.
+src/agents/pi-tools.read.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/pi-tools.read.ts(2,65): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-tools.ts(7,8): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/pi-tools.types.ts(1,32): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/schema/typebox.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/session-tool-result-guard-wrapper.ts(1,37): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/session-tool-result-guard.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/session-tool-result-guard.ts(2,34): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/session-tool-result-guard.ts(3,37): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/session-transcript-repair.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/skills/bundled-context.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/skills/bundled-dir.ts(58,41): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/agents/skills/frontmatter.ts(1,28): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/skills/refresh.ts(1,42): error TS2307: Cannot find module 'chokidar' or its corresponding type declarations.
+src/agents/skills/types.ts(1,28): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/skills/workspace.ts(5,8): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/agents/subagent-depth.ts(1,19): error TS2307: Cannot find module 'json5' or its corresponding type declarations.
+src/agents/system-prompt-report.ts(1,32): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/test-helpers/fast-core-tools.ts(1,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/agents/test-helpers/fast-tool-stubs.ts(1,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/agents/tool-call-id.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/tool-display.ts(14,53): error TS2856: Import attributes are not allowed on statements that compile to CommonJS 'require' calls.
+src/agents/tool-images.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/tool-images.ts(2,35): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/tool-summaries.ts(1,32): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/tools/agents-list-tool.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/browser-tool.schema.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/browser-tool.ts(709,47): error TS2339: Property 'error' does not exist on type '{ ok: true; paths: string[]; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; paths: string[]; }'.
+src/agents/tools/canvas-tool.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/common.ts(1,49): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/tools/cron-tool.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/discord-actions-guild.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/tools/discord-actions-messaging.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/tools/discord-actions-moderation.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/tools/discord-actions-presence.ts(1,51): error TS2307: Cannot find module '@buape/carbon/gateway' or its corresponding type declarations.
+src/agents/tools/discord-actions-presence.ts(2,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/tools/discord-actions.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/tools/gateway-tool.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/image-tool.helpers.ts(1,39): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/tools/image-tool.ts(1,62): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/agents/tools/image-tool.ts(2,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/memory-tool.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/message-tool.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/nodes-tool.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/tools/nodes-tool.ts(2,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/session-status-tool.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/sessions-history-tool.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/sessions-history-tool.ts(180,53): error TS2339: Property 'status' does not exist on type 'SessionReferenceResolution'.
+  Property 'status' does not exist on type '{ ok: true; key: string; displayKey: string; resolvedViaSessionId: boolean; }'.
+src/agents/tools/sessions-history-tool.ts(180,84): error TS2339: Property 'error' does not exist on type 'SessionReferenceResolution'.
+  Property 'error' does not exist on type '{ ok: true; key: string; displayKey: string; resolvedViaSessionId: boolean; }'.
+src/agents/tools/sessions-history-tool.ts(213,26): error TS2339: Property 'status' does not exist on type 'SessionAccessResult'.
+  Property 'status' does not exist on type '{ allowed: true; }'.
+src/agents/tools/sessions-history-tool.ts(214,25): error TS2339: Property 'error' does not exist on type 'SessionAccessResult'.
+  Property 'error' does not exist on type '{ allowed: true; }'.
+src/agents/tools/sessions-list-tool.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/sessions-send-tool.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/sessions-send-tool.ts(170,35): error TS2339: Property 'status' does not exist on type 'SessionReferenceResolution'.
+  Property 'status' does not exist on type '{ ok: true; key: string; displayKey: string; resolvedViaSessionId: boolean; }'.
+src/agents/tools/sessions-send-tool.ts(171,34): error TS2339: Property 'error' does not exist on type 'SessionReferenceResolution'.
+  Property 'error' does not exist on type '{ ok: true; key: string; displayKey: string; resolvedViaSessionId: boolean; }'.
+src/agents/tools/sessions-send-tool.ts(211,26): error TS2339: Property 'status' does not exist on type 'SessionAccessResult'.
+  Property 'status' does not exist on type '{ allowed: true; }'.
+src/agents/tools/sessions-send-tool.ts(212,25): error TS2339: Property 'error' does not exist on type 'SessionAccessResult'.
+  Property 'error' does not exist on type '{ allowed: true; }'.
+src/agents/tools/sessions-spawn-tool.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/slack-actions.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/tools/subagents-tool.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/telegram-actions.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/tools/telegram-actions.ts(120,33): error TS2339: Property 'warning' does not exist on type '{ ok: true; } | { ok: false; warning: string; }'.
+  Property 'warning' does not exist on type '{ ok: true; }'.
+src/agents/tools/tts-tool.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/web-fetch-utils.ts(8,34): error TS2307: Cannot find module '@mozilla/readability' or its corresponding type declarations.
+src/agents/tools/web-fetch-utils.ts(9,32): error TS2307: Cannot find module 'linkedom' or its corresponding type declarations.
+src/agents/tools/web-fetch-utils.ts(14,30): error TS2307: Cannot find module '@mozilla/readability' or its corresponding type declarations.
+src/agents/tools/web-fetch-utils.ts(15,28): error TS2307: Cannot find module 'linkedom' or its corresponding type declarations.
+src/agents/tools/web-fetch-utils.ts(18,50): error TS2307: Cannot find module '@mozilla/readability' or its corresponding type declarations.
+src/agents/tools/web-fetch-utils.ts(18,82): error TS2307: Cannot find module 'linkedom' or its corresponding type declarations.
+src/agents/tools/web-fetch.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/web-search.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/agents/tools/whatsapp-actions.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/agents/workspace-templates.ts(7,30): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/agents/workspace-templates.ts(27,42): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/auto-reply/envelope.ts(9,8): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/auto-reply/envelope.ts(10,31): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/auto-reply/reply.directive.directive-behavior.e2e-harness.ts(2,51): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/auto-reply/reply.directive.directive-behavior.e2e-mocks.ts(1,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/auto-reply/reply.test-harness.ts(4,37): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/auto-reply/reply.triggers.trigger-handling.test-harness.ts(2,39): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/auto-reply/reply/block-reply-pipeline.ts(117,11): error TS2345: Argument of type 'void | Promise<void>' is not assignable to parameter of type 'Promise<void>'.
+  Type 'void' is not assignable to type 'Promise<void>'.
+src/auto-reply/reply/commands-allowlist.ts(656,33): error TS2339: Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; } | { ok: false; issues: ConfigValidationIssue[]; warnings: ConfigValidationIssue[]; }'.
+  Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; }'.
+src/auto-reply/reply/commands-approve.ts(86,59): error TS2339: Property 'error' does not exist on type 'ParsedApproveCommand'.
+  Property 'error' does not exist on type '{ ok: true; id: string; decision: "deny" | "allow-once" | "allow-always"; }'.
+src/auto-reply/reply/commands-config.ts(129,31): error TS2339: Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; } | { ok: false; issues: ConfigValidationIssue[]; warnings: ConfigValidationIssue[]; }'.
+  Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; }'.
+src/auto-reply/reply/commands-config.ts(155,31): error TS2339: Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; } | { ok: false; issues: ConfigValidationIssue[]; warnings: ConfigValidationIssue[]; }'.
+  Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; }'.
+src/auto-reply/reply/commands-subagents.ts(28,31): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/auto-reply/reply/config-commands.ts(18,47): error TS2339: Property 'message' does not exist on type 'ParsedSlashCommand'.
+  Property 'message' does not exist on type '{ ok: true; action: string; args: string; }'.
+src/auto-reply/reply/debug-commands.ts(19,47): error TS2339: Property 'message' does not exist on type 'ParsedSlashCommand'.
+  Property 'message' does not exist on type '{ ok: true; action: string; args: string; }'.
+src/auto-reply/reply/session-updates.ts(12,8): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/auto-reply/reply/session.ts(1,57): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/auto-reply/reply/test-helpers.ts(1,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/auto-reply/status.ts(20,31): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/auto-reply/types.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/brain/CloserEngine.ts(8,28): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/brain/MonolithBreaker.ts(4,29): error TS2307: Cannot find module './MasterBrain.js' or its corresponding type declarations.
+src/brain/RAGPro.ts(6,29): error TS2307: Cannot find module './MasterBrain.js' or its corresponding type declarations.
+src/brain/RefactorEngine.ts(7,29): error TS2307: Cannot find module './MasterBrain.js' or its corresponding type declarations.
+src/browser/paths.ts(44,45): error TS2339: Property 'error' does not exist on type '{ ok: true; path: string; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; path: string; }'.
+src/browser/pw-session.ts(8,8): error TS2307: Cannot find module 'playwright-core' or its corresponding type declarations.
+src/browser/pw-session.ts(9,26): error TS2307: Cannot find module 'playwright-core' or its corresponding type declarations.
+src/browser/pw-tools-core.downloads.ts(1,27): error TS2307: Cannot find module 'playwright-core' or its corresponding type declarations.
+src/browser/pw-tools-core.state.ts(1,39): error TS2307: Cannot find module 'playwright-core' or its corresponding type declarations.
+src/browser/pw-tools-core.state.ts(2,46): error TS2307: Cannot find module 'playwright-core' or its corresponding type declarations.
+src/browser/pw-tools-core.test-harness.ts(1,32): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/browser/pw-tools-core.test-harness.ts(61,10): error TS2339: Property 'mockClear' does not exist on type 'unknown'.
+src/browser/routes/agent.act.ts(369,57): error TS2339: Property 'error' does not exist on type '{ ok: true; paths: string[]; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; paths: string[]; }'.
+src/browser/routes/agent.act.ts(466,60): error TS2339: Property 'error' does not exist on type '{ ok: true; path: string; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; path: string; }'.
+src/browser/routes/agent.act.ts(506,58): error TS2339: Property 'error' does not exist on type '{ ok: true; path: string; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; path: string; }'.
+src/browser/routes/agent.debug.ts(144,55): error TS2339: Property 'error' does not exist on type '{ ok: true; path: string; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; path: string; }'.
+src/browser/server-context.ts(379,22): error TS2339: Property 'reason' does not exist on type 'TargetIdResolution'.
+  Property 'reason' does not exist on type '{ ok: true; targetId: string; }'.
+src/browser/server-context.ts(419,20): error TS2339: Property 'reason' does not exist on type 'TargetIdResolution'.
+  Property 'reason' does not exist on type '{ ok: true; targetId: string; }'.
+src/browser/server-context.ts(449,20): error TS2339: Property 'reason' does not exist on type 'TargetIdResolution'.
+  Property 'reason' does not exist on type '{ ok: true; targetId: string; }'.
+src/browser/server.control-server.test-harness.ts(5,64): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/browser/server.control-server.test-harness.ts(150,24): error TS2347: Untyped function calls may not accept type arguments.
+src/browser/server.control-server.test-harness.ts(225,16): error TS1309: The current file is a CommonJS module and cannot use 'await' at the top level.
+src/canvas-host/a2ui.ts(18,43): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/canvas-host/server.ts(3,22): error TS2307: Cannot find module 'chokidar' or its corresponding type declarations.
+src/channels/plugins/actions/discord/handle-action.guild-admin.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/channels/plugins/actions/discord/handle-action.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/channels/plugins/agent-tools/whatsapp-login.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/channels/plugins/config-schema.ts(1,33): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/channels/plugins/message-actions.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/channels/plugins/types.core.ts(1,49): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/channels/plugins/types.core.ts(2,30): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/channels/registry.ts(144,38): error TS2345: Argument of type 'string' is not assignable to parameter of type '"signal" | "telegram" | "whatsapp" | "discord" | "irc" | "googlechat" | "slack" | "imessage"'.
+src/channels/registry.ts(144,50): error TS2322: Type 'string' is not assignable to type '"signal" | "telegram" | "whatsapp" | "discord" | "irc" | "googlechat" | "slack" | "imessage"'.
+src/cli/acp-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/argv.ts(75,5): error TS2322: Type 'string' is not assignable to type 'number'.
+src/cli/browser-cli-actions-input/register.element.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/browser-cli-actions-input/register.files-downloads.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/browser-cli-actions-input/register.files-downloads.ts(16,28): error TS2339: Property 'error' does not exist on type '{ ok: true; paths: string[]; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; paths: string[]; }'.
+src/cli/browser-cli-actions-input/register.form-wait-eval.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/browser-cli-actions-input/register.navigation.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/browser-cli-actions-input/register.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/browser-cli-actions-input/shared.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/browser-cli-actions-observe.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/browser-cli-debug.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/browser-cli-extension.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/browser-cli-extension.ts(16,37): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/cli/browser-cli-inspect.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/browser-cli-manage.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/browser-cli-state.cookies-storage.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/browser-cli-state.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/browser-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/channels-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/cli-utils.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/command-options.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/completion-cli.ts(1,33): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/config-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/config-cli.ts(2,19): error TS2307: Cannot find module 'json5' or its corresponding type declarations.
+src/cli/cron-cli/register.cron-add.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/cron-cli/register.cron-edit.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/cron-cli/register.cron-simple.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/cron-cli/register.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/cron-cli/shared.ts(5,37): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/cli/daemon-cli/register-service-commands.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/daemon-cli/register.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/devices-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/devices-cli.ts(3,31): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/cli/directory-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/dns-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/docs-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/exec-approvals-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/exec-approvals-cli.ts(2,19): error TS2307: Cannot find module 'json5' or its corresponding type declarations.
+src/cli/exec-approvals-cli.ts(11,31): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/cli/gateway-cli/call.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/gateway-cli/register.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/gateway-cli/run.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/gateway-rpc.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/hooks-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/hooks-cli.ts(568,40): error TS2339: Property 'error' does not exist on type 'InstallHooksResult'.
+  Property 'error' does not exist on type '{ ok: true; hookPackId: string; hooks: string[]; targetDir: string; version?: string; }'.
+src/cli/hooks-cli.ts(612,39): error TS2339: Property 'error' does not exist on type 'InstallHooksResult'.
+  Property 'error' does not exist on type '{ ok: true; hookPackId: string; hooks: string[]; targetDir: string; version?: string; }'.
+src/cli/hooks-cli.ts(661,37): error TS2339: Property 'error' does not exist on type 'InstallHooksResult'.
+  Property 'error' does not exist on type '{ ok: true; hookPackId: string; hooks: string[]; targetDir: string; version?: string; }'.
+src/cli/hooks-cli.ts(735,80): error TS2339: Property 'error' does not exist on type 'InstallHooksResult'.
+  Property 'error' does not exist on type '{ ok: true; hookPackId: string; hooks: string[]; targetDir: string; version?: string; }'.
+src/cli/hooks-cli.ts(759,80): error TS2339: Property 'error' does not exist on type 'InstallHooksResult'.
+  Property 'error' does not exist on type '{ ok: true; hookPackId: string; hooks: string[]; targetDir: string; version?: string; }'.
+src/cli/logs-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/memory-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/models-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/node-cli/register.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/nodes-cli/pairing-render.ts(2,31): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/cli/nodes-cli/register.camera.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/nodes-cli/register.canvas.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/nodes-cli/register.invoke.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/nodes-cli/register.location.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/nodes-cli/register.notify.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/nodes-cli/register.pairing.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/nodes-cli/register.screen.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/nodes-cli/register.status.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/nodes-cli/register.status.ts(3,31): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/cli/nodes-cli/register.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/nodes-cli/rpc.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/pairing-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/plugins-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/plugins-cli.ts(498,37): error TS2339: Property 'error' does not exist on type 'UninstallPluginResult'.
+  Property 'error' does not exist on type '{ ok: true; config: ClawCoreConfig; pluginId: string; actions: UninstallActions; warnings: string[]; }'.
+src/cli/plugins-cli.ts(541,39): error TS2339: Property 'error' does not exist on type '{ ok: true; path: string; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; path: string; }'.
+src/cli/plugins-cli.ts(554,40): error TS2339: Property 'error' does not exist on type 'InstallPluginResult'.
+  Property 'error' does not exist on type '{ ok: true; pluginId: string; targetDir: string; manifestName?: string; version?: string; extensions: string[]; }'.
+src/cli/plugins-cli.ts(592,39): error TS2339: Property 'error' does not exist on type 'InstallPluginResult'.
+  Property 'error' does not exist on type '{ ok: true; pluginId: string; targetDir: string; manifestName?: string; version?: string; extensions: string[]; }'.
+src/cli/plugins-cli.ts(644,37): error TS2339: Property 'error' does not exist on type 'InstallPluginResult'.
+  Property 'error' does not exist on type '{ ok: true; pluginId: string; targetDir: string; manifestName?: string; version?: string; extensions: string[]; }'.
+src/cli/program.test-mocks.ts(1,26): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/cli/program/action-reparse.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/build-program.ts(1,25): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/command-registry.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/help.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/helpers.ts(26,58): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/helpers.ts(30,41): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/message/helpers.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/message/register.broadcast.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/message/register.discord-admin.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/message/register.emoji-sticker.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/message/register.permissions-search.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/message/register.pins.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/message/register.poll.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/message/register.reactions.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/message/register.read-edit-delete.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/message/register.send.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/message/register.thread.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/preaction.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/program-context.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/register.agent.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/register.configure.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/register.maintenance.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/register.message.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/register.onboard.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/register.setup.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/register.status-health-sessions.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/program/register.subclis.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/progress.ts(1,25): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/cli/run-main.ts(127,52): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/cli/sandbox-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/security-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/skills-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/system-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/tui-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/update-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/cli/update-cli/progress.ts(1,25): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/cli/update-cli/progress.ts(8,39): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/cli/update-cli/shared.ts(132,18): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/cli/update-cli/update-command.ts(1,35): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/cli/update-cli/wizard.ts(1,43): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/cli/webhooks-cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/commands/agent/delivery.ts(132,30): error TS2339: Property 'error' does not exist on type 'OutboundTargetResolution'.
+  Property 'error' does not exist on type '{ ok: true; to: string; }'.
+src/commands/agent/delivery.ts(134,39): error TS2339: Property 'error' does not exist on type 'OutboundTargetResolution'.
+  Property 'error' does not exist on type '{ ok: true; to: string; }'.
+src/commands/channels/status.ts(9,31): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/commands/chutes-oauth.ts(1,39): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/commands/configure.shared.ts(7,8): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/commands/doctor-completion.ts(22,16): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/commands/doctor-config-flow.ts(1,31): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/commands/doctor-prompter.ts(1,33): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/commands/doctor-ui.ts(18,16): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/commands/doctor.e2e-harness.ts(4,43): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/commands/doctor.e2e-harness.ts(149,24): error TS2347: Untyped function calls may not accept type arguments.
+src/commands/doctor.e2e-harness.ts(175,24): error TS2347: Untyped function calls may not accept type arguments.
+src/commands/doctor.e2e-harness.ts(196,24): error TS2347: Untyped function calls may not accept type arguments.
+src/commands/doctor.e2e-harness.ts(238,24): error TS2347: Untyped function calls may not accept type arguments.
+src/commands/doctor.ts(1,58): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/commands/doctor.ts(75,16): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/commands/models/auth.ts(1,83): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/commands/models/list.list-command.ts(1,33): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/commands/models/list.registry.ts(1,33): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/commands/models/scan.ts(1,67): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/commands/onboard-auth.credentials.ts(1,39): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/commands/onboard-helpers.ts(1,34): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/commands/onboard-helpers.ts(35,3): error TS2322: Type 'symbol | T' is not assignable to type 'T'.
+  'T' could be instantiated with an arbitrary type which could be unrelated to 'symbol | T'.
+src/commands/onboarding/__tests__/test-utils.ts(1,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/commands/onboarding/plugin-install.ts(182,59): error TS2339: Property 'error' does not exist on type 'InstallPluginResult'.
+  Property 'error' does not exist on type '{ ok: true; pluginId: string; targetDir: string; manifestName?: string; version?: string; extensions: string[]; }'.
+src/commands/onboarding/plugin-install.ts(198,52): error TS2339: Property 'error' does not exist on type 'InstallPluginResult'.
+  Property 'error' does not exist on type '{ ok: true; pluginId: string; targetDir: string; manifestName?: string; version?: string; extensions: string[]; }'.
+src/commands/openai-codex-oauth.ts(1,39): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/commands/openai-codex-oauth.ts(2,34): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/commands/reset.ts(1,51): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/commands/sandbox-display.ts(8,39): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/commands/sandbox.ts(1,41): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/commands/sessions.ts(14,31): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/commands/setup.ts(1,19): error TS2307: Cannot find module 'json5' or its corresponding type declarations.
+src/commands/status-all.ts(90,18): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/commands/status-all/format.ts(1,31): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/commands/status-all/format.ts(2,39): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/commands/status.command.ts(8,31): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/commands/status.format.ts(2,39): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/commands/status.update.ts(16,16): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/commands/uninstall.ts(1,56): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/config/includes-scan.ts(1,19): error TS2307: Cannot find module 'json5' or its corresponding type declarations.
+src/config/includes.ts(13,19): error TS2307: Cannot find module 'json5' or its corresponding type declarations.
+src/config/io.ts(1,19): error TS2307: Cannot find module 'json5' or its corresponding type declarations.
+src/config/io.ts(563,35): error TS2339: Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; } | { ok: false; issues: ConfigValidationIssue[]; warnings: ConfigValidationIssue[]; }'.
+  Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; }'.
+src/config/io.ts(676,76): error TS2339: Property 'error' does not exist on type 'ParseConfigJson5Result'.
+  Property 'error' does not exist on type '{ ok: true; parsed: unknown; }'.
+src/config/io.ts(749,31): error TS2339: Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; } | { ok: false; issues: ConfigValidationIssue[]; warnings: ConfigValidationIssue[]; }'.
+  Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; }'.
+src/config/io.ts(848,31): error TS2339: Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; } | { ok: false; issues: ConfigValidationIssue[]; warnings: ConfigValidationIssue[]; }'.
+  Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; }'.
+src/config/schema.hints.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/sessions/transcript.ts(1,57): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/config/sessions/types.ts(1,28): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/config/validation.ts(192,38): error TS2339: Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; } | { ok: false; issues: ConfigValidationIssue[]; }'.
+  Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; }'.
+src/config/validation.ts(410,35): error TS2339: Property 'errors' does not exist on type '{ ok: true; } | { ok: false; errors: string[]; }'.
+  Property 'errors' does not exist on type '{ ok: true; }'.
+src/config/zod-schema.agent-defaults.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/zod-schema.agent-model.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/zod-schema.agent-runtime.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/zod-schema.agents.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/zod-schema.allowdeny.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/zod-schema.approvals.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/zod-schema.channels.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/zod-schema.core.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/zod-schema.hooks.ts(2,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/zod-schema.providers-core.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/zod-schema.providers-core.ts(192,17): error TS2339: Property 'enabled' does not exist on type 'unknown'.
+src/config/zod-schema.providers-core.ts(196,22): error TS2339: Property 'webhookUrl' does not exist on type 'unknown'.
+src/config/zod-schema.providers-core.ts(196,56): error TS2339: Property 'webhookUrl' does not exist on type 'unknown'.
+src/config/zod-schema.providers-core.ts(201,22): error TS2339: Property 'webhookSecret' does not exist on type 'unknown'.
+src/config/zod-schema.providers-core.ts(201,59): error TS2339: Property 'webhookSecret' does not exist on type 'unknown'.
+src/config/zod-schema.providers-core.ts(616,17): error TS2339: Property 'enabled' does not exist on type 'unknown'.
+src/config/zod-schema.providers-core.ts(619,33): error TS2339: Property 'mode' does not exist on type 'unknown'.
+src/config/zod-schema.providers-core.ts(623,35): error TS2339: Property 'signingSecret' does not exist on type 'unknown'.
+src/config/zod-schema.providers-whatsapp.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/zod-schema.providers.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/zod-schema.sensitive.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/zod-schema.session.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/config/zod-schema.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/cron/isolated-agent.mocks.ts(1,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/cron/isolated-agent/delivery-target.ts(105,43): error TS2339: Property 'error' does not exist on type 'OutboundTargetResolution'.
+  Property 'error' does not exist on type '{ ok: true; to: string; }'.
+src/cron/schedule.ts(1,22): error TS2307: Cannot find module 'croner' or its corresponding type declarations.
+src/cron/service.test-harness.ts(4,64): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/cron/store.ts(1,19): error TS2307: Cannot find module 'json5' or its corresponding type declarations.
+src/discord/client.ts(1,31): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/components.ts(25,8): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/components.ts(26,59): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/components.ts(1090,31): error TS2554: Expected 0 arguments, but got 1.
+src/discord/monitor/agent-components.ts(1,47): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/monitor/agent-components.ts(18,8): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/agent-components.ts(19,42): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/monitor/allow-list.ts(1,34): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/exec-approvals.ts(11,8): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/exec-approvals.ts(12,37): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/monitor/format.ts(1,34): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/gateway-plugin.ts(1,47): error TS2307: Cannot find module '@buape/carbon/gateway' or its corresponding type declarations.
+src/discord/monitor/gateway-plugin.ts(2,33): error TS2307: Cannot find module 'https-proxy-agent' or its corresponding type declarations.
+src/discord/monitor/gateway-registry.ts(1,36): error TS2307: Cannot find module '@buape/carbon/gateway' or its corresponding type declarations.
+src/discord/monitor/listeners.ts(8,8): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/listeners.ts(10,39): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/discord/monitor/listeners.ts(98,23): error TS2339: Property 'type' does not exist on type 'DiscordMessageListener'.
+src/discord/monitor/listeners.ts(117,19): error TS2339: Property 'type' does not exist on type 'DiscordReactionListener'.
+src/discord/monitor/listeners.ts(134,19): error TS2339: Property 'type' does not exist on type 'DiscordReactionRemoveListener'.
+src/discord/monitor/listeners.ts(181,21): error TS2322: Type 'unknown' is not assignable to type 'object'.
+src/discord/monitor/listeners.ts(185,23): error TS2339: Property 'bot' does not exist on type 'unknown'.
+src/discord/monitor/listeners.ts(188,41): error TS2339: Property 'guild_id' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(191,23): error TS2339: Property 'guild' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(199,52): error TS2339: Property 'channel_id' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(217,74): error TS2339: Property 'channel_id' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(228,23): error TS2339: Property 'channel_id' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(240,27): error TS2339: Property 'id' does not exist on type 'unknown'.
+src/discord/monitor/listeners.ts(245,32): error TS2339: Property 'message' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(251,20): error TS2339: Property 'id' does not exist on type 'unknown'.
+src/discord/monitor/listeners.ts(252,22): error TS2339: Property 'username' does not exist on type 'unknown'.
+src/discord/monitor/listeners.ts(260,56): error TS2339: Property 'emoji' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(264,13): error TS2339: Property 'guild' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(265,37): error TS2339: Property 'guild' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(266,17): error TS2339: Property 'guild_id' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(271,20): error TS2339: Property 'channel_id' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(273,125): error TS2339: Property 'message_id' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(275,46): error TS2339: Property 'rawMember' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(276,14): error TS2339: Property 'rawMember' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(282,21): error TS2339: Property 'guild_id' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(286,36): error TS2339: Property 'id' does not exist on type 'unknown'.
+src/discord/monitor/listeners.ts(286,46): error TS2339: Property 'channel_id' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(292,54): error TS2339: Property 'message_id' does not exist on type 'Record<"user", unknown>'.
+src/discord/monitor/listeners.ts(292,73): error TS2339: Property 'id' does not exist on type 'unknown'.
+src/discord/monitor/listeners.ts(314,19): error TS2322: Type 'unknown' is not assignable to type 'object'.
+src/discord/monitor/listeners.ts(323,24): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/monitor/message-handler.preflight.ts(1,53): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/message-handler.preflight.ts(69,31): error TS2339: Property 'message' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(70,30): error TS2339: Property 'author' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(76,33): error TS2339: Property 'channel_id' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(105,25): error TS2339: Property 'member' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(116,46): error TS2339: Property 'guild_id' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(121,79): error TS2339: Property 'guild_id' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(240,51): error TS2339: Property 'rawMember' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(241,19): error TS2339: Property 'rawMember' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(247,26): error TS2339: Property 'guild_id' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(278,28): error TS2339: Property 'guild' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(283,49): error TS2339: Property 'guild_id' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(283,85): error TS2339: Property 'guild' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(283,119): error TS2339: Property 'guild' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(292,66): error TS2339: Property 'guild_id' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(295,44): error TS2339: Property 'guild_id' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(312,18): error TS2339: Property 'guild' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(312,65): error TS2339: Property 'guild' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(483,62): error TS2339: Property 'guild_id' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.ts(582,24): error TS2339: Property 'guild' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.preflight.types.ts(1,48): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/message-handler.preflight.types.ts(36,32): error TS2339: Property 'message' does not exist on type '{}'.
+src/discord/monitor/message-handler.process.ts(1,29): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/message-handler.process.ts(126,21): error TS2339: Property 'guild' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.process.ts(150,13): error TS2339: Property 'member' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.ts(1,29): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/message-handler.ts(29,34): error TS2339: Property 'message' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.ts(30,35): error TS2339: Property 'author' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.ts(36,36): error TS2339: Property 'channel_id' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.ts(44,34): error TS2339: Property 'message' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.ts(77,62): error TS2339: Property 'message' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.ts(81,22): error TS2339: Property 'message' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.ts(84,39): error TS2339: Property 'message' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.ts(85,38): error TS2339: Property 'message' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.ts(87,25): error TS2339: Property 'message' does not exist on type 'unknown'.
+src/discord/monitor/message-handler.ts(91,9): error TS2698: Spread types may only be created from object types.
+src/discord/monitor/message-handler.ts(105,55): error TS2339: Property 'message' does not exist on type 'unknown'.
+src/discord/monitor/message-utils.ts(1,51): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/message-utils.ts(2,36): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/monitor/native-command.ts(11,8): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/native-command.ts(12,59): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/monitor/presence-cache.ts(1,44): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/monitor/presence.ts(1,51): error TS2307: Cannot find module '@buape/carbon/gateway' or its corresponding type declarations.
+src/discord/monitor/provider.ts(1,36): error TS2307: Cannot find module '@buape/carbon/gateway' or its corresponding type declarations.
+src/discord/monitor/provider.ts(7,8): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/provider.ts(8,24): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/monitor/reply-context.ts(1,43): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/reply-delivery.ts(1,36): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/sender-identity.ts(1,27): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/system-events.ts(1,43): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/threading.ts(1,42): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/monitor/threading.ts(2,24): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/monitor/threading.ts(90,32): error TS2339: Property 'message' does not exist on type '{}'.
+src/discord/monitor/threading.ts(296,32): error TS2339: Property 'message' does not exist on type '{}'.
+src/discord/monitor/threading.ts(346,32): error TS2339: Property 'message' does not exist on type '{}'.
+src/discord/monitor/typing.ts(1,29): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/send.channels.ts(1,33): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.channels.ts(2,24): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.components.ts(1,33): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.components.ts(7,8): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/send.components.ts(8,37): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.emojis-stickers.ts(1,24): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.guild.ts(8,8): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.guild.ts(9,24): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.messages.ts(1,45): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.messages.ts(2,37): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.outbound.ts(1,33): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.outbound.ts(2,81): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/send.outbound.ts(3,37): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.permissions.ts(1,36): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/send.permissions.ts(2,68): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.permissions.ts(3,58): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.permissions.ts(10,71): error TS2365: Operator '|' cannot be applied to types 'bigint' and 'unknown'.
+src/discord/send.permissions.ts(10,77): error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+src/discord/send.permissions.ts(28,52): error TS2365: Operator '&' cannot be applied to types 'bigint' and 'unknown'.
+src/discord/send.permissions.ts(28,63): error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+src/discord/send.reactions.ts(1,24): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.shared.ts(1,34): error TS2307: Cannot find module 'discord-api-types/rest/v10' or its corresponding type declarations.
+src/discord/send.shared.ts(9,8): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/send.shared.ts(10,32): error TS2307: Cannot find module 'discord-api-types/payloads/v10' or its corresponding type declarations.
+src/discord/send.shared.ts(11,39): error TS2307: Cannot find module 'discord-api-types/v10' or its corresponding type declarations.
+src/discord/send.test-harness.ts(1,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/discord/send.test-harness.ts(10,16): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/send.test-harness.ts(49,28): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/send.types.ts(1,36): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/ui.ts(1,27): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/discord/voice-message.ts(13,36): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/entry.ts(89,40): error TS2339: Property 'error' does not exist on type 'CliProfileParseResult'.
+  Property 'error' does not exist on type '{ ok: true; profile: string; argv: string[]; }'.
+src/extensionAPI.ts(1,59): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/extensionAPI.ts(3,49): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/extensionAPI.ts(4,38): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/extensionAPI.ts(5,40): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/extensionAPI.ts(6,36): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/extensionAPI.ts(7,39): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/extensionAPI.ts(8,38): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/extensionAPI.ts(14,8): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/gateway/config-reload.ts(1,22): error TS2307: Cannot find module 'chokidar' or its corresponding type declarations.
+src/gateway/control-ui.ts(283,22): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/gateway/hooks.ts(185,14): error TS2339: Property 'code' does not exist on type 'ReadJsonBodyResult'.
+  Property 'code' does not exist on type '{ ok: true; value: unknown; }'.
+src/gateway/hooks.ts(188,14): error TS2339: Property 'code' does not exist on type 'ReadJsonBodyResult'.
+  Property 'code' does not exist on type '{ ok: true; value: unknown; }'.
+src/gateway/hooks.ts(191,14): error TS2339: Property 'code' does not exist on type 'ReadJsonBodyResult'.
+  Property 'code' does not exist on type '{ ok: true; value: unknown; }'.
+src/gateway/hooks.ts(194,37): error TS2339: Property 'error' does not exist on type 'ReadJsonBodyResult'.
+  Property 'error' does not exist on type '{ ok: true; value: unknown; }'.
+src/gateway/http-common.ts(61,14): error TS2339: Property 'error' does not exist on type '{ ok: true; value: unknown; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; value: unknown; }'.
+src/gateway/http-common.ts(67,14): error TS2339: Property 'error' does not exist on type '{ ok: true; value: unknown; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; value: unknown; }'.
+src/gateway/http-common.ts(73,34): error TS2339: Property 'error' does not exist on type '{ ok: true; value: unknown; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; value: unknown; }'.
+src/gateway/node-invoke-system-run-approval.ts(147,29): error TS2339: Property 'message' does not exist on type 'SystemRunCommandValidation'.
+  Property 'message' does not exist on type '{ ok: true; shellCommand: string; cmdText: string; }'.
+src/gateway/node-invoke-system-run-approval.ts(148,29): error TS2339: Property 'details' does not exist on type 'SystemRunCommandValidation'.
+  Property 'details' does not exist on type '{ ok: true; shellCommand: string; cmdText: string; }'.
+src/gateway/open-responses.schema.ts(10,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/gateway/protocol/index.ts(1,42): error TS2307: Cannot find module 'ajv' or its corresponding type declarations.
+src/gateway/protocol/index.ts(227,69): error TS2307: Cannot find module 'ajv' or its corresponding type declarations.
+src/gateway/protocol/schema/agent.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/agents-models-skills.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/channels.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/config.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/cron.ts(1,36): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/devices.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/exec-approvals.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/frames.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/logs-chat.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/nodes.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/primitives.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/protocol-schemas.ts(1,30): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/sessions.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/snapshot.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/types.ts(1,29): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/protocol/schema/wizard.ts(1,22): error TS2307: Cannot find module '@sinclair/typebox' or its corresponding type declarations.
+src/gateway/server-http.ts(312,14): error TS2339: Property 'error' does not exist on type '{ ok: true; value: unknown; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; value: unknown; }'.
+src/gateway/server-http.ts(314,18): error TS2339: Property 'error' does not exist on type '{ ok: true; value: unknown; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; value: unknown; }'.
+src/gateway/server-http.ts(317,54): error TS2339: Property 'error' does not exist on type '{ ok: true; value: unknown; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; value: unknown; }'.
+src/gateway/server-http.ts(327,59): error TS2339: Property 'error' does not exist on type '{ ok: true; value: { text: string; mode: "now" | "next-heartbeat"; }; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; value: { text: string; mode: "now" | "next-heartbeat"; }; }'.
+src/gateway/server-http.ts(338,59): error TS2339: Property 'error' does not exist on type '{ ok: true; value: HookAgentPayload; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; value: HookAgentPayload; }'.
+src/gateway/server-http.ts(351,59): error TS2339: Property 'error' does not exist on type '{ ok: true; value: string; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; value: string; }'.
+src/gateway/server-http.ts(373,59): error TS2339: Property 'error' does not exist on type 'HookMappingResult'.
+  Property 'error' does not exist on type '{ ok: true; action: HookAction; }'.
+src/gateway/server-http.ts(404,63): error TS2339: Property 'error' does not exist on type '{ ok: true; value: string; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; value: string; }'.
+src/gateway/server-methods/agent-timestamp.ts(3,38): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/gateway/server-methods/agent.ts(329,47): error TS2339: Property 'error' does not exist on type '{ ok: true; key: string; sessionId?: string; } | { ok: false; error: Static<any>; }'.
+  Property 'error' does not exist on type '{ ok: true; key: string; sessionId?: string; }'.
+src/gateway/server-methods/agent.ts(666,27): error TS2339: Property 'trim' does not exist on type 'unknown'.
+src/gateway/server-methods/browser.ts(176,40): error TS2339: Property 'reason' does not exist on type '{ ok: true; } | { ok: false; reason: string; }'.
+  Property 'reason' does not exist on type '{ ok: true; }'.
+src/gateway/server-methods/chat.ts(1,57): error TS2307: Cannot find module '@mariozechner/pi-coding-agent' or its corresponding type declarations.
+src/gateway/server-methods/chat.ts(537,71): error TS2339: Property 'error' does not exist on type '{ ok: true; message: string; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; message: string; }'.
+src/gateway/server-methods/config.ts(122,80): error TS2339: Property 'error' does not exist on type 'ParseConfigJson5Result'.
+  Property 'error' does not exist on type '{ ok: true; parsed: unknown; }'.
+src/gateway/server-methods/config.ts(141,38): error TS2339: Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; } | { ok: false; issues: ConfigValidationIssue[]; warnings: ConfigValidationIssue[]; }'.
+  Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; }'.
+src/gateway/server-methods/config.ts(308,82): error TS2339: Property 'error' does not exist on type 'ParseConfigJson5Result'.
+  Property 'error' does not exist on type '{ ok: true; parsed: unknown; }'.
+src/gateway/server-methods/config.ts(347,40): error TS2339: Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; } | { ok: false; issues: ConfigValidationIssue[]; warnings: ConfigValidationIssue[]; }'.
+  Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; }'.
+src/gateway/server-methods/cron.ts(92,68): error TS2339: Property 'message' does not exist on type 'TimestampValidationResult'.
+  Property 'message' does not exist on type 'TimestampValidationSuccess'.
+src/gateway/server-methods/cron.ts(137,70): error TS2339: Property 'message' does not exist on type 'TimestampValidationResult'.
+  Property 'message' does not exist on type 'TimestampValidationSuccess'.
+src/gateway/server-methods/nodes.helpers.ts(1,34): error TS2307: Cannot find module 'ajv' or its corresponding type declarations.
+src/gateway/server-methods/nodes.ts(409,40): error TS2339: Property 'reason' does not exist on type '{ ok: true; } | { ok: false; reason: string; }'.
+  Property 'reason' does not exist on type '{ ok: true; }'.
+src/gateway/server-methods/nodes.ts(424,66): error TS2339: Property 'message' does not exist on type '{ ok: true; params: unknown; } | { ok: false; message: string; details?: Record<string, unknown>; }'.
+  Property 'message' does not exist on type '{ ok: true; params: unknown; }'.
+src/gateway/server-methods/nodes.ts(425,38): error TS2339: Property 'details' does not exist on type '{ ok: true; params: unknown; } | { ok: false; message: string; details?: Record<string, unknown>; }'.
+  Property 'details' does not exist on type '{ ok: true; params: unknown; }'.
+src/gateway/server-methods/send.ts(157,75): error TS2339: Property 'error' does not exist on type 'OutboundTargetResolution'.
+  Property 'error' does not exist on type '{ ok: true; to: string; }'.
+src/gateway/server-methods/send.ts(375,90): error TS2339: Property 'error' does not exist on type 'OutboundTargetResolution'.
+  Property 'error' does not exist on type '{ ok: true; to: string; }'.
+src/gateway/server-methods/sessions.ts(229,42): error TS2339: Property 'error' does not exist on type 'SessionsResolveResult'.
+  Property 'error' does not exist on type '{ ok: true; key: string; }'.
+src/gateway/server-methods/sessions.ts(256,41): error TS2339: Property 'error' does not exist on type '{ ok: true; entry: SessionEntry; } | { ok: false; error: Static<any>; }'.
+  Property 'error' does not exist on type '{ ok: true; entry: SessionEntry; }'.
+src/gateway/server-methods/update.ts(34,22): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/gateway/server-methods/validation.ts(1,34): error TS2307: Cannot find module 'ajv' or its corresponding type declarations.
+src/gateway/server-methods/wizard.ts(39,28): error TS2345: Argument of type '{ mode: unknown; workspace: string; }' is not assignable to parameter of type 'OnboardOptions'.
+  Types of property 'mode' are incompatible.
+    Type 'unknown' is not assignable to type 'OnboardMode'.
+src/gateway/server-methods/wizard.ts(53,48): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string'.
+src/gateway/server-methods/wizard.ts(73,34): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string'.
+src/gateway/server-methods/wizard.ts(82,48): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string'.
+src/gateway/server-methods/wizard.ts(89,35): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string'.
+src/gateway/server-methods/wizard.ts(97,48): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string'.
+src/gateway/server-methods/wizard.ts(104,37): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string'.
+src/gateway/server.agent.gateway-server-agent.mocks.ts(1,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/gateway/server.impl.ts(305,18): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/gateway/server.impl.ts(315,20): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/gateway/server/ws-connection/message-handler.ts(319,35): error TS2339: Property 'reason' does not exist on type 'OriginCheckResult'.
+  Property 'reason' does not exist on type '{ ok: true; }'.
+src/gateway/sessions-patch.ts(132,31): error TS2339: Property 'error' does not exist on type 'ParsedSessionLabel'.
+  Property 'error' does not exist on type '{ ok: true; label: string; }'.
+src/gateway/sessions-patch.ts(168,29): error TS2339: Property 'error' does not exist on type '{ ok: true; value: VerboseLevel; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; value: VerboseLevel; }'.
+src/gateway/sessions-resolve.ts(113,65): error TS2339: Property 'error' does not exist on type 'ParsedSessionLabel'.
+  Property 'error' does not exist on type '{ ok: true; label: string; }'.
+src/gateway/test-helpers.e2e.ts(116,28): error TS2702: 'WebSocket' only refers to a type, but is being used as a namespace here.
+src/gateway/test-helpers.mocks.ts(6,26): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/gateway/test-helpers.mocks.ts(238,14): error TS4112: This member cannot have an 'override' modifier because its containing class 'MockModelRegistry' does not extend another class.
+src/gateway/test-helpers.server.ts(5,72): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/gateway/test-helpers.server.ts(314,28): error TS2702: 'WebSocket' only refers to a type, but is being used as a namespace here.
+src/hooks/bundled-dir.ts(25,50): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/hooks/bundled-dir.ts(37,50): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/hooks/gmail-ops.ts(237,60): error TS2339: Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; } | { ok: false; issues: ConfigValidationIssue[]; warnings: ConfigValidationIssue[]; }'.
+  Property 'issues' does not exist on type '{ ok: true; config: ClawCoreConfig; warnings: ConfigValidationIssue[]; }'.
+src/hooks/gmail-ops.ts(296,30): error TS2339: Property 'error' does not exist on type '{ ok: true; value: GmailHookRuntimeConfig; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; value: GmailHookRuntimeConfig; }'.
+src/hooks/gmail-watcher.ts(151,47): error TS2339: Property 'error' does not exist on type '{ ok: true; value: GmailHookRuntimeConfig; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; value: GmailHookRuntimeConfig; }'.
+src/hooks/install.ts(67,37): error TS2339: Property 'error' does not exist on type '{ ok: true; path: string; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; path: string; }'.
+src/hooks/install.ts(167,48): error TS2339: Property 'error' does not exist on type '{ ok: true; path: string; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; path: string; }'.
+src/hooks/install.ts(205,5): error TS2322: Type '{ ok: true; } | { ok: false; error: string; }' is not assignable to type 'InstallHooksResult'.
+  Type '{ ok: true; }' is not assignable to type 'InstallHooksResult'.
+    Type '{ ok: true; }' is missing the following properties from type '{ ok: true; hookPackId: string; hooks: string[]; targetDir: string; version?: string; }': hookPackId, hooks, targetDir
+src/hooks/install.ts(254,48): error TS2339: Property 'error' does not exist on type '{ ok: true; path: string; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; path: string; }'.
+src/infra/archive.ts(1,19): error TS2307: Cannot find module 'jszip' or its corresponding type declarations.
+src/infra/archive.ts(7,22): error TS2307: Cannot find module 'tar' or its corresponding type declarations.
+src/infra/bonjour.ts(91,51): error TS2307: Cannot find module '@homebridge/ciao' or its corresponding type declarations.
+src/infra/channel-summary.ts(10,31): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/infra/dotenv.ts(1,20): error TS2307: Cannot find module 'dotenv' or its corresponding type declarations.
+src/infra/git-commit.ts(49,35): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/infra/git-commit.ts(62,35): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/infra/net/fetch-guard.ts(1,33): error TS2307: Cannot find module 'undici' or its corresponding type declarations.
+src/infra/net/ssrf.ts(3,40): error TS2307: Cannot find module 'undici' or its corresponding type declarations.
+src/infra/outbound/channel-adapters.ts(1,65): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/infra/outbound/message-action-runner.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/infra/outbound/message-action-runner.ts(244,22): error TS2339: Property 'error' does not exist on type 'ResolveMessagingTargetResult'.
+  Property 'error' does not exist on type '{ ok: true; target: ResolvedMessagingTarget; }'.
+src/infra/outbound/message-action-runner.ts(263,22): error TS2339: Property 'error' does not exist on type 'ResolveMessagingTargetResult'.
+  Property 'error' does not exist on type '{ ok: true; target: ResolvedMessagingTarget; }'.
+src/infra/outbound/message-action-runner.ts(336,26): error TS2339: Property 'error' does not exist on type 'ResolveMessagingTargetResult'.
+  Property 'error' does not exist on type '{ ok: true; target: ResolvedMessagingTarget; }'.
+src/infra/outbound/message.ts(195,28): error TS2339: Property 'error' does not exist on type 'OutboundTargetResolution'.
+  Property 'error' does not exist on type '{ ok: true; to: string; }'.
+src/infra/outbound/outbound-send-service.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/infra/outbound/tool-payload.ts(1,38): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/infra/retry-policy.ts(1,32): error TS2307: Cannot find module '@buape/carbon' or its corresponding type declarations.
+src/infra/retry-policy.ts(59,67): error TS2339: Property 'retryAfter' does not exist on type 'unknown'.
+src/infra/state-migrations.fs.ts(1,19): error TS2307: Cannot find module 'json5' or its corresponding type declarations.
+src/infra/update-startup.ts(72,16): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/line/actions.ts(1,35): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/auto-reply-delivery.ts(1,35): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/bot-handlers.ts(9,8): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/bot-message-context.ts(1,84): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/bot.ts(1,41): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/config-schema.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+src/line/download.ts(1,30): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/flex-templates/message.ts(1,35): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/flex-templates/types.ts(1,35): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/markdown-to-line.ts(1,35): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/monitor.ts(1,41): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/probe.ts(1,30): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/probe.ts(23,30): error TS2339: Property 'displayName' does not exist on type 'unknown'.
+src/line/probe.ts(24,25): error TS2339: Property 'userId' does not exist on type 'unknown'.
+src/line/probe.ts(25,26): error TS2339: Property 'basicId' does not exist on type 'unknown'.
+src/line/probe.ts(26,29): error TS2339: Property 'pictureUrl' does not exist on type 'unknown'.
+src/line/reply-chunks.ts(1,35): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/rich-menu.ts(1,30): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/send.ts(1,30): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/template-messages.ts(1,35): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/types.ts(9,8): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/webhook-node.ts(1,41): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/webhook-utils.ts(1,41): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/line/webhook.ts(1,41): error TS2307: Cannot find module '@line/bot-sdk' or its corresponding type declarations.
+src/logging-fixed.ts(25,10): error TS2554: Expected 1 arguments, but got 0.
+src/logging/config.ts(1,19): error TS2307: Cannot find module 'json5' or its corresponding type declarations.
+src/logging/console.ts(19,37): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/logging/logger.ts(4,36): error TS2307: Cannot find module 'tslog' or its corresponding type declarations.
+src/logging/logger.ts(19,37): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/logging/redact.ts(4,37): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/logging/subsystem.ts(1,41): error TS2307: Cannot find module 'tslog' or its corresponding type declarations.
+src/macos/gateway-daemon.ts(42,30): error TS2307: Cannot find module 'long' or its corresponding type declarations.
+src/macos/relay.ts(21,28): error TS2307: Cannot find module 'long' or its corresponding type declarations.
+src/markdown/frontmatter.ts(1,18): error TS2307: Cannot find module 'yaml' or its corresponding type declarations.
+src/markdown/ir.ts(1,24): error TS2307: Cannot find module 'markdown-it' or its corresponding type declarations.
+src/media-understanding/providers/audio.test-helpers.ts(1,35): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/media-understanding/providers/audio.test-helpers.ts(2,43): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/media-understanding/providers/image.ts(1,42): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/media-understanding/providers/image.ts(2,26): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/media/image-ops.ts(6,28): error TS2307: Cannot find module 'sharp' or its corresponding type declarations.
+src/media/image-ops.ts(25,29): error TS2307: Cannot find module 'sharp' or its corresponding type declarations.
+src/media/mime.ts(1,36): error TS2307: Cannot find module 'file-type' or its corresponding type declarations.
+src/memory/embedding-manager.test-harness.ts(4,57): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/memory/embedding.test-mocks.ts(1,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/memory/manager.ts(2,32): error TS2307: Cannot find module 'chokidar' or its corresponding type declarations.
+src/memory/sqlite-vec.ts(8,36): error TS2307: Cannot find module 'sqlite-vec' or its corresponding type declarations.
+src/memory/sqlite.ts(4,31): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/node-host/invoke.ts(520,62): error TS2339: Property 'message' does not exist on type 'SystemRunCommandValidation'.
+  Property 'message' does not exist on type '{ ok: true; shellCommand: string; cmdText: string; }'.
+src/node-host/invoke.ts(630,31): error TS2339: Property 'error' does not exist on type 'ExecHostResponse'.
+  Property 'error' does not exist on type '{ ok: true; payload: ExecHostRunResult; }'.
+src/node-host/invoke.ts(644,57): error TS2339: Property 'error' does not exist on type 'ExecHostResponse'.
+  Property 'error' does not exist on type '{ ok: true; payload: ExecHostRunResult; }'.
+src/plugins/bundled-dir.ts(24,45): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/plugins/cli.ts(1,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/plugins/install.ts(90,37): error TS2339: Property 'error' does not exist on type '{ ok: true; path: string; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; path: string; }'.
+src/plugins/install.ts(192,48): error TS2339: Property 'error' does not exist on type '{ ok: true; path: string; } | { ok: false; error: string; }'.
+  Property 'error' does not exist on type '{ ok: true; path: string; }'.
+src/plugins/install.ts(239,5): error TS2322: Type '{ ok: true; } | { ok: false; error: string; }' is not assignable to type 'InstallPluginResult'.
+  Type '{ ok: true; }' is not assignable to type 'InstallPluginResult'.
+    Type '{ ok: true; }' is missing the following properties from type '{ ok: true; pluginId: string; targetDir: string; manifestName?: string; version?: string; extensions: string[]; }': pluginId, targetDir, extensions
+src/plugins/loader.ts(1,28): error TS2307: Cannot find module 'jiti' or its corresponding type declarations.
+src/plugins/loader.ts(51,38): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/plugins/loader.ts(113,38): error TS2339: Property 'errors' does not exist on type '{ ok: true; } | { ok: false; errors: string[]; }'.
+  Property 'errors' does not exist on type '{ ok: true; }'.
+src/plugins/loader.ts(231,29): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/plugins/manifest-registry.ts(187,30): error TS2339: Property 'error' does not exist on type 'PluginManifestLoadResult'.
+  Property 'error' does not exist on type '{ ok: true; manifest: PluginManifest; manifestPath: string; }'.
+src/plugins/runtime/index.ts(150,35): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/plugins/schema-validator.ts(1,65): error TS2307: Cannot find module 'ajv' or its corresponding type declarations.
+src/plugins/schema-validator.ts(3,69): error TS2307: Cannot find module 'ajv' or its corresponding type declarations.
+src/plugins/types.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/plugins/types.ts(2,30): error TS2307: Cannot find module 'commander' or its corresponding type declarations.
+src/plugins/update.ts(227,58): error TS2339: Property 'error' does not exist on type 'InstallPluginResult'.
+  Property 'error' does not exist on type '{ ok: true; pluginId: string; targetDir: string; manifestName?: string; version?: string; extensions: string[]; }'.
+src/plugins/update.ts(274,58): error TS2339: Property 'error' does not exist on type 'InstallPluginResult'.
+  Property 'error' does not exist on type '{ ok: true; pluginId: string; targetDir: string; manifestName?: string; version?: string; extensions: string[]; }'.
+src/plugins/update.ts(399,70): error TS2339: Property 'error' does not exist on type 'InstallPluginResult'.
+  Property 'error' does not exist on type '{ ok: true; pluginId: string; targetDir: string; manifestName?: string; version?: string; extensions: string[]; }'.
+src/process/supervisor/adapters/pty.ts(86,3): error TS2322: Type 'void | PtyDisposable' is not assignable to type 'PtyDisposable'.
+  Type 'void' is not assignable to type 'PtyDisposable'.
+src/process/supervisor/adapters/pty.ts(113,5): error TS2322: Type 'void | PtyDisposable' is not assignable to type 'PtyDisposable'.
+  Type 'void' is not assignable to type 'PtyDisposable'.
+src/providers/github-copilot-auth.ts(1,45): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/providers/google-shared.test-helpers.ts(1,28): error TS2307: Cannot find module '@mariozechner/pi-ai/dist/types.js' or its corresponding type declarations.
+src/providers/google-shared.test-helpers.ts(2,24): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/providers/qwen-portal-oauth.ts(1,39): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/sessions/input-provenance.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-agent-core' or its corresponding type declarations.
+src/shared/frontmatter.ts(1,19): error TS2307: Cannot find module 'json5' or its corresponding type declarations.
+src/signal/monitor.tool-result.test-harness.ts(1,32): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/signal/monitor.tool-result.test-harness.ts(51,24): error TS2347: Untyped function calls may not accept type arguments.
+src/slack/actions.ts(1,32): error TS2307: Cannot find module '@slack/web-api' or its corresponding type declarations.
+src/slack/client.ts(1,69): error TS2307: Cannot find module '@slack/web-api' or its corresponding type declarations.
+src/slack/monitor.test-helpers.ts(1,26): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/slack/monitor.test-helpers.ts(131,24): error TS2347: Untyped function calls may not accept type arguments.
+src/slack/monitor/context.ts(1,26): error TS2307: Cannot find module '@slack/bolt' or its corresponding type declarations.
+src/slack/monitor/events/channels.ts(1,47): error TS2307: Cannot find module '@slack/bolt' or its corresponding type declarations.
+src/slack/monitor/events/members.ts(1,47): error TS2307: Cannot find module '@slack/bolt' or its corresponding type declarations.
+src/slack/monitor/events/messages.ts(1,47): error TS2307: Cannot find module '@slack/bolt' or its corresponding type declarations.
+src/slack/monitor/events/pins.ts(1,47): error TS2307: Cannot find module '@slack/bolt' or its corresponding type declarations.
+src/slack/monitor/events/reactions.ts(1,47): error TS2307: Cannot find module '@slack/bolt' or its corresponding type declarations.
+src/slack/monitor/media.ts(1,50): error TS2307: Cannot find module '@slack/web-api' or its corresponding type declarations.
+src/slack/monitor/provider.ts(2,23): error TS2307: Cannot find module '@slack/bolt' or its corresponding type declarations.
+src/slack/monitor/provider.ts(32,52): error TS2307: Cannot find module '@slack/bolt' or its corresponding type declarations.
+src/slack/monitor/provider.ts(33,27): error TS2307: Cannot find module '@slack/bolt' or its corresponding type declarations.
+src/slack/monitor/slash.test-harness.ts(1,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/slack/monitor/slash.ts(1,76): error TS2307: Cannot find module '@slack/bolt' or its corresponding type declarations.
+src/slack/monitor/thread-resolution.ts(1,50): error TS2307: Cannot find module '@slack/web-api' or its corresponding type declarations.
+src/slack/probe.ts(17,17): error TS2339: Property 'ok' does not exist on type 'unknown'.
+src/slack/probe.ts(21,23): error TS2339: Property 'error' does not exist on type 'unknown'.
+src/slack/probe.ts(29,25): error TS2339: Property 'user_id' does not exist on type 'unknown'.
+src/slack/probe.ts(29,60): error TS2339: Property 'user' does not exist on type 'unknown'.
+src/slack/probe.ts(30,26): error TS2339: Property 'team_id' does not exist on type 'unknown'.
+src/slack/probe.ts(30,61): error TS2339: Property 'team' does not exist on type 'unknown'.
+src/slack/resolve-channels.ts(1,32): error TS2307: Cannot find module '@slack/web-api' or its corresponding type declarations.
+src/slack/resolve-users.ts(1,32): error TS2307: Cannot find module '@slack/web-api' or its corresponding type declarations.
+src/slack/scopes.ts(1,32): error TS2307: Cannot find module '@slack/web-api' or its corresponding type declarations.
+src/slack/send.ts(1,61): error TS2307: Cannot find module '@slack/web-api' or its corresponding type declarations.
+src/telegram/allowed-updates.ts(1,31): error TS2307: Cannot find module 'grammy' or its corresponding type declarations.
+src/telegram/audit.ts(104,53): error TS2339: Property 'description' does not exist on type 'TelegramApiErr | TelegramApiOk<{ status?: string; }>'.
+  Property 'description' does not exist on type 'TelegramApiOk<{ status?: string; }>'.
+src/telegram/audit.ts(105,20): error TS2339: Property 'description' does not exist on type 'TelegramApiErr | TelegramApiOk<{ status?: string; }>'.
+  Property 'description' does not exist on type 'TelegramApiOk<{ status?: string; }>'.
+src/telegram/bot-handlers.ts(1,30): error TS2307: Cannot find module '@grammyjs/types' or its corresponding type declarations.
+src/telegram/bot-handlers.ts(400,22): error TS2339: Property 'reason' does not exist on type 'TelegramGroupBaseAccessResult'.
+  Property 'reason' does not exist on type '{ allowed: true; }'.
+src/telegram/bot-handlers.ts(404,22): error TS2339: Property 'reason' does not exist on type 'TelegramGroupBaseAccessResult'.
+  Property 'reason' does not exist on type '{ allowed: true; }'.
+src/telegram/bot-handlers.ts(437,24): error TS2339: Property 'reason' does not exist on type 'TelegramGroupPolicyAccessResult'.
+  Property 'reason' does not exist on type '{ allowed: true; groupPolicy: "open" | "disabled" | "allowlist"; }'.
+src/telegram/bot-handlers.ts(441,24): error TS2339: Property 'reason' does not exist on type 'TelegramGroupPolicyAccessResult'.
+  Property 'reason' does not exist on type '{ allowed: true; groupPolicy: "open" | "disabled" | "allowlist"; }'.
+src/telegram/bot-handlers.ts(445,24): error TS2339: Property 'reason' does not exist on type 'TelegramGroupPolicyAccessResult'.
+  Property 'reason' does not exist on type '{ allowed: true; groupPolicy: "open" | "disabled" | "allowlist"; }'.
+src/telegram/bot-handlers.ts(451,24): error TS2339: Property 'reason' does not exist on type 'TelegramGroupPolicyAccessResult'.
+  Property 'reason' does not exist on type '{ allowed: true; groupPolicy: "open" | "disabled" | "allowlist"; }'.
+src/telegram/bot-message-context.ts(1,26): error TS2307: Cannot find module 'grammy' or its corresponding type declarations.
+src/telegram/bot-message-context.ts(211,20): error TS2339: Property 'reason' does not exist on type 'TelegramGroupBaseAccessResult'.
+  Property 'reason' does not exist on type '{ allowed: true; }'.
+src/telegram/bot-message-context.ts(215,20): error TS2339: Property 'reason' does not exist on type 'TelegramGroupBaseAccessResult'.
+  Property 'reason' does not exist on type '{ allowed: true; }'.
+src/telegram/bot-message-dispatch.ts(1,26): error TS2307: Cannot find module 'grammy' or its corresponding type declarations.
+src/telegram/bot-native-command-menu.ts(1,26): error TS2307: Cannot find module 'grammy' or its corresponding type declarations.
+src/telegram/bot-native-commands.ts(1,35): error TS2307: Cannot find module 'grammy' or its corresponding type declarations.
+src/telegram/bot-native-commands.ts(205,20): error TS2339: Property 'reason' does not exist on type 'TelegramGroupBaseAccessResult'.
+  Property 'reason' does not exist on type '{ allowed: true; }'.
+src/telegram/bot-native-commands.ts(208,20): error TS2339: Property 'reason' does not exist on type 'TelegramGroupBaseAccessResult'.
+  Property 'reason' does not exist on type '{ allowed: true; }'.
+src/telegram/bot-native-commands.ts(233,22): error TS2339: Property 'reason' does not exist on type 'TelegramGroupPolicyAccessResult'.
+  Property 'reason' does not exist on type '{ allowed: true; groupPolicy: "open" | "disabled" | "allowlist"; }'.
+src/telegram/bot-native-commands.ts(237,20): error TS2339: Property 'reason' does not exist on type 'TelegramGroupPolicyAccessResult'.
+  Property 'reason' does not exist on type '{ allowed: true; groupPolicy: "open" | "disabled" | "allowlist"; }'.
+src/telegram/bot-native-commands.ts(238,20): error TS2339: Property 'reason' does not exist on type 'TelegramGroupPolicyAccessResult'.
+  Property 'reason' does not exist on type '{ allowed: true; groupPolicy: "open" | "disabled" | "allowlist"; }'.
+src/telegram/bot-native-commands.ts(242,22): error TS2339: Property 'reason' does not exist on type 'TelegramGroupPolicyAccessResult'.
+  Property 'reason' does not exist on type '{ allowed: true; groupPolicy: "open" | "disabled" | "allowlist"; }'.
+src/telegram/bot-updates.ts(1,30): error TS2307: Cannot find module '@grammyjs/types' or its corresponding type declarations.
+src/telegram/bot.create-telegram-bot.test-harness.ts(1,32): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/telegram/bot.create-telegram-bot.test-harness.ts(38,24): error TS2347: Untyped function calls may not accept type arguments.
+src/telegram/bot.create-telegram-bot.test-harness.ts(46,24): error TS2347: Untyped function calls may not accept type arguments.
+src/telegram/bot.media.e2e-harness.ts(1,43): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/telegram/bot.media.e2e-harness.ts(50,24): error TS2347: Untyped function calls may not accept type arguments.
+src/telegram/bot.media.e2e-harness.ts(63,24): error TS2347: Untyped function calls may not accept type arguments.
+src/telegram/bot.media.e2e-harness.ts(73,24): error TS2347: Untyped function calls may not accept type arguments.
+src/telegram/bot.ts(1,39): error TS2307: Cannot find module 'grammy' or its corresponding type declarations.
+src/telegram/bot.ts(2,31): error TS2307: Cannot find module '@grammyjs/runner' or its corresponding type declarations.
+src/telegram/bot.ts(3,30): error TS2307: Cannot find module '@grammyjs/transformer-throttler' or its corresponding type declarations.
+src/telegram/bot.ts(4,69): error TS2307: Cannot find module '@grammyjs/types' or its corresponding type declarations.
+src/telegram/bot.ts(5,38): error TS2307: Cannot find module 'grammy' or its corresponding type declarations.
+src/telegram/bot/delivery.ts(1,50): error TS2307: Cannot find module 'grammy' or its corresponding type declarations.
+src/telegram/bot/delivery.ts(439,40): error TS2339: Property 'description' does not exist on type 'unknown'.
+src/telegram/bot/delivery.ts(531,16): error TS2339: Property 'message_id' does not exist on type 'unknown'.
+src/telegram/bot/delivery.ts(547,18): error TS2339: Property 'message_id' does not exist on type 'unknown'.
+src/telegram/bot/helpers.ts(1,57): error TS2307: Cannot find module '@grammyjs/types' or its corresponding type declarations.
+src/telegram/bot/helpers.ts(500,14): error TS1360: Type 'MessageOrigin' does not satisfy the expected type 'never'.
+src/telegram/bot/types.ts(1,45): error TS2307: Cannot find module '@grammyjs/types' or its corresponding type declarations.
+src/telegram/draft-stream.ts(1,26): error TS2307: Cannot find module 'grammy' or its corresponding type declarations.
+src/telegram/monitor.ts(1,38): error TS2307: Cannot find module '@grammyjs/runner' or its corresponding type declarations.
+src/telegram/monitor.ts(8,39): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/telegram/proxy.ts(1,50): error TS2307: Cannot find module 'undici' or its corresponding type declarations.
+src/telegram/send.test-harness.ts(1,32): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/telegram/send.test-harness.ts(58,24): error TS2347: Untyped function calls may not accept type arguments.
+src/telegram/send.test-harness.ts(75,10): error TS2339: Property 'mockReset' does not exist on type 'unknown'.
+src/telegram/send.ts(6,8): error TS2307: Cannot find module '@grammyjs/types' or its corresponding type declarations.
+src/telegram/send.ts(7,66): error TS2307: Cannot find module 'grammy' or its corresponding type declarations.
+src/telegram/send.ts(96,64): error TS2339: Property 'error' does not exist on type 'unknown'.
+src/telegram/send.ts(673,36): error TS2339: Property 'message_id' does not exist on type 'unknown'.
+src/telegram/send.ts(692,33): error TS2339: Property 'message_id' does not exist on type 'unknown'.
+src/telegram/send.ts(693,12): error TS2339: Property 'message_id' does not exist on type 'unknown'.
+src/telegram/send.ts(694,35): error TS2339: Property 'message_id' does not exist on type 'unknown'.
+src/telegram/send.ts(701,43): error TS2339: Property 'chat' does not exist on type 'unknown'.
+src/telegram/send.ts(949,36): error TS2339: Property 'message_id' does not exist on type 'unknown'.
+src/telegram/send.ts(950,41): error TS2339: Property 'chat' does not exist on type 'unknown'.
+src/telegram/send.ts(951,15): error TS2339: Property 'message_id' does not exist on type 'unknown'.
+src/telegram/send.ts(952,38): error TS2339: Property 'message_id' does not exist on type 'unknown'.
+src/telegram/send.ts(1050,36): error TS2339: Property 'message_id' does not exist on type 'unknown'.
+src/telegram/send.ts(1051,41): error TS2339: Property 'chat' does not exist on type 'unknown'.
+src/telegram/send.ts(1052,26): error TS2339: Property 'poll' does not exist on type 'unknown'.
+src/telegram/send.ts(1053,15): error TS2339: Property 'message_id' does not exist on type 'unknown'.
+src/telegram/send.ts(1054,38): error TS2339: Property 'message_id' does not exist on type 'unknown'.
+src/telegram/webhook.ts(1,33): error TS2307: Cannot find module 'grammy' or its corresponding type declarations.
+src/terminal/note.ts(1,35): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/test-utils/vitest-mock-fn.ts(6,10): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/tts/tts-core.ts(1,50): error TS2307: Cannot find module '@mariozechner/pi-ai' or its corresponding type declarations.
+src/tui/commands.ts(1,35): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/components/assistant-message.ts(1,45): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/components/assistant-message.ts(14,10): error TS2339: Property 'addChild' does not exist on type 'AssistantMessageComponent'.
+src/tui/components/assistant-message.ts(15,10): error TS2339: Property 'addChild' does not exist on type 'AssistantMessageComponent'.
+src/tui/components/chat-log.ts(1,41): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/components/chat-log.ts(13,10): error TS2339: Property 'clear' does not exist on type 'ChatLog'.
+src/tui/components/chat-log.ts(19,10): error TS2339: Property 'addChild' does not exist on type 'ChatLog'.
+src/tui/components/chat-log.ts(20,10): error TS2339: Property 'addChild' does not exist on type 'ChatLog'.
+src/tui/components/chat-log.ts(24,10): error TS2339: Property 'addChild' does not exist on type 'ChatLog'.
+src/tui/components/chat-log.ts(34,10): error TS2339: Property 'addChild' does not exist on type 'ChatLog'.
+src/tui/components/chat-log.ts(56,10): error TS2339: Property 'addChild' does not exist on type 'ChatLog'.
+src/tui/components/chat-log.ts(65,10): error TS2339: Property 'removeChild' does not exist on type 'ChatLog'.
+src/tui/components/chat-log.ts(78,10): error TS2339: Property 'addChild' does not exist on type 'ChatLog'.
+src/tui/components/custom-editor.ts(1,41): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/components/custom-editor.ts(44,64): error TS2339: Property 'isShowingAutocomplete' does not exist on type 'CustomEditor'.
+src/tui/components/custom-editor.ts(53,16): error TS2339: Property 'getText' does not exist on type 'CustomEditor'.
+src/tui/components/filterable-select-list.ts(1,32): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/components/filterable-select-list.ts(9,8): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/components/searchable-select-list.ts(10,8): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/components/searchable-select-list.ts(228,29): error TS2339: Property 'noMatch' does not exist on type 'SearchableSelectListTheme'.
+src/tui/components/searchable-select-list.ts(255,29): error TS2339: Property 'scrollInfo' does not exist on type 'SearchableSelectListTheme'.
+src/tui/components/searchable-select-list.ts(287,70): error TS2339: Property 'description' does not exist on type 'SearchableSelectListTheme'.
+src/tui/components/searchable-select-list.ts(289,42): error TS2339: Property 'selectedText' does not exist on type 'SearchableSelectListTheme'.
+src/tui/components/searchable-select-list.ts(298,36): error TS2339: Property 'selectedText' does not exist on type 'SearchableSelectListTheme'.
+src/tui/components/selectors.ts(1,77): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/components/tool-execution.ts(1,56): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/components/tool-execution.ts(77,10): error TS2339: Property 'addChild' does not exist on type 'ToolExecutionComponent'.
+src/tui/components/tool-execution.ts(78,10): error TS2339: Property 'addChild' does not exist on type 'ToolExecutionComponent'.
+src/tui/components/user-message.ts(1,45): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/components/user-message.ts(13,10): error TS2339: Property 'addChild' does not exist on type 'UserMessageComponent'.
+src/tui/components/user-message.ts(14,10): error TS2339: Property 'addChild' does not exist on type 'UserMessageComponent'.
+src/tui/theme/theme.ts(6,8): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/theme/theme.ts(130,3): error TS2353: Object literal may only specify known properties, and 'selectedPrefix' does not exist in type 'SearchableSelectListTheme'.
+src/tui/tui-command-handlers.ts(1,37): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/tui-command-handlers.ts(17,41): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/tui/tui-command-handlers.ts(262,27): error TS2554: Expected 2 arguments, but got 1.
+src/tui/tui-event-handlers.ts(1,26): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/tui-local-shell.ts(1,44): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/tui-overlays.ts(1,37): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/tui-session-actions.ts(1,26): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/tui.ts(8,8): error TS2307: Cannot find module '@mariozechner/pi-tui' or its corresponding type declarations.
+src/tui/tui.ts(381,35): error TS2554: Expected 0 arguments, but got 2.
+src/tui/tui.ts(390,12): error TS2339: Property 'setAutocompleteProvider' does not exist on type 'CustomEditor'.
+src/tui/tui.ts(709,5): error TS2739: Type 'CustomEditor' is missing the following properties from type '{ setText: (value: string) => void; addToHistory: (value: string) => void; }': setText, addToHistory
+src/tui/tui.ts(714,10): error TS2339: Property 'onSubmit' does not exist on type 'CustomEditor'.
+src/tui/tui.ts(724,16): error TS2339: Property 'getText' does not exist on type 'CustomEditor'.
+src/tui/tui.ts(725,14): error TS2339: Property 'setText' does not exist on type 'CustomEditor'.
+src/version.ts(70,31): error TS1470: The 'import.meta' meta-property is not allowed in files which will build into CommonJS output.
+src/web/auto-reply.test-harness.ts(5,64): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/web/auto-reply/monitor.ts(10,39): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+src/web/inbound/access-control.test-harness.ts(1,32): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/web/inbound/access-control.test-harness.ts(37,24): error TS2347: Untyped function calls may not accept type arguments.
+src/web/inbound/extract.ts(1,28): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/inbound/extract.ts(6,8): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/inbound/media.ts(1,39): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/inbound/media.ts(2,63): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/inbound/monitor.ts(1,58): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/inbound/monitor.ts(2,46): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/inbound/monitor.ts(349,28): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/inbound/send-api.ts(1,52): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/inbound/types.ts(1,40): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/login-qr.ts(1,34): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/login.ts(1,34): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/media.ts(334,7): error TS2322: Type 'number | WebMediaOptions' is not assignable to type 'number'.
+  Type 'WebMediaOptions' is not assignable to type 'number'.
+src/web/media.ts(353,7): error TS2322: Type 'number | WebMediaOptions' is not assignable to type 'number'.
+  Type 'WebMediaOptions' is not assignable to type 'number'.
+src/web/monitor-inbox.test-harness.ts(5,43): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/web/monitor-inbox.test-harness.ts(81,24): error TS2347: Untyped function calls may not accept type arguments.
+src/web/session.ts(7,8): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/session.ts(10,20): error TS2307: Cannot find module 'qrcode-terminal' or its corresponding type declarations.
+src/web/session.ts(124,29): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/session.ts(171,56): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/test-helpers.ts(1,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.
+src/web/test-helpers.ts(2,40): error TS6059: File '/Users/german/Documents/GitHub/ClawCore_Unified/test/mocks/baileys.ts' is not under 'rootDir' '/Users/german/Documents/GitHub/ClawCore_Unified/src'. 'rootDir' is expected to contain all source files.
+  The file is in the program because:
+    Imported via "../../test/mocks/baileys.js" from file '/Users/german/Documents/GitHub/ClawCore_Unified/src/web/test-helpers.ts'
+    Imported via "../../test/mocks/baileys.js" from file '/Users/german/Documents/GitHub/ClawCore_Unified/src/web/test-helpers.ts'
+  File is CommonJS module because '/Users/german/Documents/GitHub/ClawCore_Unified/package.json' does not have field "type"
+src/web/test-helpers.ts(34,24): error TS2347: Untyped function calls may not accept type arguments.
+src/web/test-helpers.ts(54,24): error TS2347: Untyped function calls may not accept type arguments.
+src/web/test-helpers.ts(88,24): error TS1309: The current file is a CommonJS module and cannot use 'await' at the top level.
+src/web/test-helpers.ts(88,37): error TS2307: Cannot find module '@whiskeysockets/baileys' or its corresponding type declarations.
+src/web/test-helpers.ts(94,3): error TS2578: Unused '@ts-expect-error' directive.
+src/web/test-helpers.ts(96,3): error TS2578: Unused '@ts-expect-error' directive.
+src/web/test-helpers.ts(98,3): error TS2578: Unused '@ts-expect-error' directive.
+src/web/test-helpers.ts(100,3): error TS2578: Unused '@ts-expect-error' directive.
+src/wizard/clack-prompter.ts(12,8): error TS2307: Cannot find module '@clack/prompts' or its corresponding type declarations.
+src/wizard/clack-prompter.ts(25,3): error TS2322: Type 'symbol | T' is not assignable to type 'T'.
+  'T' could be instantiated with an arbitrary type which could be unrelated to 'symbol | T'.
+test/mocks/baileys.ts(2,20): error TS2307: Cannot find module 'vitest' or its corresponding type declarations.

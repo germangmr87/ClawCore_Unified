@@ -229,7 +229,7 @@ describe("sanitizeChatSendMessageInput", () => {
 
 describe("gateway chat transcript writes (guardrail)", () => {
   it("does not append transcript messages via raw fs.appendFileSync(transcriptPath, ...)", () => {
-    const chatTs = fileURLToPath(new URL("./chat.ts", import.meta.url));
+    const chatTs = fileURLToPath(new URL("./chat.js", import.meta.url));
     const src = fs.readFileSync(chatTs, "utf-8");
 
     expect(src.includes("fs.appendFileSync(transcriptPath")).toBe(false);
@@ -498,16 +498,16 @@ describe("logs.tail", () => {
   });
 
   it("falls back to latest rolling log file when today is missing", async () => {
-    const tempDir = await fsPromises.mkdtemp(path.join(os.tmpdir(), "openclaw-logs-"));
-    const older = path.join(tempDir, "openclaw-2026-01-20.log");
-    const newer = path.join(tempDir, "openclaw-2026-01-21.log");
+    const tempDir = await fsPromises.mkdtemp(path.join(os.tmpdir(), "clawcore-logs-"));
+    const older = path.join(tempDir, "clawcore-2026-01-20.log");
+    const newer = path.join(tempDir, "clawcore-2026-01-21.log");
 
     await fsPromises.writeFile(older, '{"msg":"old"}\n');
     await fsPromises.writeFile(newer, '{"msg":"new"}\n');
     await fsPromises.utimes(older, new Date(0), new Date(0));
     await fsPromises.utimes(newer, new Date(), new Date());
 
-    setLoggerOverride({ file: path.join(tempDir, "openclaw-2026-01-22.log") });
+    setLoggerOverride({ file: path.join(tempDir, "clawcore-2026-01-22.log") });
 
     const respond = vi.fn();
     await logsHandlers["logs.tail"]({

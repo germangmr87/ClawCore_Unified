@@ -14,11 +14,11 @@ function createSandbox(overrides?: Partial<SandboxContext>): SandboxContext {
     workspaceDir: "/tmp/workspace",
     agentWorkspaceDir: "/tmp/workspace",
     workspaceAccess: "rw",
-    containerName: "openclaw-sbx-test",
+    containerName: "clawcore-sbx-test",
     containerWorkdir: "/workspace",
     docker: {
-      image: "openclaw-sandbox:bookworm-slim",
-      containerPrefix: "openclaw-sbx-",
+      image: "clawcore-sandbox:bookworm-slim",
+      containerPrefix: "clawcore-sbx-",
       network: "none",
       user: "1000:1000",
       workdir: "/workspace",
@@ -83,15 +83,15 @@ describe("resolveSandboxFsPathWithMounts", () => {
     const sandbox = createSandbox();
     const mounts = buildSandboxFsMounts(sandbox);
     const resolved = resolveSandboxFsPathWithMounts({
-      filePath: "src/index.ts",
+      filePath: "src/index.js",
       cwd: sandbox.workspaceDir,
       defaultWorkspaceRoot: sandbox.workspaceDir,
       defaultContainerRoot: sandbox.containerWorkdir,
       mounts,
     });
-    expect(resolved.hostPath).toBe(path.join(path.resolve("/tmp/workspace"), "src", "index.ts"));
-    expect(resolved.containerPath).toBe("/workspace/src/index.ts");
-    expect(resolved.relativePath).toBe("src/index.ts");
+    expect(resolved.hostPath).toBe(path.join(path.resolve("/tmp/workspace"), "src", "index.js"));
+    expect(resolved.containerPath).toBe("/workspace/src/index.js");
+    expect(resolved.relativePath).toBe("src/index.js");
     expect(resolved.writable).toBe(true);
   });
 

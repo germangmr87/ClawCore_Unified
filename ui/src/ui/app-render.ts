@@ -67,6 +67,7 @@ import { renderNodes } from "./views/nodes.ts";
 import { renderOverview } from "./views/overview.ts";
 import { renderSessions } from "./views/sessions.ts";
 import { renderSkills } from "./views/skills.ts";
+import { renderSovereign } from "./views/sovereign.ts";
 
 const AVATAR_DATA_RE = /^data:/i;
 const AVATAR_HTTP_RE = /^https?:\/\//i;
@@ -124,11 +125,11 @@ export function renderApp(state: AppViewState) {
           </button>
           <div class="brand">
             <div class="brand-logo">
-              <img src=${basePath ? `${basePath}/favicon.svg` : "/favicon.svg"} alt="OpenClaw" />
+              <img src=${basePath ? `${basePath}/favicon.svg` : "/favicon.svg"} alt="ClawCore" />
             </div>
             <div class="brand-text">
-              <div class="brand-title">OPENCLAW</div>
-              <div class="brand-sub">Gateway Dashboard</div>
+              <div class="brand-title">CLAWCORE</div>
+              <div class="brand-sub">Sovereign Dashboard</div>
             </div>
           </div>
         </div>
@@ -175,7 +176,7 @@ export function renderApp(state: AppViewState) {
           <div class="nav-group__items">
             <a
               class="nav-item nav-item--external"
-              href="https://docs.openclaw.ai"
+              href="https://docs.clawcore.ai"
               target="_blank"
               rel="noreferrer"
               title="Docs (opens in new tab)"
@@ -941,6 +942,15 @@ export function renderApp(state: AppViewState) {
                 onRefresh: () => loadLogs(state, { reset: true }),
                 onExport: (lines, label) => state.exportLogs(lines, label),
                 onScroll: (event) => state.handleLogsScroll(event),
+              })
+            : nothing
+        }
+
+        ${
+          state.tab === "sovereign"
+            ? renderSovereign({
+                connected: state.connected,
+                onRefresh: () => state.loadOverview(),
               })
             : nothing
         }

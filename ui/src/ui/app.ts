@@ -83,7 +83,7 @@ import { type ChatAttachment, type ChatQueueItem, type CronFormState } from "./u
 
 declare global {
   interface Window {
-    __OPENCLAW_CONTROL_UI_BASE_PATH__?: string;
+    __CLAWCORE_CONTROL_UI_BASE_PATH__?: string;
   }
 }
 
@@ -102,8 +102,8 @@ function resolveOnboardingMode(): boolean {
   return normalized === "1" || normalized === "true" || normalized === "yes" || normalized === "on";
 }
 
-@customElement("openclaw-app")
-export class OpenClawApp extends LitElement {
+@customElement("clawcore-app")
+export class ClawCoreApp extends LitElement {
   @state() settings: UiSettings = loadSettings();
   @state() password = "";
   @state() tab: Tab = "chat";
@@ -142,6 +142,8 @@ export class OpenClawApp extends LitElement {
   @state() sidebarContent: string | null = null;
   @state() sidebarError: string | null = null;
   @state() splitRatio = this.settings.splitRatio;
+
+  @state() sovereignStatus: any = null;
 
   @state() nodesLoading = false;
   @state() nodes: Array<Record<string, unknown>> = [];
@@ -333,6 +335,8 @@ export class OpenClawApp extends LitElement {
   private nodesPollInterval: number | null = null;
   private logsPollInterval: number | null = null;
   private debugPollInterval: number | null = null;
+  private sovereignPollInterval: number | null = null;
+
   private logsScrollFrame: number | null = null;
   private toolStreamById = new Map<string, ToolStreamEntry>();
   private toolStreamOrder: string[] = [];

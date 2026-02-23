@@ -1,13 +1,13 @@
 {
-  "name": "@openclaw/slack",
+  "name": "@clawcore/slack",
   "version": "2026.2.16",
   "private": true,
-  "description": "OpenClaw Slack channel plugin",
+  "description": "ClawCore Slack channel plugin",
   "type": "module",
   "devDependencies": {
-    "openclaw": "workspace:*"
+    "clawcore": "workspace:*"
   },
-  "openclaw": {
+  "clawcore": {
     "extensions": [
       "./index.ts"
     ]

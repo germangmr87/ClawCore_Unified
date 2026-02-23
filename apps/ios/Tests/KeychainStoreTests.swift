@@ -1,6 +1,6 @@
 import Foundation
 import Testing
-@testable import OpenClaw
+@testable import ClawCore
 
 @Suite struct KeychainStoreTests {
     @Test func saveLoadUpdateDeleteRoundTrip() {

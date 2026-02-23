@@ -13,7 +13,7 @@ function makeWorkElevatedAllowlistConfig(home: string) {
     agents: {
       defaults: {
         model: "anthropic/claude-opus-4-5",
-        workspace: path.join(home, "openclaw"),
+        workspace: path.join(home, "clawcore"),
       },
       list: [
         {
@@ -97,7 +97,7 @@ describe("directive behavior", () => {
           agents: {
             defaults: {
               model: "anthropic/claude-opus-4-5",
-              workspace: path.join(home, "openclaw"),
+              workspace: path.join(home, "clawcore"),
               sandbox: { mode: "off" },
             },
           },
@@ -133,7 +133,7 @@ describe("directive behavior", () => {
           agents: {
             defaults: {
               model: "anthropic/claude-opus-4-5",
-              workspace: path.join(home, "openclaw"),
+              workspace: path.join(home, "clawcore"),
             },
           },
           tools: {
@@ -167,7 +167,7 @@ describe("directive behavior", () => {
           agents: {
             defaults: {
               model: "anthropic/claude-opus-4-5",
-              workspace: path.join(home, "openclaw"),
+              workspace: path.join(home, "clawcore"),
             },
           },
           tools: {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { OpenClawConfig } from "../config/config.js";
+import type { ClawCoreConfig } from "../config/config.js";
 import type { IMessagePayload } from "./monitor/types.js";
 import {
   buildIMessageInboundContext,
@@ -7,7 +7,7 @@ import {
 } from "./monitor/inbound-processing.js";
 import { parseIMessageNotification } from "./monitor/parse-notification.js";
 
-function baseCfg(): OpenClawConfig {
+function baseCfg(): ClawCoreConfig {
   return {
     channels: {
       imessage: {
@@ -19,13 +19,13 @@ function baseCfg(): OpenClawConfig {
     },
     session: { mainKey: "main" },
     messages: {
-      groupChat: { mentionPatterns: ["@openclaw"] },
+      groupChat: { mentionPatterns: ["@clawcore"] },
     },
-  } as unknown as OpenClawConfig;
+  } as unknown as ClawCoreConfig;
 }
 
 function resolve(params: {
-  cfg?: OpenClawConfig;
+  cfg?: ClawCoreConfig;
   message: IMessagePayload;
   storeAllowFrom?: string[];
 }) {
@@ -83,7 +83,7 @@ describe("imessage monitor gating + envelope builders", () => {
       chat_id: 42,
       sender: "+15550002222",
       is_from_me: false,
-      text: "@openclaw ping",
+      text: "@clawcore ping",
       is_group: true,
       chat_name: "Lobster Squad",
       participants: ["+1555", "+1556"],
@@ -248,12 +248,12 @@ describe("imessage monitor gating + envelope builders", () => {
         chat_id: 123,
         sender: "+15550001111",
         is_from_me: false,
-        text: "@openclaw hello",
+        text: "@clawcore hello",
         is_group: true,
       },
       opts: {},
-      messageText: "@openclaw hello",
-      bodyText: "@openclaw hello",
+      messageText: "@clawcore hello",
+      bodyText: "@clawcore hello",
       allowFrom: ["*"],
       groupAllowFrom: [],
       groupPolicy: "open",
@@ -280,12 +280,12 @@ describe("imessage monitor gating + envelope builders", () => {
         chat_id: 202,
         sender: "+15550003333",
         is_from_me: false,
-        text: "@openclaw hi",
+        text: "@clawcore hi",
         is_group: true,
       },
       opts: {},
-      messageText: "@openclaw hi",
-      bodyText: "@openclaw hi",
+      messageText: "@clawcore hi",
+      bodyText: "@clawcore hi",
       allowFrom: ["*"],
       groupAllowFrom: ["chat_id:101"],
       groupPolicy: "allowlist",
@@ -304,12 +304,12 @@ describe("imessage monitor gating + envelope builders", () => {
         chat_id: 101,
         sender: "+15550003333",
         is_from_me: false,
-        text: "@openclaw ok",
+        text: "@clawcore ok",
         is_group: true,
       },
       opts: {},
-      messageText: "@openclaw ok",
-      bodyText: "@openclaw ok",
+      messageText: "@clawcore ok",
+      bodyText: "@clawcore ok",
       allowFrom: ["*"],
       groupAllowFrom: ["chat_id:101"],
       groupPolicy: "allowlist",
@@ -336,12 +336,12 @@ describe("imessage monitor gating + envelope builders", () => {
         chat_id: 303,
         sender: "+15550003333",
         is_from_me: false,
-        text: "@openclaw hi",
+        text: "@clawcore hi",
         is_group: true,
       },
       opts: {},
-      messageText: "@openclaw hi",
-      bodyText: "@openclaw hi",
+      messageText: "@clawcore hi",
+      bodyText: "@clawcore hi",
       allowFrom: ["*"],
       groupAllowFrom: [],
       groupPolicy: "disabled",

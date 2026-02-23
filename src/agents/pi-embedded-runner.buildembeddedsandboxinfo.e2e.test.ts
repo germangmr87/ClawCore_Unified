@@ -11,14 +11,14 @@ describe("buildEmbeddedSandboxInfo", () => {
     const sandbox = {
       enabled: true,
       sessionKey: "session:test",
-      workspaceDir: "/tmp/openclaw-sandbox",
-      agentWorkspaceDir: "/tmp/openclaw-workspace",
+      workspaceDir: "/tmp/clawcore-sandbox",
+      agentWorkspaceDir: "/tmp/clawcore-workspace",
       workspaceAccess: "none",
-      containerName: "openclaw-sbx-test",
+      containerName: "clawcore-sbx-test",
       containerWorkdir: "/workspace",
       docker: {
-        image: "openclaw-sandbox:bookworm-slim",
-        containerPrefix: "openclaw-sbx-",
+        image: "clawcore-sandbox:bookworm-slim",
+        containerPrefix: "clawcore-sbx-",
         workdir: "/workspace",
         readOnlyRoot: true,
         tmpfs: ["/tmp"],
@@ -35,13 +35,13 @@ describe("buildEmbeddedSandboxInfo", () => {
       browser: {
         bridgeUrl: "http://localhost:9222",
         noVncUrl: "http://localhost:6080",
-        containerName: "openclaw-sbx-browser-test",
+        containerName: "clawcore-sbx-browser-test",
       },
     } satisfies SandboxContext;
 
     expect(buildEmbeddedSandboxInfo(sandbox)).toEqual({
       enabled: true,
-      workspaceDir: "/tmp/openclaw-sandbox",
+      workspaceDir: "/tmp/clawcore-sandbox",
       containerWorkspaceDir: "/workspace",
       workspaceAccess: "none",
       agentWorkspaceMount: undefined,
@@ -55,14 +55,14 @@ describe("buildEmbeddedSandboxInfo", () => {
     const sandbox = {
       enabled: true,
       sessionKey: "session:test",
-      workspaceDir: "/tmp/openclaw-sandbox",
-      agentWorkspaceDir: "/tmp/openclaw-workspace",
+      workspaceDir: "/tmp/clawcore-sandbox",
+      agentWorkspaceDir: "/tmp/clawcore-workspace",
       workspaceAccess: "none",
-      containerName: "openclaw-sbx-test",
+      containerName: "clawcore-sbx-test",
       containerWorkdir: "/workspace",
       docker: {
-        image: "openclaw-sandbox:bookworm-slim",
-        containerPrefix: "openclaw-sbx-",
+        image: "clawcore-sandbox:bookworm-slim",
+        containerPrefix: "clawcore-sbx-",
         workdir: "/workspace",
         readOnlyRoot: true,
         tmpfs: ["/tmp"],
@@ -86,7 +86,7 @@ describe("buildEmbeddedSandboxInfo", () => {
       }),
     ).toEqual({
       enabled: true,
-      workspaceDir: "/tmp/openclaw-sandbox",
+      workspaceDir: "/tmp/clawcore-sandbox",
       containerWorkspaceDir: "/workspace",
       workspaceAccess: "none",
       agentWorkspaceMount: undefined,

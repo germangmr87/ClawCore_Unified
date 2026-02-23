@@ -31,7 +31,7 @@ async function resolveCliEntrypointPathForService(): Promise<string> {
     await fs.access(resolvedPath);
     // Prefer the original (possibly symlinked) path over the resolved realpath.
     // This keeps LaunchAgent/systemd paths stable across package version updates,
-    // since symlinks like node_modules/openclaw -> .pnpm/openclaw@X.Y.Z/...
+    // since symlinks like node_modules/clawcore -> .pnpm/clawcore@X.Y.Z/...
     // are automatically updated by pnpm, while the resolved path contains
     // version-specific directories that break after updates.
     const normalizedLooksLikeDist = /[/\\]dist[/\\].+\.(cjs|js|mjs)$/.test(normalized);
@@ -187,7 +187,7 @@ async function resolveCliProgramArguments(params: {
   if (runtime === "bun") {
     if (params.dev) {
       const repoRoot = resolveRepoRootForDev();
-      const devCliPath = path.join(repoRoot, "src", "index.ts");
+      const devCliPath = path.join(repoRoot, "src", "index.js");
       await fs.access(devCliPath);
       const bunPath = isBunRuntime(execPath) ? execPath : await resolveBunPath();
       return {
@@ -220,7 +220,7 @@ async function resolveCliProgramArguments(params: {
 
   // Dev mode: use bun to run TypeScript directly
   const repoRoot = resolveRepoRootForDev();
-  const devCliPath = path.join(repoRoot, "src", "index.ts");
+  const devCliPath = path.join(repoRoot, "src", "index.js");
   await fs.access(devCliPath);
 
   // If already running under bun, use current execPath

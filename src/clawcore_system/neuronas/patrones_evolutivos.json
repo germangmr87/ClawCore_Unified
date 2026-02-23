@@ -1,0 +1,24 @@
+{
+    "supervivencia": {
+        "error": "validar_y_reiniciar",
+        "caida": "activar_protocolo_continuidad",
+        "prohibido": "abortar_y_notificar"
+    },
+    "optimizacion": {
+        "lento": "reducir_carga_neuronal",
+        "memoria": "limpiar_cache_experiencias"
+    },
+    "aprendizaje": {
+        "nuevo": "indexar_conocimiento",
+        "mejorar": "evolucionar_patrones"
+    },
+    "global": {
+        "riesgo_bajo": "proceder_autonomamente",
+        "riesgo_alto": "consultar_y_validar",
+        "emergencia": "activar_protocolo_continuidad"
+    },
+    "validacion": {
+        "inyecci\u00f3n": "bloquear_y_limpiar",
+        "traversal": "restringir_a_workspace"
+    }
+}

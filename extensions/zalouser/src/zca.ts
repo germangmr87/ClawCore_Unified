@@ -1,5 +1,5 @@
 import { spawn, type SpawnOptions } from "node:child_process";
-import { stripAnsi } from "openclaw/plugin-sdk";
+import { stripAnsi } from "clawcore/plugin-sdk";
 import type { ZcaResult, ZcaRunOptions } from "./types.js";
 
 const ZCA_BINARY = "zca";

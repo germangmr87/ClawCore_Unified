@@ -9,14 +9,14 @@ import { loadPluginManifestRegistry } from "./manifest-registry.js";
 const tempDirs: string[] = [];
 
 function makeTempDir() {
-  const dir = path.join(os.tmpdir(), `openclaw-manifest-registry-${randomUUID()}`);
+  const dir = path.join(os.tmpdir(), `clawcore-manifest-registry-${randomUUID()}`);
   fs.mkdirSync(dir, { recursive: true });
   tempDirs.push(dir);
   return dir;
 }
 
 function writeManifest(dir: string, manifest: Record<string, unknown>) {
-  fs.writeFileSync(path.join(dir, "openclaw.plugin.json"), JSON.stringify(manifest), "utf-8");
+  fs.writeFileSync(path.join(dir, "clawcore.plugin.json"), JSON.stringify(manifest), "utf-8");
 }
 
 afterEach(() => {
@@ -44,13 +44,13 @@ describe("loadPluginManifestRegistry", () => {
     const candidates: PluginCandidate[] = [
       {
         idHint: "test-plugin",
-        source: path.join(dirA, "index.ts"),
+        source: path.join(dirA, "index.js"),
         rootDir: dirA,
         origin: "bundled",
       },
       {
         idHint: "test-plugin",
-        source: path.join(dirB, "index.ts"),
+        source: path.join(dirB, "index.js"),
         rootDir: dirB,
         origin: "global",
       },
@@ -86,13 +86,13 @@ describe("loadPluginManifestRegistry", () => {
     const candidates: PluginCandidate[] = [
       {
         idHint: "feishu",
-        source: path.join(realDir, "index.ts"),
+        source: path.join(realDir, "index.js"),
         rootDir: realDir,
         origin: "bundled",
       },
       {
         idHint: "feishu",
-        source: path.join(symlinkPath, "index.ts"),
+        source: path.join(symlinkPath, "index.js"),
         rootDir: symlinkPath,
         origin: "bundled",
       },
@@ -117,13 +117,13 @@ describe("loadPluginManifestRegistry", () => {
     const candidates: PluginCandidate[] = [
       {
         idHint: "same-path-plugin",
-        source: path.join(dir, "a.ts"),
+        source: path.join(dir, "a.js"),
         rootDir: dir,
         origin: "bundled",
       },
       {
         idHint: "same-path-plugin",
-        source: path.join(dir, "b.ts"),
+        source: path.join(dir, "b.js"),
         rootDir: dir,
         origin: "global",
       },
@@ -152,13 +152,13 @@ describe("loadPluginManifestRegistry", () => {
     const candidates: PluginCandidate[] = [
       {
         idHint: "precedence-plugin",
-        source: path.join(dir, "index.ts"),
+        source: path.join(dir, "index.js"),
         rootDir: dir,
         origin: "bundled",
       },
       {
         idHint: "precedence-plugin",
-        source: path.join(altDir, "index.ts"),
+        source: path.join(altDir, "index.js"),
         rootDir: altDir,
         origin: "config",
       },

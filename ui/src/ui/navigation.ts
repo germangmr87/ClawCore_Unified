@@ -7,6 +7,7 @@ export const TAB_GROUPS = [
     tabs: ["overview", "channels", "instances", "sessions", "usage", "cron"],
   },
   { label: "Agent", tabs: ["agents", "skills", "nodes"] },
+  { label: "Neural Core", tabs: ["sovereign"] },
   { label: "Settings", tabs: ["config", "debug", "logs"] },
 ] as const;
 
@@ -23,7 +24,8 @@ export type Tab =
   | "chat"
   | "config"
   | "debug"
-  | "logs";
+  | "logs"
+  | "sovereign";
 
 const TAB_PATHS: Record<Tab, string> = {
   agents: "/agents",
@@ -39,6 +41,7 @@ const TAB_PATHS: Record<Tab, string> = {
   config: "/config",
   debug: "/debug",
   logs: "/logs",
+  sovereign: "/sovereign",
 };
 
 const PATH_TO_TAB = new Map(Object.entries(TAB_PATHS).map(([tab, path]) => [path, tab as Tab]));
@@ -150,6 +153,8 @@ export function iconForTab(tab: Tab): IconName {
       return "bug";
     case "logs":
       return "scrollText";
+    case "sovereign":
+      return "zap";
     default:
       return "folder";
   }
@@ -183,6 +188,8 @@ export function titleForTab(tab: Tab) {
       return "Debug";
     case "logs":
       return "Logs";
+    case "sovereign":
+      return "Neural Core";
     default:
       return "Control";
   }
@@ -211,11 +218,13 @@ export function subtitleForTab(tab: Tab) {
     case "chat":
       return "Direct gateway chat session for quick interventions.";
     case "config":
-      return "Edit ~/.openclaw/openclaw.json safely.";
+      return "Edit ~/.clawcore/clawcore.json safely.";
     case "debug":
       return "Gateway snapshots, events, and manual RPC calls.";
     case "logs":
       return "Live tail of the gateway file logs.";
+    case "sovereign":
+      return "Cerebro profundo, telemetría vibe, malla P2P y controles soberanos.";
     default:
       return "";
   }

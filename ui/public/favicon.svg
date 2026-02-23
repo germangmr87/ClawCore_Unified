@@ -1,22 +1,58 @@
 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="lobster-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ff4d4d"/>
-      <stop offset="100%" stop-color="#991b1b"/>
+    <linearGradient id="claw-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2ff"/>
+      <stop offset="50%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#bc00ff"/>
     </linearGradient>
+    <linearGradient id="ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2ff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#bc00ff" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-  <!-- Body -->
-  <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#lobster-gradient)"/>
-  <!-- Left Claw -->
-  <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#lobster-gradient)"/>
-  <!-- Right Claw -->
-  <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#lobster-gradient)"/>
-  <!-- Antenna -->
-  <path d="M45 15 Q35 5 30 8" stroke="#ff4d4d" stroke-width="3" stroke-linecap="round"/>
-  <path d="M75 15 Q85 5 90 8" stroke="#ff4d4d" stroke-width="3" stroke-linecap="round"/>
-  <!-- Eyes -->
-  <circle cx="45" cy="35" r="6" fill="#050810"/>
-  <circle cx="75" cy="35" r="6" fill="#050810"/>
-  <circle cx="46" cy="34" r="2.5" fill="#00e5cc"/>
-  <circle cx="76" cy="34" r="2.5" fill="#00e5cc"/>
+
+  <!-- Outer neural ring -->
+  <circle cx="60" cy="60" r="55" stroke="url(#ring-grad)" stroke-width="2" fill="none" opacity="0.7"/>
+  <circle cx="60" cy="60" r="50" stroke="url(#ring-grad)" stroke-width="1" fill="none" opacity="0.4" stroke-dasharray="4 6"/>
+
+  <!-- Neural circuit dots on ring -->
+  <circle cx="60" cy="5" r="3" fill="#00f2ff" opacity="0.8"/>
+  <circle cx="105" cy="35" r="2.5" fill="#7c3aed" opacity="0.7"/>
+  <circle cx="105" cy="85" r="2.5" fill="#bc00ff" opacity="0.7"/>
+  <circle cx="60" cy="115" r="3" fill="#bc00ff" opacity="0.6"/>
+  <circle cx="15" cy="85" r="2.5" fill="#7c3aed" opacity="0.7"/>
+  <circle cx="15" cy="35" r="2.5" fill="#00f2ff" opacity="0.7"/>
+
+  <!-- Central claw mark — three slashes -->
+  <g filter="url(#glow)">
+    <!-- Left claw slash -->
+    <path d="M35 30 Q38 55 42 85 Q43 90 40 92" stroke="url(#claw-grad)" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <!-- Center claw slash -->
+    <path d="M55 25 Q58 55 60 88 Q60 92 58 95" stroke="url(#claw-grad)" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <!-- Right claw slash -->
+    <path d="M75 30 Q78 55 82 85 Q83 90 80 92" stroke="url(#claw-grad)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Neural nodes at claw tips -->
+  <circle cx="40" cy="92" r="4" fill="#00f2ff" opacity="0.9"/>
+  <circle cx="58" cy="95" r="5" fill="#7c3aed" opacity="0.9"/>
+  <circle cx="80" cy="92" r="4" fill="#bc00ff" opacity="0.9"/>
+
+  <!-- Top neural halo -->
+  <circle cx="35" cy="30" r="3" fill="#00f2ff" opacity="0.6"/>
+  <circle cx="55" cy="25" r="3.5" fill="#7c3aed" opacity="0.7"/>
+  <circle cx="75" cy="30" r="3" fill="#bc00ff" opacity="0.6"/>
+
+  <!-- Connecting neural lines -->
+  <line x1="35" y1="30" x2="55" y2="25" stroke="#00f2ff" stroke-width="0.8" opacity="0.4"/>
+  <line x1="55" y1="25" x2="75" y2="30" stroke="#bc00ff" stroke-width="0.8" opacity="0.4"/>
+  <line x1="40" y1="92" x2="58" y2="95" stroke="#00f2ff" stroke-width="0.8" opacity="0.4"/>
+  <line x1="58" y1="95" x2="80" y2="92" stroke="#bc00ff" stroke-width="0.8" opacity="0.4"/>
 </svg>

@@ -5,11 +5,11 @@ import { resolveConfigDir, resolveUserPath } from "../utils.js";
 import { resolveBundledPluginsDir } from "./bundled-dir.js";
 import {
   getPackageManifestMetadata,
-  type OpenClawPackageManifest,
+  type ClawCorePackageManifest,
   type PackageManifest,
 } from "./manifest.js";
 
-const EXTENSION_EXTS = new Set([".ts", ".js", ".mts", ".cts", ".mjs", ".cjs"]);
+const EXTENSION_EXTS = new Set([".js", ".js", ".mts", ".cts", ".mjs", ".cjs"]);
 
 export type PluginCandidate = {
   idHint: string;
@@ -21,7 +21,7 @@ export type PluginCandidate = {
   packageVersion?: string;
   packageDescription?: string;
   packageDir?: string;
-  packageManifest?: OpenClawPackageManifest;
+  packageManifest?: ClawCorePackageManifest;
 };
 
 export type PluginDiscoveryResult = {
@@ -34,7 +34,7 @@ function isExtensionFile(filePath: string): boolean {
   if (!EXTENSION_EXTS.has(ext)) {
     return false;
   }
-  return !filePath.endsWith(".d.ts");
+  return !filePath.endsWith(".d.js");
 }
 
 function readPackageManifest(dir: string): PackageManifest | null {
@@ -70,7 +70,7 @@ function deriveIdHint(params: {
   }
 
   // Prefer the unscoped name so config keys stay stable even when the npm
-  // package is scoped (example: @openclaw/voice-call -> voice-call).
+  // package is scoped (example: @clawcore/voice-call -> voice-call).
   const unscoped = rawPackageName.includes("/")
     ? (rawPackageName.split("/").pop() ?? rawPackageName)
     : rawPackageName;
@@ -180,7 +180,7 @@ function discoverInDirectory(params: {
       continue;
     }
 
-    const indexCandidates = ["index.ts", "index.js", "index.mjs", "index.cjs"];
+    const indexCandidates = ["index.js", "index.js", "index.mjs", "index.cjs"];
     const indexFile = indexCandidates
       .map((candidate) => path.join(fullPath, candidate))
       .find((candidate) => fs.existsSync(candidate));
@@ -266,7 +266,7 @@ function discoverFromPath(params: {
       return;
     }
 
-    const indexCandidates = ["index.ts", "index.js", "index.mjs", "index.cjs"];
+    const indexCandidates = ["index.js", "index.js", "index.mjs", "index.cjs"];
     const indexFile = indexCandidates
       .map((candidate) => path.join(resolved, candidate))
       .find((candidate) => fs.existsSync(candidate));
@@ -298,7 +298,7 @@ function discoverFromPath(params: {
   }
 }
 
-export function discoverOpenClawPlugins(params: {
+export function discoverClawCorePlugins(params: {
   workspaceDir?: string;
   extraPaths?: string[];
 }): PluginDiscoveryResult {
@@ -327,7 +327,7 @@ export function discoverOpenClawPlugins(params: {
   }
   if (workspaceDir) {
     const workspaceRoot = resolveUserPath(workspaceDir);
-    const workspaceExtDirs = [path.join(workspaceRoot, ".openclaw", "extensions")];
+    const workspaceExtDirs = [path.join(workspaceRoot, ".clawcore", "extensions")];
     for (const dir of workspaceExtDirs) {
       discoverInDirectory({
         dir,

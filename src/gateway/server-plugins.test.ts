@@ -3,10 +3,10 @@ import type { PluginRegistry } from "../plugins/registry.js";
 import type { PluginDiagnostic } from "../plugins/types.js";
 import { loadGatewayPlugins } from "./server-plugins.js";
 
-const loadOpenClawPlugins = vi.hoisted(() => vi.fn());
+const loadClawCorePlugins = vi.hoisted(() => vi.fn());
 
 vi.mock("../plugins/loader.js", () => ({
-  loadOpenClawPlugins,
+  loadClawCorePlugins,
 }));
 
 const createRegistry = (diagnostics: PluginDiagnostic[]): PluginRegistry => ({
@@ -30,11 +30,11 @@ describe("loadGatewayPlugins", () => {
       {
         level: "error",
         pluginId: "telegram",
-        source: "/tmp/telegram/index.ts",
+        source: "/tmp/telegram/index.js",
         message: "failed to load plugin: boom",
       },
     ];
-    loadOpenClawPlugins.mockReturnValue(createRegistry(diagnostics));
+    loadClawCorePlugins.mockReturnValue(createRegistry(diagnostics));
 
     const log = {
       info: vi.fn(),

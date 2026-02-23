@@ -1,0 +1,14 @@
+{
+  "cuotas": {
+    "TEST_NEURON": {
+      "quota": 1000,
+      "usado": 1000
+    },
+    "TEST": {
+      "quota": 5000,
+      "usado": 0
+    }
+  },
+  "uso_global": 1000,
+  "quota_global": 50000
+}

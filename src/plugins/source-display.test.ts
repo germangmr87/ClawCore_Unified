@@ -6,15 +6,15 @@ describe("formatPluginSourceForTable", () => {
     const out = formatPluginSourceForTable(
       {
         origin: "bundled",
-        source: "/opt/homebrew/lib/node_modules/openclaw/extensions/bluebubbles/index.ts",
+        source: "/opt/homebrew/lib/node_modules/clawcore/extensions/bluebubbles/index.js",
       },
       {
-        stock: "/opt/homebrew/lib/node_modules/openclaw/extensions",
-        global: "/Users/x/.openclaw/extensions",
-        workspace: "/Users/x/ws/.openclaw/extensions",
+        stock: "/opt/homebrew/lib/node_modules/clawcore/extensions",
+        global: "/Users/x/.clawcore/extensions",
+        workspace: "/Users/x/ws/.clawcore/extensions",
       },
     );
-    expect(out.value).toBe("stock:bluebubbles/index.ts");
+    expect(out.value).toBe("stock:bluebubbles/index.js");
     expect(out.rootKey).toBe("stock");
   });
 
@@ -22,15 +22,15 @@ describe("formatPluginSourceForTable", () => {
     const out = formatPluginSourceForTable(
       {
         origin: "workspace",
-        source: "/Users/x/ws/.openclaw/extensions/matrix/index.ts",
+        source: "/Users/x/ws/.clawcore/extensions/matrix/index.js",
       },
       {
-        stock: "/opt/homebrew/lib/node_modules/openclaw/extensions",
-        global: "/Users/x/.openclaw/extensions",
-        workspace: "/Users/x/ws/.openclaw/extensions",
+        stock: "/opt/homebrew/lib/node_modules/clawcore/extensions",
+        global: "/Users/x/.clawcore/extensions",
+        workspace: "/Users/x/ws/.clawcore/extensions",
       },
     );
-    expect(out.value).toBe("workspace:matrix/index.ts");
+    expect(out.value).toBe("workspace:matrix/index.js");
     expect(out.rootKey).toBe("workspace");
   });
 
@@ -38,12 +38,12 @@ describe("formatPluginSourceForTable", () => {
     const out = formatPluginSourceForTable(
       {
         origin: "global",
-        source: "/Users/x/.openclaw/extensions/zalo/index.js",
+        source: "/Users/x/.clawcore/extensions/zalo/index.js",
       },
       {
-        stock: "/opt/homebrew/lib/node_modules/openclaw/extensions",
-        global: "/Users/x/.openclaw/extensions",
-        workspace: "/Users/x/ws/.openclaw/extensions",
+        stock: "/opt/homebrew/lib/node_modules/clawcore/extensions",
+        global: "/Users/x/.clawcore/extensions",
+        workspace: "/Users/x/ws/.clawcore/extensions",
       },
     );
     expect(out.value).toBe("global:zalo/index.js");

@@ -5,7 +5,7 @@ import type {
   UpdateStepProgress,
 } from "../../infra/update-runner.js";
 import type { UpdateCommandOptions } from "./shared.js";
-import { formatDurationPrecise } from "../../infra/format-time/format-duration.ts";
+import { formatDurationPrecise } from "../../infra/format-time/format-duration.js";
 import { defaultRuntime } from "../../runtime.js";
 import { theme } from "../../terminal/theme.js";
 
@@ -24,8 +24,8 @@ const STEP_LABELS: Record<string, string> = {
   "ui:build": "Building UI assets",
   "ui:build (post-doctor repair)": "Restoring missing UI assets",
   "ui assets verify": "Validating UI assets",
-  "openclaw doctor entry": "Checking doctor entrypoint",
-  "openclaw doctor": "Running doctor checks",
+  "clawcore doctor entry": "Checking doctor entrypoint",
+  "clawcore doctor": "Running doctor checks",
   "git rev-parse HEAD (after)": "Verifying update",
   "global update": "Updating via package manager",
   "global install": "Installing global package",

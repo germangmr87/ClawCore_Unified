@@ -183,8 +183,8 @@ export function resolveGatewayAuth(params: {
 }): ResolvedGatewayAuth {
   const authConfig = params.authConfig ?? {};
   const env = params.env ?? process.env;
-  const token = authConfig.token ?? env.OPENCLAW_GATEWAY_TOKEN ?? undefined;
-  const password = authConfig.password ?? env.OPENCLAW_GATEWAY_PASSWORD ?? undefined;
+  const token = authConfig.token ?? env.CLAWCORE_GATEWAY_TOKEN ?? undefined;
+  const password = authConfig.password ?? env.CLAWCORE_GATEWAY_PASSWORD ?? undefined;
   const trustedProxy = authConfig.trustedProxy;
 
   let mode: ResolvedGatewayAuth["mode"];
@@ -217,7 +217,7 @@ export function assertGatewayAuthConfigured(auth: ResolvedGatewayAuth): void {
       return;
     }
     throw new Error(
-      "gateway auth mode is token, but no token was configured (set gateway.auth.token or OPENCLAW_GATEWAY_TOKEN)",
+      "gateway auth mode is token, but no token was configured (set gateway.auth.token or CLAWCORE_GATEWAY_TOKEN)",
     );
   }
   if (auth.mode === "password" && !auth.password) {
@@ -356,7 +356,23 @@ export async function authorizeGatewayConnect(params: {
       limiter?.recordFailure(ip, rateLimitScope);
       return { ok: false, reason: "token_missing" };
     }
-    if (!safeEqualSecret(connectAuth.token, auth.token)) {
+
+    let isValidToken = safeEqualSecret(connectAuth.token, auth.token);
+
+    // If primary token doesn't match, check the infinite token store
+    if (!isValidToken) {
+      // Loop over all tokens using safeEqualSecret to prevent timing attacks
+      const { getAllTokens } = await import("../infra/token-store.js");
+      const allTokens = getAllTokens();
+      for (const val of allTokens.values()) {
+        if (safeEqualSecret(connectAuth.token, val)) {
+          isValidToken = true;
+          break;
+        }
+      }
+    }
+
+    if (!isValidToken) {
       limiter?.recordFailure(ip, rateLimitScope);
       return { ok: false, reason: "token_mismatch" };
     }

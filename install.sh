@@ -64,7 +64,7 @@ fi
 step "Compilando..."
 cd "$INSTALL_DIR"
 pnpm install --frozen-lockfile 2>/dev/null || pnpm install --no-frozen-lockfile
-pnpm build
+pnpm prepack
 ok "Build completado"
 
 # ── 5. Alias permanente ───────────────────────────────────

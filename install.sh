@@ -84,6 +84,13 @@ echo -e "${GREEN}${BOLD}══════════════════�
 echo -e "${GREEN}${BOLD}  ✅ Instalación completa. Iniciando configuración...${NC}"
 echo -e "${GREEN}${BOLD}════════════════════════════════════════${NC}"
 echo ""
-# Reaperturar el teclado explícitamente al salir de curl pipe
-exec < /dev/tty
-node "$INSTALL_DIR/clawcore.mjs" onboard --install-daemon
+# Ejecutar el onboarding con conexión a la terminal del usuario
+if [[ -t 0 ]]; then
+  node "$INSTALL_DIR/clawcore.mjs" onboard --install-daemon
+else
+  # Redirigir la entrada estándar desde la terminal física actual (si existe), en caso de curl
+  node "$INSTALL_DIR/clawcore.mjs" onboard --install-daemon < /dev/tty || {
+    echo -e "${RED}⚠️ No se pudo iniciar automáticamente la configuración interactiva.${NC}"
+    echo -e "Por favor, ejecuta manualmente: ${CYAN}clawcore onboard --install-daemon${NC}"
+  }
+fi

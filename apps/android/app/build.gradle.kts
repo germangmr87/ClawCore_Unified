@@ -9,7 +9,7 @@ plugins {
 
 android {
   namespace = "ai.clawcore.android"
-  compileSdk = 36
+  compileSdk = 35
 
   sourceSets {
     getByName("main") {
@@ -20,9 +20,9 @@ android {
   defaultConfig {
     applicationId = "ai.clawcore.android"
     minSdk = 31
-    targetSdk = 36
-    versionCode = 202602160
-    versionName = "2026.2.16"
+    targetSdk = 35
+    versionCode = 202602220
+    versionName = "2026.2.22"
     ndk {
       // Support all major ABIs — native libs are tiny (~47 KB per ABI)
       abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
@@ -101,9 +101,9 @@ dependencies {
   implementation(composeBom)
   androidTestImplementation(composeBom)
 
-  implementation("androidx.core:core-ktx:1.17.0")
-  implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.10.0")
-  implementation("androidx.activity:activity-compose:1.12.2")
+  implementation("androidx.core:core-ktx:1.15.0")
+  implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
+  implementation("androidx.activity:activity-compose:1.10.0")
   implementation("androidx.webkit:webkit:1.15.0")
 
   implementation("androidx.compose.ui:ui")

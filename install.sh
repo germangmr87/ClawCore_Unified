@@ -6,7 +6,7 @@
 # ============================================================
 set -euo pipefail
 
-REPO_URL="https://github.com/germangmr87/openclaw.git"
+REPO_URL="https://github.com/germangmr87/ClawCore_Unified.git"
 INSTALL_DIR="$HOME/.clawcore"
 VERSION="2026.2.22"
 
@@ -23,7 +23,7 @@ NC='\033[0m' # No Color
 print_header() {
   echo ""
   echo -e "${CYAN}${BOLD}╔══════════════════════════════════════════╗${NC}"
-  echo -e "${CYAN}${BOLD}║       🦞  ClawCore Installer v${VERSION}    ║${NC}"
+  echo -e "${CYAN}${BOLD}║      🦞  ClawCore Installer v${VERSION}   ║${NC}"
   echo -e "${CYAN}${BOLD}╚══════════════════════════════════════════╝${NC}"
   echo ""
 }
@@ -319,7 +319,7 @@ print_summary() {
   echo -e "  ${CYAN}~/.clawcore/logs/gateway.log${NC}"
   echo ""
   echo -e "  ${BOLD}Reinstalar / actualizar:${NC}"
-  echo -e "  ${CYAN}curl -fsSL https://raw.githubusercontent.com/germangmr87/openclaw/main/install.sh | bash${NC}"
+  echo -e "  ${CYAN}curl -fsSL https://raw.githubusercontent.com/germangmr87/ClawCore_Unified/main/install.sh | bash${NC}"
   echo ""
 }
 

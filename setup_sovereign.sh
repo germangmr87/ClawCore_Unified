@@ -50,13 +50,26 @@ echo "   ✅ Puertos 18791 liberados (18789 se respeta para el gateway oficial)"
 
 # 6. Construir la UI si hay un dist más antiguo
 echo ""
-echo "🏗️  Verificando build de la UI..."
+echo "🏗️  Verificando entorno Node.js y build de la UI..."
+if ! command -v npm &> /dev/null; then
+  echo "   ⚠️  NPM no encontrado. Intentando instalar Node.js..."
+  sudo apt update && sudo apt install -y nodejs npm || echo "   ❌ No se pudo instalar Node.js automáticamente."
+fi
+
 UI_DIST="$REPO_ROOT/dist/control-ui"
 if [ ! -f "$UI_DIST/index.html" ]; then
-  echo "   ⚠️  dist/control-ui no encontrado. Compilando UI..."
-  cd "$REPO_ROOT/ui" && npm install -q && npm run build:control-ui -q
-  cd "$REPO_ROOT"
-  echo "   ✅ UI compilada"
+  if command -v npm &> /dev/null; then
+    echo "   🏗️  Compilando UI..."
+    cd "$REPO_ROOT/ui" && npm install -q && npm run build:control-ui -q
+    cd "$REPO_ROOT"
+    if [ -f "$UI_DIST/index.html" ]; then
+      echo "   ✅ UI compilada con éxito."
+    else
+      echo "   ❌ Fallo al compilar la UI."
+    fi
+  else
+    echo "   ⚠️  Saltando compilación de UI (NPM no disponible)."
+  fi
 else
   echo "   ✅ dist/control-ui encontrado"
 fi
@@ -64,7 +77,8 @@ fi
 # 7. Lanzar el Gateway Sofia en background
 echo ""
 echo "🚀 Iniciando Sofia AI Gateway en puerto 18791..."
-SOFIA_GATEWAY_PORT=18791 nohup python3 "$RUNTIME_SRC/brain/api_gateway.py" \
+cd "$RUNTIME_DIR"
+PYTHONPATH="$RUNTIME_DIR" SOFIA_GATEWAY_PORT=18791 nohup python3 "$RUNTIME_SRC/brain/api_gateway.py" \
   > "$RUNTIME_DIR/logs/sofia_gateway.log" 2>&1 &
 SOFIA_PID=$!
 sleep 5

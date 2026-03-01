@@ -70,6 +70,31 @@ else
   echo "   ✅ dist/control-ui encontrado"
 fi
 
+# 2. Configuración Interactiva (Soberanía)
+echo ""
+echo "⚙️  CONFIGURACIÓN DEL NÚCLEO SOFIA"
+echo "   (Pulsa Enter para usar los valores de respaldo)"
+echo ""
+
+DOTENV="$RUNTIME_DIR/.env"
+[ -f "$DOTENV" ] && source "$DOTENV"
+
+read -p "   🔑 Telegram Bot Token [${TELEGRAM_BOT_TOKEN:-Respaldo}]: " NEW_TG
+read -p "   🔑 Gemini API Key [${GEMINI_API_KEY:-Respaldo}]: " NEW_GEM
+read -p "   🔑 DeepSeek API Key [${DEEPSEEK_API_KEY:-Ninguno}]: " NEW_DS
+read -p "   🛰️ Ollama Remote URL [${OLLAMA_REMOTE_URL:-http://localhost:11434}]: " NEW_OLLAMA
+
+# Crear .env con los nuevos valores o mantener antiguos
+cat > "$DOTENV" << EOF
+TELEGRAM_BOT_TOKEN=${NEW_TG:-$TELEGRAM_BOT_TOKEN}
+GEMINI_API_KEY=${NEW_GEM:-$GEMINI_API_KEY}
+DEEPSEEK_API_KEY=${NEW_DS:-$DEEPSEEK_API_KEY}
+OLLAMA_REMOTE_URL=${NEW_OLLAMA:-$OLLAMA_REMOTE_URL}
+NODE_NAME=Sofia_VPS
+EOF
+
+echo "   ✅ Configuración guardada en $DOTENV"
+
 # 2. Sincronizar código y UI al runtime
 echo ""
 echo "📂 Sincronizando archivos al runtime ($RUNTIME_DIR)..."
@@ -77,7 +102,8 @@ rsync -avq --delete "$REPO_ROOT/src/" "$RUNTIME_SRC/"
 if [ -d "$REPO_ROOT/dist" ]; then
   rsync -avq --delete "$REPO_ROOT/dist/" "$RUNTIME_DIR/dist/"
 fi
-cp -f "$REPO_ROOT/.env" "$RUNTIME_DIR/.env" 2>/dev/null || echo "   ⚠️  .env no encontrado en el repo."
+# Ya no sobreescribimos el .env si lo configuramos arriba
+# cp -f "$REPO_ROOT/.env" "$RUNTIME_DIR/.env" 2>/dev/null || echo "   ⚠️  .env no encontrado en el repo."
 
 # Verificación de integridad soberana antes del lanzamiento
 echo "🔍 Verificando integridad de neuronas en runtime..."

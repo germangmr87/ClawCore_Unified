@@ -24,16 +24,16 @@ mkdir -p "$RUNTIME_DIR/logs"
 # 2. Copiar archivos soberanos corregidos
 echo "📂 Sincronizando código fuente al runtime ($RUNTIME_SRC)..."
 rsync -av --delete "$REPO_ROOT/src/" "$RUNTIME_SRC/"
-cp -f "$REPO_ROOT/.env" "$RUNTIME_DIR/.env" || echo "   ⚠️  .env no encontrado en el repo."
+cp -f "$REPO_ROOT/.env" "$RUNTIME_DIR/.env" 2>/dev/null || echo "   ⚠️  .env no encontrado en el repo."
 echo "   ✅ Sincronización completada."
 
 # 3. Verificar dependencias Python
 echo ""
 echo "🐍 Verificando dependencias Python..."
 python3 -c "import fastapi, uvicorn, aiohttp, dotenv; print('   ✅ dependencias base OK')" 2>/dev/null \
-  || { echo "   ⚠️  Instalando dependencias faltantes..."; pip3 install fastapi uvicorn aiohttp websockets python-dotenv edge-tts --break-system-packages -q; }
+  || { echo "   ⚠️  Instalando dependencias faltantes..."; python3 -m pip install fastapi uvicorn aiohttp websockets python-dotenv edge-tts --break-system-packages -q || echo "   ❌ Error: Pip no encontrado. Corre: sudo apt update && sudo apt install python3-pip -y"; }
 python3 -c "import websockets; print('   ✅ websockets OK')" 2>/dev/null \
-  || pip3 install websockets --break-system-packages -q
+  || python3 -m pip install websockets --break-system-packages -q 2>/dev/null
 
 # 4. Verificar sintaxis del gateway
 echo ""

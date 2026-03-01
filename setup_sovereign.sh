@@ -9,6 +9,7 @@ set -e
 REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
 RUNTIME_DIR="$HOME/.clawcore"
 RUNTIME_SRC="$RUNTIME_DIR/src"
+UI_DIST="$REPO_ROOT/dist/control-ui"
 
 echo "🔱 ClawCore Sovereign Setup v5.5"
 echo "──────────────────────────────────────────────────────"
@@ -21,11 +22,7 @@ mkdir -p "$RUNTIME_SRC/brain"
 mkdir -p "$RUNTIME_SRC/clawcore_system/neuronas"
 mkdir -p "$RUNTIME_DIR/logs"
 
-# 2. Copiar archivos soberanos corregidos
-echo "📂 Sincronizando código fuente al runtime ($RUNTIME_SRC)..."
-rsync -av --delete "$REPO_ROOT/src/" "$RUNTIME_SRC/"
-cp -f "$REPO_ROOT/.env" "$RUNTIME_DIR/.env" 2>/dev/null || echo "   ⚠️  .env no encontrado en el repo."
-echo "   ✅ Sincronización completada."
+# (Sync movido abajo para incluir el build de la UI)
 
 # 3. Verificar dependencias Python
 echo ""
@@ -56,11 +53,10 @@ if ! command -v npm &> /dev/null; then
   sudo apt update && sudo apt install -y nodejs npm || echo "   ❌ No se pudo instalar Node.js automáticamente."
 fi
 
-UI_DIST="$REPO_ROOT/dist/control-ui"
 if [ ! -f "$UI_DIST/index.html" ]; then
   if command -v npm &> /dev/null; then
     echo "   🏗️  Compilando UI..."
-    cd "$REPO_ROOT/ui" && npm install -q && npm run build:control-ui -q
+    cd "$REPO_ROOT/ui" && npm install -q && npm run build -q
     cd "$REPO_ROOT"
     if [ -f "$UI_DIST/index.html" ]; then
       echo "   ✅ UI compilada con éxito."
@@ -73,6 +69,16 @@ if [ ! -f "$UI_DIST/index.html" ]; then
 else
   echo "   ✅ dist/control-ui encontrado"
 fi
+
+# 2. Sincronizar código y UI al runtime
+echo ""
+echo "📂 Sincronizando archivos al runtime ($RUNTIME_DIR)..."
+rsync -av --delete "$REPO_ROOT/src/" "$RUNTIME_SRC/"
+if [ -d "$REPO_ROOT/dist" ]; then
+  rsync -av --delete "$REPO_ROOT/dist/" "$RUNTIME_DIR/dist/"
+fi
+cp -f "$REPO_ROOT/.env" "$RUNTIME_DIR/.env" 2>/dev/null || echo "   ⚠️  .env no encontrado en el repo."
+echo "   ✅ Sincronización completada."
 
 # 7. Lanzar el Gateway Sofia en background
 echo ""

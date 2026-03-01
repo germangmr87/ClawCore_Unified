@@ -63,6 +63,7 @@ HISTORY_FILE = os.path.expanduser("~/.clawcore/sofia_history_v5.json")
 
 def save_history():
     """Guarda el historial de Sofia del portal UI."""
+    if 'kernel' not in globals(): return
     try:
         data = kernel.histories.get('gateway', [])
         with open(HISTORY_FILE, "w") as f:
@@ -78,9 +79,12 @@ def load_history():
     except: pass
     return []
 
-# Inicializar Kernel con historia persistente
-if 'gateway' not in kernel.histories:
-    kernel.histories['gateway'] = load_history()
+# Inicializar Kernel con historia persistente si se importó con éxito
+if 'kernel' in globals():
+    if 'gateway' not in kernel.histories:
+        kernel.histories['gateway'] = load_history()
+else:
+    logger.error("❌ El objeto 'kernel' no está definido. Los servicios de IA estarán deshabilitados.")
 start_time_global = time.time()
 
 # ─── REGISTRO DE MODELOS DISPONIBLES ─────────────────────────────────────────
@@ -152,10 +156,17 @@ manager = ConnectionManager()
 @app.on_event("startup")
 async def startup_event():
     """Inicia el kernel y el bot unificado cuando arranca el gateway."""
-    kernel.iniciar()
-    logger.info("🧠 Kernel Sofia iniciado exitosamente desde el Gateway.")
-    asyncio.create_task(run_bot_task())
-    logger.info("📱 Interfaz Telegram sincronizada con el núcleo principal.")
+    if 'kernel' in globals():
+        kernel.iniciar()
+        logger.info("🧠 Kernel Sofia iniciado exitosamente desde el Gateway.")
+    else:
+        logger.error("🛑 Kernel no disponible. Sofia está en coma.")
+        
+    try:
+        asyncio.create_task(run_bot_task())
+        logger.info("📱 Interfaz Telegram sincronizada con el núcleo principal.")
+    except Exception as e:
+        logger.error(f"Fallo al iniciar Telegram Bot: {e}")
 
 async def get_llm_response(messages: List[Dict]) -> str:
     """Usa el modelo activo o el Kernel Soberano si está en modo 'kernel'."""
@@ -164,6 +175,8 @@ async def get_llm_response(messages: List[Dict]) -> str:
 
     # Modo Kernel (Sofia nativa — incluye memoria y sistema de personalidad)
     if active_model_name == "kernel":
+        if 'kernel' not in globals():
+            return "El Kernel Soberano no está cargado. Por favor, revisa los logs del servidor."
         try:
                 response = await kernel.pensar(messages[-1].get("content", ""), context_id="gateway")
                 if response:

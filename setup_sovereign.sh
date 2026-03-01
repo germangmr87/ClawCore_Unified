@@ -73,18 +73,29 @@ fi
 # 2. Sincronizar código y UI al runtime
 echo ""
 echo "📂 Sincronizando archivos al runtime ($RUNTIME_DIR)..."
-rsync -av --delete "$REPO_ROOT/src/" "$RUNTIME_SRC/"
+rsync -avq --delete "$REPO_ROOT/src/" "$RUNTIME_SRC/"
 if [ -d "$REPO_ROOT/dist" ]; then
-  rsync -av --delete "$REPO_ROOT/dist/" "$RUNTIME_DIR/dist/"
+  rsync -avq --delete "$REPO_ROOT/dist/" "$RUNTIME_DIR/dist/"
 fi
 cp -f "$REPO_ROOT/.env" "$RUNTIME_DIR/.env" 2>/dev/null || echo "   ⚠️  .env no encontrado en el repo."
+
+# Verificación de integridad soberana antes del lanzamiento
+echo "🔍 Verificando integridad de neuronas en runtime..."
+if [ -f "$RUNTIME_SRC/clawcore_system/neuronas/buscador_red.py" ]; then
+  echo "   ✅ buscador_red.py presente"
+else
+  echo "   ❌ ERROR: buscador_red.py NO ENCONTRADO en $RUNTIME_SRC/clawcore_system/neuronas/"
+  ls -la "$RUNTIME_SRC/clawcore_system/neuronas/"
+fi
+
 echo "   ✅ Sincronización completada."
 
 # 7. Lanzar el Gateway Sofia en background
 echo ""
 echo "🚀 Iniciando Sofia AI Gateway en puerto 18791..."
 cd "$RUNTIME_DIR"
-PYTHONPATH="$RUNTIME_DIR" SOFIA_GATEWAY_PORT=18791 nohup python3 "$RUNTIME_SRC/brain/api_gateway.py" \
+export PYTHONPATH="$RUNTIME_DIR"
+nohup python3 "$RUNTIME_SRC/brain/api_gateway.py" \
   > "$RUNTIME_DIR/logs/sofia_gateway.log" 2>&1 &
 SOFIA_PID=$!
 sleep 5

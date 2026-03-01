@@ -29,20 +29,19 @@ load_dotenv(dotenv_path=ENV_PATH)
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("GatewaySoberano")
 
-# Inyectar rutas
+# Inyectar rutas (Patrón Estándar ClawCore)
 ROOT = Path(__file__).resolve().parent.parent.parent
 if str(ROOT) not in sys.path: sys.path.insert(0, str(ROOT))
 
-import aiohttp
-from starlette.websockets import WebSocketState
+# --- VARIABLES DE ENTORNO (Soberanía Real) ---
+# NO HARDCODEAR LLAVES AQUÍ. Deben estar en el .env o variables de entorno.
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+GEMINI_KEY = os.getenv("GEMINI_API_KEY")
 
-# --- SOVEREIGN FALLBACK (macOS TCC Fix) ---
-if not os.getenv("TELEGRAM_BOT_TOKEN"):
-    os.environ["TELEGRAM_BOT_TOKEN"] = "8236923260:AAF0y9N6Jy8hJuy-RKSZfpmE9puBDwguzDk"
-    logger.warning("🛡️ GATEWAY: Usando TELEGRAM_BOT_TOKEN de Respaldo Soberano.")
-if not os.getenv("GEMINI_API_KEY"):
-    os.environ["GEMINI_API_KEY"] = "AIzaSyBC22up54NB1cGsumk5QiTcsG2RciW6aSw"
-    logger.warning("🛡️ GATEWAY: Usando GEMINI_API_KEY de Respaldo Soberano.")
+if not TELEGRAM_TOKEN:
+    logger.error("❌ ERROR CRÍTICO: TELEGRAM_BOT_TOKEN no configurado.")
+if not GEMINI_KEY:
+    logger.error("❌ ERROR CRÍTICO: GEMINI_API_KEY no configurada.")
 
 try:
     from src.clawcore_system.neuronas.vibe_dashboard import vibe

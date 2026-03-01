@@ -4,10 +4,10 @@ import sys
 from dotenv import load_dotenv
 from pathlib import Path
 
-# Configurar# Logger soberano
-logging.basicConfig(level=logging.DEBUG)
+# Configurar Logger soberano
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("KernelSoberano")
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 
 import asyncio
 import time
@@ -21,23 +21,18 @@ from typing import Dict, List, Optional, Any, Final
 ENV_PATH = Path(__file__).resolve().parent.parent.parent.parent / ".env"
 loaded = load_dotenv(dotenv_path=ENV_PATH)
 
-# --- SOVEREIGN FALLBACK (macOS TCC Fix) ---
-if not os.getenv("TELEGRAM_BOT_TOKEN"):
-    os.environ["TELEGRAM_BOT_TOKEN"] = "8236923260:AAF0y9N6Jy8hJuy-RKSZfpmE9puBDwguzDk"
-    logger.warning("🛡️ NÚCLEO: Usando TELEGRAM_BOT_TOKEN de Respaldo Soberano.")
-
-if not os.getenv("GEMINI_API_KEY"):
-    os.environ["GEMINI_API_KEY"] = "AIzaSyBC22up54NB1cGsumk5QiTcsG2RciW6aSw"
-    logger.warning("🛡️ NÚCLEO: Usando GEMINI_API_KEY de Respaldo Soberano.")
-
-if not os.getenv("DEEPSEEK_API_KEY"):
-    os.environ["DEEPSEEK_API_KEY"] = "sk-0e47803238214396aadeee6f40512d16"
+# --- PROTECCIÓN DE SOBERANÍA ---
+# Las llaves deben cargarse desde el entorno (.env).
+# NUNCA hardcodear llaves en el código fuente.
+TG_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+GEM_KEY = os.getenv("GEMINI_API_KEY")
+DS_KEY = os.getenv("DEEPSEEK_API_KEY")
 
 logger.info(f"📍 Entorno: {ENV_PATH} | Éxito Load: {loaded}")
-if os.getenv("GEMINI_API_KEY"):
-    logger.info("✅ GEMINI_API_KEY activa (vía Env o Fallback).")
+if GEM_KEY:
+    logger.info("✅ GEMINI_API_KEY cargada desde el entorno.")
 else:
-    logger.error("🚫 GEMINI_API_KEY crítica no detectada.")
+    logger.error("🚫 GEMINI_API_KEY no detectada. Verifique su archivo .env")
 
 import sqlite3
 import hashlib
